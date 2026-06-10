@@ -1,36 +1,31 @@
-# =====================================================
-#  NETLIFY.TOML — Sri Sai Speciality Dental Care
-#  Add this to your existing netlify.toml file
-#  (or use this as your complete netlify.toml)
-# =====================================================
-
 [build]
   publish = "."
 
-# ---- Netlify Identity (needed for CMS login) ----
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "SAMEORIGIN"
-    X-XSS-Protection = "1; mode=block"
-
-# ---- CMS Admin panel header ----
-[[headers]]
-  for = "/admin/*"
-  [headers.values]
-    X-Frame-Options = "SAMEORIGIN"
-    Content-Security-Policy = "frame-ancestors 'self'"
-
-# ---- Blog post URL routing ----
-# Maps /blog/my-post-slug/ → /blog/post-template.html
 [[redirects]]
   from = "/blog/:slug"
   to = "/blog/post-template.html"
   status = 200
 
-# ---- Keep www redirect ----
 [[redirects]]
-  from = "https://srisaispecialitydentalcare.netlify.app/*"
+  from = "https://srisaispecialitydentalcare.in"
+  to = "https://www.srisaispecialitydentalcare.in"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://srisaispecialitydentalcare.in/*"
+  to = "https://www.srisaispecialitydentalcare.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://srisaispecialitydentalcare.in"
+  to = "https://www.srisaispecialitydentalcare.in"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://srisaispecialitydentalcare.in/*"
   to = "https://www.srisaispecialitydentalcare.in/:splat"
   status = 301
   force = true
