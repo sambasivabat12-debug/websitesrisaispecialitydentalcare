@@ -413,7 +413,7 @@ section{padding:80px 40px}
 .clinic-gallery{background:var(--soft-gray)}
 .cg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:52px}
 @media(max-width:600px){.cg-grid{grid-template-columns:1fr}}
-.cg-card{flex-shrink:0;width:min(80vw,340px);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);position:relative;cursor:default;transition:all .4s cubic-bezier(.16,1,.3,1);background:var(--text)}
+.cg-card{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);position:relative;cursor:default;transition:all .4s cubic-bezier(.16,1,.3,1);background:var(--text)}
 .cg-card:hover{transform:translateY(-10px);box-shadow:0 32px 72px var(--shadow-teal);border-color:var(--teal2)}
 .cg-img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.16,1,.3,1)}
 .cg-card:hover .cg-img{transform:scale(1.07)}
@@ -840,6 +840,7 @@ footer a{color:var(--gold2);text-decoration:none}
 .mobile-menu.open .mobile-menu-links li:nth-child(5){opacity:1;transform:none;transition-delay:.32s}
 .mobile-menu.open .mobile-menu-links li:nth-child(6){opacity:1;transform:none;transition-delay:.38s}
 .mobile-menu.open .mobile-menu-links li:nth-child(7){opacity:1;transform:none;transition-delay:.44s}
+.mobile-menu.open .mobile-menu-links li:nth-child(8){opacity:1;transform:none;transition-delay:.50s}
 .mobile-menu-links a{display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:clamp(1.4rem,6vw,2rem);font-weight:700;color:#fff;text-decoration:none;padding:8px 0;letter-spacing:-.3px;transition:color .2s;min-height:44px}
 .mobile-menu-links a:hover{color:var(--gold2)}
 .mobile-menu-book{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-weight:700;font-size:15px;padding:14px 36px;border-radius:100px;text-decoration:none;box-shadow:0 6px 24px var(--shadow-gold);opacity:0;transform:translateY(20px);transition:opacity .4s .50s,transform .4s .50s;min-height:48px;display:flex;align-items:center;justify-content:center}
@@ -1270,135 +1271,8 @@ input[type="date"].pf-input::-webkit-calendar-picker-indicator{cursor:pointer;op
   section{padding:90px 60px}
   .container{max-width:1280px;padding:0 60px}
 }
-
-.auto-car-wrap{position:relative;overflow:hidden;padding-bottom:52px}
-.auto-car-wrap::before,.auto-car-wrap::after{content:'';position:absolute;top:0;bottom:52px;width:56px;z-index:2;pointer-events:none}
-.auto-car-wrap.fade-white::before{background:linear-gradient(to right,var(--white,#fff),transparent)}
-.auto-car-wrap.fade-white::after{right:0;background:linear-gradient(to left,var(--white,#fff),transparent)}
-.auto-car-wrap.fade-light::before{background:linear-gradient(to right,#f0f7f5,transparent)}
-.auto-car-wrap.fade-light::after{right:0;background:linear-gradient(to left,#f0f7f5,transparent)}
-.auto-car-wrap.fade-dark::before{background:linear-gradient(to right,#06243c,transparent)}
-.auto-car-wrap.fade-dark::after{right:0;background:linear-gradient(to left,#0c4a3a,transparent)}
-.auto-car-track{display:flex;gap:20px;width:max-content;padding:8px 20px 12px;animation:autoCarScroll 28s linear infinite;cursor:grab;will-change:transform}
-.auto-car-track:active{cursor:grabbing}
-.auto-car-track.paused{animation-play-state:paused}
-.auto-car-track.speed-slow{animation-duration:36s}
-.auto-car-wrap:hover .auto-car-track{animation-play-state:paused}
-@keyframes autoCarScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.auto-car-controls{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:12px;padding:0 16px}
-.acar-arrow{width:38px;height:38px;border-radius:50%;border:2px solid #cce8e2;background:#fff;color:#0a7c6e;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all .25s cubic-bezier(.34,1.56,.64,1);box-shadow:0 2px 10px rgba(10,124,110,.1)}
-.acar-arrow:hover{background:#0a7c6e;border-color:#0a7c6e;color:#fff;transform:scale(1.12)}
-.acar-arrow svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
-.auto-car-wrap.fade-dark .acar-arrow{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.9)}
-.auto-car-wrap.fade-dark .acar-arrow:hover{background:#c8a84b;border-color:#c8a84b;color:#06243c}
-.acar-dots{display:flex;gap:7px;align-items:center}
-.acar-dot{width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:#cce8e2;transition:all .3s}
-.acar-dot.active{width:22px;border-radius:4px;background:linear-gradient(90deg,#0a7c6e,#12a992)}
-.auto-car-wrap.fade-dark .acar-dot{background:rgba(255,255,255,.2)}
-.auto-car-wrap.fade-dark .acar-dot.active{background:#e8cc78;width:22px}
-.treat-grid-car{overflow:hidden;position:relative;padding-bottom:56px;margin-top:40px}
-.treat-grid-car::before,.treat-grid-car::after{content:'';position:absolute;top:0;bottom:56px;width:40px;z-index:2;pointer-events:none}
-.treat-grid-car::before{background:linear-gradient(to right,var(--soft-gray,#f4fbf9),transparent)}
-.treat-grid-car::after{right:0;background:linear-gradient(to left,var(--soft-gray,#f4fbf9),transparent)}
-.treat-grid-track{display:grid;grid-template-columns:repeat(10,240px);gap:20px;padding:8px 20px 12px;transition:transform .45s cubic-bezier(.4,0,.2,1)}
-.treat-grid-track .treat-card,.treat-grid-track a.treat-card{width:240px}
-.why-card{flex-shrink:0;width:220px}
-.ba-card{flex-shrink:0;width:280px}
-.patient-card{flex-shrink:0}
-.doc-card{flex-shrink:0;width:min(85vw,360px)}
-.ba-carousel-wrap{position:relative;max-width:700px;margin:0 auto}
-.ba-slides{position:relative;width:100%;height:360px;border-radius:22px;overflow:hidden;user-select:none;box-shadow:0 20px 52px rgba(6,36,60,.22);cursor:ew-resize}
-.ba-slide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease}
-.ba-slide.active{opacity:1;z-index:1}
-.ba-before-half,.ba-after-half{position:absolute;inset:0;overflow:hidden}
-.ba-before-half img,.ba-after-half img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.ba-before-half::after{content:'BEFORE';position:absolute;top:14px;left:14px;background:rgba(0,0,0,.55);color:#fff;font-size:10px;font-weight:900;letter-spacing:2px;padding:4px 10px;border-radius:100px;z-index:3}
-.ba-after-half::after{content:'AFTER';position:absolute;top:14px;right:14px;background:rgba(10,124,110,.85);color:#fff;font-size:10px;font-weight:900;letter-spacing:2px;padding:4px 10px;border-radius:100px;z-index:3}
-.ba-divider-line{position:absolute;top:0;bottom:0;width:3px;background:#fff;z-index:10;box-shadow:0 0 10px rgba(0,0,0,.25)}
-.ba-divider-handle{position:absolute;top:50%;width:40px;height:40px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:11;transform:translate(-50%,-50%);cursor:ew-resize;transition:transform .2s}
-.ba-case-strip{background:#fff;border:1px solid #cce8e2;border-radius:14px;padding:12px 16px;margin-top:12px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 12px rgba(10,124,110,.06)}
-.ba-case-num{width:30px;height:30px;background:linear-gradient(135deg,#0a7c6e,#12a992);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:12px;flex-shrink:0}
-.ba-case-text strong{display:block;font-size:13px;color:#0d2b26;font-weight:700;margin-bottom:1px}
-.ba-case-text span{font-size:11px;color:#6b8f88}
-.ba-case-badge{background:#d8f5ef;color:#0a7c6e;font-size:10.5px;font-weight:800;padding:4px 10px;border-radius:100px;white-space:nowrap;margin-left:auto}
-.ba-thumbs{display:flex;gap:7px;justify-content:center;margin-top:12px}
-.ba-thumb-btn{width:50px;height:36px;border-radius:8px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:all .22s;opacity:.5;flex-shrink:0}
-.ba-thumb-btn.active{border-color:#0a7c6e;opacity:1;transform:scale(1.06)}
-.ba-thumb-btn img{width:100%;height:100%;object-fit:cover}
-.ba-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px}
-.faq-section{padding:72px 24px}
-.faq-list{display:flex;flex-direction:column;gap:10px}
-.faq-item{background:#fff;border:1.5px solid #cce8e2;border-radius:16px;overflow:hidden;transition:border-color .3s,box-shadow .3s}
-.faq-item:hover{border-color:#12a992}
-.faq-item.open{border-color:#0a7c6e;box-shadow:0 6px 24px rgba(10,124,110,.1)}
-.faq-question{display:flex;align-items:flex-start;gap:12px;padding:18px 20px;cursor:pointer;user-select:none}
-.faq-q-badge{flex-shrink:0;width:26px;height:26px;margin-top:1px;border-radius:7px;background:linear-gradient(135deg,#0a7c6e,#12a992);color:#fff;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center}
-.faq-q-text{flex:1;font-family:'Playfair Display',serif;font-size:.97rem;font-weight:700;color:#0d2b26;line-height:1.4}
-.faq-chevron{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#d8f5ef;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.faq-chevron svg{width:13px;height:13px;stroke:#0a7c6e;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
-.faq-item.open .faq-chevron{background:#0a7c6e}
-.faq-item.open .faq-chevron svg{stroke:#fff;transform:rotate(180deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1),padding .38s;padding:0 20px 0 58px}
-.faq-item.open .faq-answer{max-height:280px;padding:0 20px 16px 58px}
-.faq-answer-inner{font-size:13.5px;color:#6b8f88;line-height:1.85;border-top:1px solid #cce8e2;padding-top:12px}
-.nav-logo-img,.nav-logo img{width:36px!important;height:36px!important}
-@media(max-width:600px){.ba-slides{height:240px}.ba-thumbs{gap:5px}.ba-thumb-btn{width:42px;height:30px}.faq-answer,.faq-item.open .faq-answer{padding-left:14px;padding-right:14px}.faq-question{padding:14px 14px}}
-
-
-/* AREA PILL CAROUSEL */
-.auto-car-track.fast{animation-duration:18s}
-#areasCarTrack span{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:8px 16px;font-size:13px;font-weight:700;color:#0a7c6e;white-space:nowrap;box-shadow:0 2px 8px rgba(10,124,110,.08);transition:all .3s}
-#areasCarTrack span:hover{background:#0a7c6e;color:#fff;border-color:#0a7c6e;transform:translateY(-3px);box-shadow:0 6px 18px rgba(10,124,110,.25)}
-
-
-/* WHY GRID CAROUSEL */
-.why-grid-car{
-  overflow:hidden;
-  position:relative;
-  padding-bottom:60px;
-}
-/* No fade edges — it's a fixed grid not a scroll */
-.why-grid-track{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  grid-template-rows:auto auto;
-  gap:16px;
-  padding:0 0 4px;
-  transition:transform .45s cubic-bezier(.4,0,.2,1);
-}
-/* Override old why-card rule */
-.why-card{
-  background:rgba(255,255,255,.08) !important;
-  border:1px solid rgba(255,255,255,.14) !important;
-  border-radius:18px !important;
-  padding:24px 16px !important;
-  text-align:center;
-  transition:all .35s cubic-bezier(.34,1.56,.64,1) !important;
-  cursor:default;
-  min-width:0 !important;
-  overflow:hidden;
-  backdrop-filter:blur(8px);
-}
-.why-card:hover{
-  background:rgba(255,255,255,.16) !important;
-  transform:translateY(-6px);
-  border-color:rgba(255,255,255,.28) !important;
-  box-shadow:0 14px 38px rgba(0,0,0,.25);
-}
-.why-icon-wrap{font-size:2rem;margin-bottom:12px;display:block;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
-.why-card:hover .why-icon-wrap{transform:scale(1.18) rotate(-8deg)}
-.why-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:#fff !important;margin-bottom:7px;line-height:1.3}
-.why-desc{font-size:11.5px;color:rgba(255,255,255,.62) !important;line-height:1.72}
-/* Grid carousel controls */
-.why-grid-car .auto-car-controls{bottom:0}
-@media(max-width:600px){
-  .why-grid-track{grid-template-columns:repeat(2,1fr);gap:12px}
-}
-/* TREATMENTS auto-scroll */
-.treat-card{flex-shrink:0;width:240px}
-a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
-
 </style>
+<script>if(window.location.hash&&(window.location.hash.includes('invite_token')||window.location.hash.includes('recovery_token')||window.location.hash.includes('confirmation_token'))){window.location.href='/admin/'+window.location.hash;}</script>
 </head>
 <body>
 <!-- GTM noscript -->
@@ -1447,14 +1321,12 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#doctors">Doctors</a></li>
-      <li><a href="/treatments.html">Treatments</a></li>
-      <li><a href="#why">Why Us</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#treatments">Treatments</a></li>
       <li><a href="#why">Why Us</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#faq">FAQs</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="/blog/" style="color:var(--gold2);font-weight:700;">📝 Blog</a></li>
     </ul>
     <div class="nav-socials">
       <a href="https://www.instagram.com/srisaispecialitydentalcaretv?igsh=MWgwYzM3YWN0Y2x6bQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="nav-si nsi-ig" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1M12 0C8.7 0 8.3 0 7.1.1 5.8.1 5 .3 4.2.6c-.8.3-1.5.7-2.2 1.4C1.3 2.7.9 3.4.6 4.2.3 5 .1 5.8.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.2 2.1.5 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.6.5 2.9.5 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.3-.1 2.1-.2 2.9-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.6.5-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.2-2.1-.5-2.9-.3-.8-.7-1.5-1.4-2.2C21.3 1.3 20.6.9 19.8.6 19 .3 18.2.1 16.9.1 15.7 0 15.3 0 12 0zm0 5.8C8.6 5.8 5.8 8.6 5.8 12s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm6.4-11.8c-.8 0-1.4.6-1.4 1.4 0 .8.6 1.4 1.4 1.4.8 0 1.4-.6 1.4-1.4 0-.8-.6-1.4-1.4-1.4z"/></svg></a>
@@ -1472,12 +1344,13 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
 <div class="mobile-menu" id="mobileMenu">
   <ul class="mobile-menu-links">
     <li><a href="#doctors" onclick="closeMobileMenu()">Doctors</a></li>
-    <li><a href="/treatments.html" onclick="closeMobileMenu()">Treatments</a></li>
+    <li><a href="#treatments" onclick="closeMobileMenu()">Treatments</a></li>
     <li><a href="#why" onclick="closeMobileMenu()">Why Us</a></li>
     <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
     <li><a href="#forms-section" onclick="closeMobileMenu()">Patient Forms</a></li>
     <li><a href="#testimonials" onclick="closeMobileMenu()">Testimonials</a></li>
     <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+    <li><a href="/blog/" onclick="closeMobileMenu()">Blog</a></li>
   </ul>
   <a href="#" onclick="openBooking(event);closeMobileMenu()" class="mobile-menu-book">📅 Book Appointment</a>
   <div class="mobile-menu-socials">
@@ -1593,15 +1466,12 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
 <!-- ── DOCTORS ── -->
 <section class="doctors" id="doctors">
   <div class="container">
-  <div class="container">
     <div class="reveal-drop">
       <p class="sec-eyebrow">Meet Our Team</p>
       <h2 class="sec-title">Meet Our Dental Specialists in Hyderabad</h2>
       <p class="sec-body">Our specialists bring decades of combined experience and advanced qualifications to deliver the highest standard of dental care.</p>
     </div>
-  </div>
-  <div class="auto-car-wrap fade-white" style="margin-top:48px">
-    <div class="auto-car-track speed-slow" id="docCarTrack">
+    <div class="doc-grid stagger-left" style="margin-top:56px">
       <div class="doc-card">
         <div class="doc-card-inner">
           <div class="doc-avatar-wrap reveal-zoom">
@@ -1628,43 +1498,12 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
           <div class="doc-tags"><span class="doc-tag">OMFS</span><span class="doc-tag">Implantologist</span><span class="doc-tag">Jaw Surgery</span><span class="doc-tag" style="background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);border:none;font-weight:800;box-shadow:0 3px 12px rgba(200,168,75,.45);letter-spacing:.4px;"><img src="/icon-rootcanal.webp" alt="Root Canal" width="14" height="14" loading="lazy"> Painless Root Canal Specialist</span></div>
         </div>
       </div>
-      <div class="doc-card"><div class="doc-card-inner"><div class="doc-avatar-wrap"><div class="doc-avatar"><img src="/doctor-sai-vakula.webp" alt="Dr. T. Sai Vakula" loading="lazy"></div></div><div class="doc-name">Dr. T. Sai Vakula</div><div class="doc-qual">BDS, MDS (OMFS) · Maxillofacial Surgeon &amp; Implantologist</div><div class="doc-exp-banner doc-exp-gold">✦ 11 Years Experience</div><div class="doc-role">Specialist in Oral &amp; Maxillofacial Surgery with expertise in dental implants, wisdom tooth extractions, jaw surgeries, and complex oral procedures.</div><div class="doc-tags"><span class="doc-tag">OMFS</span><span class="doc-tag">Implantologist</span><span class="doc-tag">Jaw Surgery</span></div></div></div>
-      <div class="doc-card">
-        <div class="doc-card-inner">
-          <div class="doc-avatar-wrap reveal-zoom">
-            <div class="doc-avatar"><img src="/doctor-venkat-rao.webp" alt="Dr. T. Venkat Rao" loading="lazy"></div>
-            
-          </div>
-          <div class="doc-name">Dr. T. Venkat Rao</div>
-          <div class="doc-qual">BDS, M.R.S.H, FAGE · Senior Dental Surgeon</div>
-          <div class="doc-exp-banner">✦ 35 Years Experience</div>
-          <div class="doc-role">Member, Indian Dental Association. A veteran dental surgeon with over three decades of dedicated practice. Specializes in complex extractions, dental implants, root canals, and full mouth rehabilitation. Trusted by thousands of families across Hyderabad.</div>
-          <div class="doc-tags"><span class="doc-tag">Implantology</span><span class="doc-tag">Root Canal</span><span class="doc-tag">Oral Surgery</span><span class="doc-tag">IDA Member</span></div>
-        </div>
-      </div>
-      <div class="doc-card">
-        <div class="doc-card-inner">
-          <div class="doc-avatar-wrap reveal-zoom">
-            <div class="doc-avatar"><img src="/doctor-sai-vakula.webp" alt="Dr. T. Sai Vakula" loading="lazy"></div>
-            
-          </div>
-          <div class="doc-name">Dr. T. Sai Vakula</div>
-          <div class="doc-qual">BDS, MDS (OMFS) · Maxillofacial Surgeon &amp; Implantologist</div>
-          <div class="doc-exp-banner doc-exp-gold">✦ 11 Years Experience</div>
-          <div class="doc-role">Specialist in Complex Oral Surgery. A specialist in Oral &amp; Maxillofacial Surgery with deep expertise in wisdom tooth extractions, jaw surgeries, dental implants, and complex oral procedures. Known for precise, pain-free interventions.</div>
-          <div class="doc-tags"><span class="doc-tag">OMFS</span><span class="doc-tag">Implantologist</span><span class="doc-tag">Jaw Surgery</span><span class="doc-tag" style="background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);border:none;font-weight:800;box-shadow:0 3px 12px rgba(200,168,75,.45);letter-spacing:.4px;"><img src="/icon-rootcanal.webp" alt="Root Canal" width="14" height="14" loading="lazy"> Painless Root Canal Specialist</span></div>
-        </div>
-      </div>
-      <div class="doc-card"><div class="doc-card-inner"><div class="doc-avatar-wrap"><div class="doc-avatar"><img src="/doctor-sai-vakula.webp" alt="Dr. T. Sai Vakula" loading="lazy"></div></div><div class="doc-name">Dr. T. Sai Vakula</div><div class="doc-qual">BDS, MDS (OMFS) · Maxillofacial Surgeon &amp; Implantologist</div><div class="doc-exp-banner doc-exp-gold">✦ 11 Years Experience</div><div class="doc-role">Specialist in Oral &amp; Maxillofacial Surgery with expertise in dental implants, wisdom tooth extractions, jaw surgeries, and complex oral procedures.</div><div class="doc-tags"><span class="doc-tag">OMFS</span><span class="doc-tag">Implantologist</span><span class="doc-tag">Jaw Surgery</span></div></div></div>
     </div>
-    <div class="auto-car-controls" id="docCarTrackControls"><button class="acar-arrow" data-car="docCarTrack" data-dir="prev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button><div class="acar-dots" id="docCarTrackDots"><button class="acar-dot active" data-i="0"></button><button class="acar-dot" data-i="1"></button></div><button class="acar-arrow" data-car="docCarTrack" data-dir="next" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div>
   </div>
 </section>
 
 <!-- ── TREATMENTS ── -->
 <section class="treatments" id="treatments">
-  <div class="container">
-  <div class="container">
   <div class="container">
     <div class="treat-header reveal">
       <div>
@@ -1673,35 +1512,18 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
       </div>
       <p class="sec-body">Comprehensive dental solutions under one roof — from prevention to advanced restorative care.</p>
     </div>
-  </div>
-  </div>
-  <div class="auto-car-wrap fade-light" style="margin-top:40px">
-    <div class="auto-car-track" id="treatCarTrack">
-      <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t1"><img src="/icon-implant.webp" alt="Dental Implant" width="52" height="52" loading="lazy"></div><div class="treat-name">Dental Implants</div><div class="treat-desc">Permanent titanium tooth replacements for a natural look and lifelong function.</div><div class="treat-tags"><span class="treat-tag">Permanent</span><span class="treat-tag">Bone-friendly</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t2"><img src="/icon-crown.webp" alt="Crown" loading="lazy"></div><div class="treat-name">Zirconium Crowns</div><div class="treat-desc">Metal-free all-ceramic crowns for superior aesthetics and biocompatibility.</div><div class="treat-tags"><span class="treat-tag">Aesthetic</span><span class="treat-tag">Durable</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t3"><img src="/icon-smile.webp" alt="Smile Design" width="52" height="52" loading="lazy"></div><div class="treat-name">Smile Design</div><div class="treat-desc">Full smile makeovers combining veneers, whitening, contouring, and bonding.</div><div class="treat-tags"><span class="treat-tag">Cosmetic</span><span class="treat-tag">Veneers</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t4"><img src="/icon-rootcanal.webp" alt="Root Canal" width="52" height="52" loading="lazy"></div><div class="treat-name">Root Canal</div><div class="treat-desc">Pain-free endodontic treatment to save infected teeth with rotary technology.</div><div class="treat-tags"><span class="treat-tag">Pain-free</span><span class="treat-tag">Rotary</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t5">🧒</div><div class="treat-name">Pediatric Dentistry</div><div class="treat-desc">Gentle, child-friendly dental care from first tooth to teenage years.</div><div class="treat-tags"><span class="treat-tag">Kid-friendly</span><span class="treat-tag">Preventive</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t6"><img src="/icon-braces.webp" alt="Braces" loading="lazy"></div><div class="treat-name">Braces & Aligners</div><div class="treat-desc">Metal braces, ceramic braces, and clear aligners to straighten your smile.</div><div class="treat-tags"><span class="treat-tag">Orthodontic</span><span class="treat-tag">Clear Aligners</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t7"><img src="/icon-scaling.webp" alt="Scaling" loading="lazy"></div><div class="treat-name">Scaling & Cleaning</div><div class="treat-desc">Professional ultrasonic scaling, polishing, and gum therapy for oral hygiene.</div><div class="treat-tags"><span class="treat-tag">Preventive</span><span class="treat-tag">Gum Health</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t8"><img src="/icon-whitening.webp" alt="Teeth Whitening" width="52" height="52" loading="lazy"></div><div class="treat-name">Teeth Whitening</div><div class="treat-desc">Advanced laser and bleaching whitening treatments for a brighter smile.</div><div class="treat-tags"><span class="treat-tag">Laser</span><span class="treat-tag">Bleaching</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t9">🏠</div><div class="treat-name">Home Visits</div><div class="treat-desc">Dental care at your doorstep for elderly, disabled, or mobility-limited patients.</div><div class="treat-tags"><span class="treat-tag">Convenient</span><span class="treat-tag">Accessible</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t10">🚨</div><div class="treat-name">Emergency Care</div><div class="treat-desc">Immediate dental relief for toothaches, fractures, and dental emergencies.</div><div class="treat-tags"><span class="treat-tag">Same-day</span><span class="treat-tag">Urgent</span></div></a>
-      <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t1"><img src="/icon-implant.webp" alt="Dental Implant" width="52" height="52" loading="lazy"></div><div class="treat-name">Dental Implants</div><div class="treat-desc">Permanent titanium tooth replacements for a natural look and lifelong function.</div><div class="treat-tags"><span class="treat-tag">Permanent</span><span class="treat-tag">Bone-friendly</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t2"><img src="/icon-crown.webp" alt="Crown" loading="lazy"></div><div class="treat-name">Zirconium Crowns</div><div class="treat-desc">Metal-free all-ceramic crowns for superior aesthetics and biocompatibility.</div><div class="treat-tags"><span class="treat-tag">Aesthetic</span><span class="treat-tag">Durable</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t3"><img src="/icon-smile.webp" alt="Smile Design" width="52" height="52" loading="lazy"></div><div class="treat-name">Smile Design</div><div class="treat-desc">Full smile makeovers combining veneers, whitening, contouring, and bonding.</div><div class="treat-tags"><span class="treat-tag">Cosmetic</span><span class="treat-tag">Veneers</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t4"><img src="/icon-rootcanal.webp" alt="Root Canal" width="52" height="52" loading="lazy"></div><div class="treat-name">Root Canal</div><div class="treat-desc">Pain-free endodontic treatment to save infected teeth with rotary technology.</div><div class="treat-tags"><span class="treat-tag">Pain-free</span><span class="treat-tag">Rotary</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t5">🧒</div><div class="treat-name">Pediatric Dentistry</div><div class="treat-desc">Gentle, child-friendly dental care from first tooth to teenage years.</div><div class="treat-tags"><span class="treat-tag">Kid-friendly</span><span class="treat-tag">Preventive</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t6"><img src="/icon-braces.webp" alt="Braces" loading="lazy"></div><div class="treat-name">Braces & Aligners</div><div class="treat-desc">Metal braces, ceramic braces, and clear aligners to straighten your smile.</div><div class="treat-tags"><span class="treat-tag">Orthodontic</span><span class="treat-tag">Clear Aligners</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t7"><img src="/icon-scaling.webp" alt="Scaling" loading="lazy"></div><div class="treat-name">Scaling & Cleaning</div><div class="treat-desc">Professional ultrasonic scaling, polishing, and gum therapy for oral hygiene.</div><div class="treat-tags"><span class="treat-tag">Preventive</span><span class="treat-tag">Gum Health</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t8"><img src="/icon-whitening.webp" alt="Teeth Whitening" width="52" height="52" loading="lazy"></div><div class="treat-name">Teeth Whitening</div><div class="treat-desc">Advanced laser and bleaching whitening treatments for a brighter smile.</div><div class="treat-tags"><span class="treat-tag">Laser</span><span class="treat-tag">Bleaching</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t9">🏠</div><div class="treat-name">Home Visits</div><div class="treat-desc">Dental care at your doorstep for elderly, disabled, or mobility-limited patients.</div><div class="treat-tags"><span class="treat-tag">Convenient</span><span class="treat-tag">Accessible</span></div></a>
-        <a class="treat-card" href="/treatments.html" style="text-decoration:none;display:block"><div class="treat-icon t10">🚨</div><div class="treat-name">Emergency Care</div><div class="treat-desc">Immediate dental relief for toothaches, fractures, and dental emergencies.</div><div class="treat-tags"><span class="treat-tag">Same-day</span><span class="treat-tag">Urgent</span></div></a>
+    <div class="treat-grid stagger">
+      <div class="treat-card"><div class="treat-icon t1"><img src="/icon-implant.webp" alt="Dental Implant" width="52" height="52" loading="lazy"></div><div class="treat-name">Dental Implants</div><div class="treat-desc">Permanent titanium tooth replacements for a natural look and lifelong function.</div><div class="treat-tags"><span class="treat-tag">Permanent</span><span class="treat-tag">Bone-friendly</span></div></div>
+      <div class="treat-card"><div class="treat-icon t2"><img src="/icon-crown.webp" alt="Crown" loading="lazy"></div><div class="treat-name">Zirconium Crowns</div><div class="treat-desc">Metal-free all-ceramic crowns for superior aesthetics and biocompatibility.</div><div class="treat-tags"><span class="treat-tag">Aesthetic</span><span class="treat-tag">Durable</span></div></div>
+      <div class="treat-card"><div class="treat-icon t3"><img src="/icon-smile.webp" alt="Smile Design" width="52" height="52" loading="lazy"></div><div class="treat-name">Smile Design</div><div class="treat-desc">Full smile makeovers combining veneers, whitening, contouring, and bonding.</div><div class="treat-tags"><span class="treat-tag">Cosmetic</span><span class="treat-tag">Veneers</span></div></div>
+      <div class="treat-card"><div class="treat-icon t4"><img src="/icon-rootcanal.webp" alt="Root Canal" width="52" height="52" loading="lazy"></div><div class="treat-name">Root Canal</div><div class="treat-desc">Pain-free endodontic treatment to save infected teeth with rotary technology.</div><div class="treat-tags"><span class="treat-tag">Pain-free</span><span class="treat-tag">Rotary</span></div></div>
+      <div class="treat-card"><div class="treat-icon t5">🧒</div><div class="treat-name">Pediatric Dentistry</div><div class="treat-desc">Gentle, child-friendly dental care from first tooth to teenage years.</div><div class="treat-tags"><span class="treat-tag">Kid-friendly</span><span class="treat-tag">Preventive</span></div></div>
+      <div class="treat-card"><div class="treat-icon t6"><img src="/icon-braces.webp" alt="Braces" loading="lazy"></div><div class="treat-name">Braces & Aligners</div><div class="treat-desc">Metal braces, ceramic braces, and clear aligners to straighten your smile.</div><div class="treat-tags"><span class="treat-tag">Orthodontic</span><span class="treat-tag">Clear Aligners</span></div></div>
+      <div class="treat-card"><div class="treat-icon t7"><img src="/icon-scaling.webp" alt="Scaling" loading="lazy"></div><div class="treat-name">Scaling & Cleaning</div><div class="treat-desc">Professional ultrasonic scaling, polishing, and gum therapy for oral hygiene.</div><div class="treat-tags"><span class="treat-tag">Preventive</span><span class="treat-tag">Gum Health</span></div></div>
+      <div class="treat-card"><div class="treat-icon t8"><img src="/icon-whitening.webp" alt="Teeth Whitening" width="52" height="52" loading="lazy"></div><div class="treat-name">Teeth Whitening</div><div class="treat-desc">Advanced laser and bleaching whitening treatments for a brighter smile.</div><div class="treat-tags"><span class="treat-tag">Laser</span><span class="treat-tag">Bleaching</span></div></div>
+      <div class="treat-card"><div class="treat-icon t9">🏠</div><div class="treat-name">Home Visits</div><div class="treat-desc">Dental care at your doorstep for elderly, disabled, or mobility-limited patients.</div><div class="treat-tags"><span class="treat-tag">Convenient</span><span class="treat-tag">Accessible</span></div></div>
+      <div class="treat-card"><div class="treat-icon t10">🚨</div><div class="treat-name">Emergency Care</div><div class="treat-desc">Immediate dental relief for toothaches, fractures, and dental emergencies.</div><div class="treat-tags"><span class="treat-tag">Same-day</span><span class="treat-tag">Urgent</span></div></div>
     </div>
-    <div class="auto-car-controls" id="treatCarTrackControls"><button class="acar-arrow" data-car="treatCarTrack" data-dir="prev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button><div class="acar-dots" id="treatCarTrackDots"><button class="acar-dot active" data-i="0"></button><button class="acar-dot" data-i="1"></button><button class="acar-dot" data-i="2"></button><button class="acar-dot" data-i="3"></button><button class="acar-dot" data-i="4"></button><button class="acar-dot" data-i="5"></button><button class="acar-dot" data-i="6"></button><button class="acar-dot" data-i="7"></button><button class="acar-dot" data-i="8"></button><button class="acar-dot" data-i="9"></button></div><button class="acar-arrow" data-car="treatCarTrack" data-dir="next" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div>
-  </div>
-  <div style="text-align:center;margin-top:36px;padding:0 16px">
-    <a href="/treatments.html" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;font-weight:700;font-size:14.5px;padding:14px 32px;border-radius:100px;text-decoration:none;box-shadow:0 6px 24px rgba(10,124,110,.35);transition:all .3s;">View All 10 Treatments →</a>
   </div>
 </section>
 
@@ -1709,53 +1531,30 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
 <section class="why" id="why">
   <div class="why-blob why-blob1"></div>
   <div class="why-blob why-blob2"></div>
+  <div class="why-deco">
+    <svg viewBox="0 0 180 400" xmlns="http://www.w3.org/2000/svg">
+      <path d="M90 10 C90 10 30 50 30 100 S90 150 90 200 S30 250 30 300 S90 350 90 390" stroke-dasharray="6 8"/>
+      <path d="M90 10 C90 10 150 50 150 100 S90 150 90 200 S150 250 150 300 S90 350 90 390" stroke-dasharray="6 8"/>
+      <circle cx="30" cy="100" r="4" fill="rgba(18,169,146,.4)"/>
+      <circle cx="150" cy="100" r="4" fill="rgba(18,169,146,.4)"/>
+      <circle cx="30" cy="300" r="4" fill="rgba(18,169,146,.4)"/>
+      <circle cx="150" cy="300" r="4" fill="rgba(18,169,146,.4)"/>
+      <circle cx="90" cy="200" r="6" fill="rgba(200,168,75,.5)"/>
+    </svg>
+  </div>
   <div class="container" style="position:relative;z-index:2">
     <div class="reveal-zoom">
       <p class="sec-eyebrow">Why Choose Us</p>
       <h2 class="sec-title">Your Health is Our <em>Priority</em></h2>
       <p class="sec-body">Decades of clinical excellence, advanced technology, and genuine compassion — every visit, every patient.</p>
     </div>
-    <div class="why-grid-car" style="margin-top:48px">
-      <div class="why-grid-track" id="whyGridTrack">
-        <div class="why-card">
-          <div class="why-icon-wrap">👨‍⚕️</div>
-          <div class="why-title">Expert Specialists</div>
-          <div class="why-desc">35+ and 11+ years of focused dental expertise</div>
-        </div>
-      <div class="why-card">
-          <div class="why-icon-wrap">🏥</div>
-          <div class="why-title">Modern Equipment</div>
-          <div class="why-desc">Latest diagnostic &amp; treatment technology</div>
-        </div>
-      <div class="why-card">
-          <div class="why-icon-wrap"><img src="/icon-whitening.webp" alt="Ethical" width="28" height="28" loading="lazy"></div>
-          <div class="why-title">Ethical Practice</div>
-          <div class="why-desc">Honest advice, no unnecessary procedures</div>
-        </div>
-      <div class="why-card">
-          <div class="why-icon-wrap">👨‍👩‍👧</div>
-          <div class="why-title">Family Friendly</div>
-          <div class="why-desc">Gentle care for all ages, kids to seniors</div>
-        </div>
-      <div class="why-card">
-          <div class="why-icon-wrap">💰</div>
-          <div class="why-title">Affordable Pricing</div>
-          <div class="why-desc">Premium care at fair, transparent prices</div>
-        </div>
-      <div class="why-card">
-          <div class="why-icon-wrap">🧹</div>
-          <div class="why-title">Hygienic Clinic</div>
-          <div class="why-desc">Strict sterilization &amp; safety protocols</div>
-        </div>
-      </div>
-      <div class="auto-car-controls" id="whyGridTrackControls">
-        <button class="acar-arrow" data-car="whyGridTrack" data-dir="prev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-        <div class="acar-dots" id="whyGridTrackDots">
-          <button class="acar-dot active" data-i="0"></button>
-          <button class="acar-dot" data-i="1"></button>
-        </div>
-        <button class="acar-arrow" data-car="whyGridTrack" data-dir="next" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-      </div>
+    <div class="why-grid stagger-zoom">
+      <div class="why-card"><div class="why-icon-wrap">👨‍⚕️</div><div class="why-title">Expert Specialists</div><div class="why-desc">35+ and 11+ years of focused dental expertise</div></div>
+      <div class="why-card"><div class="why-icon-wrap">🏥</div><div class="why-title">Modern Equipment</div><div class="why-desc">Latest diagnostic & treatment technology</div></div>
+      <div class="why-card"><div class="why-icon-wrap"><img src="/icon-whitening.webp" alt="Teeth Whitening" width="28" height="28" loading="lazy"></div><div class="why-title">Ethical Practice</div><div class="why-desc">Honest advice, no unnecessary procedures</div></div>
+      <div class="why-card"><div class="why-icon-wrap">👨‍👩‍👧</div><div class="why-title">Family Friendly</div><div class="why-desc">Gentle care for all ages, kids to seniors</div></div>
+      <div class="why-card"><div class="why-icon-wrap">💰</div><div class="why-title">Affordable Pricing</div><div class="why-desc">Premium care at fair, transparent prices</div></div>
+      <div class="why-card"><div class="why-icon-wrap">🧹</div><div class="why-title">Hygienic Clinic</div><div class="why-desc">Strict sterilization & safety protocols</div></div>
     </div>
   </div>
 </section>
@@ -1763,60 +1562,33 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
 <!-- ── BEFORE & AFTER GALLERY ── -->
 <section class="gallery" id="gallery">
   <div class="container">
-  <div class="container">
     <div class="reveal-right">
       <p class="sec-eyebrow">Before &amp; After</p>
       <h2 class="sec-title">Real Patient <em>Transformations</em></h2>
       <p class="sec-body" style="margin-bottom:52px">Witness the life-changing results our patients experience through advanced dental treatments.</p>
     </div>
-    <div class="ba-carousel-wrap">
-      <div class="ba-slides" id="baSlides">
-        <div class="ba-slide active" data-case="0"><div class="ba-before-half"><img src="/gallery-smile.webp" alt="Before" loading="lazy"></div><div class="ba-after-half" id="baAH0" style="clip-path:inset(0 0 0 50%)"><img src="/gallery-smile.webp" alt="After" loading="lazy" style="filter:saturate(1.3) brightness(1.06)"></div></div>
-        <div class="ba-slide" data-case="1"><div class="ba-before-half"><img src="/gallery-implant.webp" alt="Before" loading="lazy"></div><div class="ba-after-half" id="baAH1" style="clip-path:inset(0 0 0 50%)"><img src="/gallery-implant.webp" alt="After" loading="lazy" style="filter:saturate(1.3) brightness(1.06)"></div></div>
-        <div class="ba-slide" data-case="2"><div class="ba-before-half"><img src="/gallery-smile-2.webp" alt="Before" loading="lazy"></div><div class="ba-after-half" id="baAH2" style="clip-path:inset(0 0 0 50%)"><img src="/gallery-smile-2.webp" alt="After" loading="lazy" style="filter:saturate(1.3) brightness(1.06)"></div></div>
-        <div class="ba-slide" data-case="3"><div class="ba-before-half"><img src="/gallery-crown.webp" alt="Before" loading="lazy"></div><div class="ba-after-half" id="baAH3" style="clip-path:inset(0 0 0 50%)"><img src="/gallery-crown.webp" alt="After" loading="lazy" style="filter:saturate(1.3) brightness(1.06)"></div></div>
-        <div class="ba-slide" data-case="4"><div class="ba-before-half"><img src="/gallery-dentures.webp" alt="Before" loading="lazy"></div><div class="ba-after-half" id="baAH4" style="clip-path:inset(0 0 0 50%)"><img src="/gallery-dentures.webp" alt="After" loading="lazy" style="filter:saturate(1.3) brightness(1.06)"></div></div>
-        
-        <div class="ba-divider-line" id="baDL" style="left:50%;pointer-events:none"></div>
-        <div class="ba-divider-handle" id="baDH" style="left:50%"><div class="ba-handle-icon"><span>‹</span><span>›</span></div></div>
-      </div>
-      <div class="ba-case-strip" id="baCS0" style="display:flex"><div class="ba-case-num">1</div><div class="ba-case-text"><strong>Full Smile Makeover</strong><span>Drag divider to compare</span></div><span class="ba-case-badge">Before &amp; After</span></div>
-      <div class="ba-case-strip" id="baCS1" style="display:none"><div class="ba-case-num">2</div><div class="ba-case-text"><strong>Full Mouth Implant Rehabilitation</strong><span>Drag divider to compare</span></div><span class="ba-case-badge">Implants</span></div>
-      <div class="ba-case-strip" id="baCS2" style="display:none"><div class="ba-case-num">3</div><div class="ba-case-text"><strong>Teeth Alignment Transformation</strong><span>Drag divider to compare</span></div><span class="ba-case-badge">Before &amp; After</span></div>
-      <div class="ba-case-strip" id="baCS3" style="display:none"><div class="ba-case-num">4</div><div class="ba-case-text"><strong>Fractured Teeth Restoration</strong><span>Drag divider to compare</span></div><span class="ba-case-badge">Crowns</span></div>
-      <div class="ba-case-strip" id="baCS4" style="display:none"><div class="ba-case-num">5</div><div class="ba-case-text"><strong>Complete Smile Reconstruction</strong><span>Drag divider to compare</span></div><span class="ba-case-badge">Dentures</span></div>
-      
-      <div class="ba-thumbs"><button class="ba-thumb-btn  active" data-goto="0"><img src="/gallery-smile.webp" alt="Full Smile Makeover" loading="lazy"></button>
-      <button class="ba-thumb-btn" data-goto="1"><img src="/gallery-implant.webp" alt="Full Mouth Implant Rehabilitation" loading="lazy"></button>
-      <button class="ba-thumb-btn" data-goto="2"><img src="/gallery-smile-2.webp" alt="Teeth Alignment Transformation" loading="lazy"></button>
-      <button class="ba-thumb-btn" data-goto="3"><img src="/gallery-crown.webp" alt="Fractured Teeth Restoration" loading="lazy"></button>
-      <button class="ba-thumb-btn" data-goto="4"><img src="/gallery-dentures.webp" alt="Complete Smile Reconstruction" loading="lazy"></button>
-      </div>
-      <div class="ba-controls"><button class="acar-arrow" id="baPrev"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span id="baCnt" style="font-size:12px;color:#6b8f88;font-weight:700">1 / 5</span><button class="acar-arrow" id="baNext"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div>
+    <div class="ba-grid stagger-zoom">
+      <div class="ba-card"><img class="ba-img" src="/gallery-smile.webp" alt="Smile transformation" loading="lazy"><div class="ba-label"><span class="ba-badge">Before &amp; After</span><span class="ba-title">Full Smile Makeover</span></div></div>
+      <div class="ba-card"><img class="ba-img" src="/gallery-implant.webp" alt="Full mouth implant rehabilitation" loading="lazy"><div class="ba-label"><span class="ba-badge">Implants</span><span class="ba-title">Full Mouth Implant Rehabilitation</span></div></div>
+      <div class="ba-card"><img class="ba-img" src="/gallery-smile-2.webp" alt="Smile transformation" loading="lazy"><div class="ba-label"><span class="ba-badge">Before &amp; After</span><span class="ba-title">Teeth Alignment Transformation</span></div></div>
+      <div class="ba-card"><img class="ba-img" src="/gallery-crown.webp" alt="Fractured teeth crown" loading="lazy"><div class="ba-label"><span class="ba-badge">Crowns</span><span class="ba-title">Fractured Teeth Restoration</span></div></div>
+      <div class="ba-card"><img class="ba-img" src="/gallery-dentures.webp" alt="Dentures" loading="lazy"><div class="ba-label"><span class="ba-badge">Dentures</span><span class="ba-title">Complete Smile Reconstruction</span></div></div>
     </div>
   </div>
-</sect<section class="clinic-gallery">
-  <div class="container">
+</section>
+
+<!-- ── CLINIC GALLERY ── -->
+<section class="clinic-gallery">
   <div class="container">
     <div class="reveal">
       <p class="sec-eyebrow">Our Clinic</p>
       <h2 class="sec-title">A Comfortable &amp; <em>Modern</em> Environment</h2>
     </div>
-  </div>
-  <div class="auto-car-wrap fade-light" style="margin-top:48px">
-    <div class="auto-car-track" id="clinicCarTrack">
+    <div class="cg-grid stagger">
       <div class="cg-card"><img class="cg-img" src="/clinic-exterior.webp" alt="Sri Sai Dental Clinic Exterior" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Our Clinic</span><span class="cg-title-txt">Clinic Exterior — Karmanghat</span></div></div>
       <div class="cg-card"><img class="cg-img" src="/clinic-room1.webp" alt="Dental Treatment Room 1" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Treatment Room</span><span class="cg-title-txt">Advanced Treatment Room 1</span></div></div>
       <div class="cg-card"><img class="cg-img" src="/clinic-room2.webp" alt="Dental Treatment Room 2" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Treatment Room</span><span class="cg-title-txt">Advanced Treatment Room 2</span></div></div>
       <div class="cg-card"><img class="cg-img" src="/clinic-room3.webp" alt="Dental Treatment Room 3" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Treatment Room</span><span class="cg-title-txt">Advanced Treatment Room 3</span></div></div>
-      <div class="cg-card"><img class="cg-img" src="/clinic-exterior.webp" alt="Sri Sai Dental Clinic Exterior" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Our Clinic</span><span class="cg-title-txt">Clinic Exterior — Karmanghat</span></div></div>
-      <div class="cg-card"><img class="cg-img" src="/clinic-room1.webp" alt="Dental Treatment Room 1" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Treatment Room</span><span class="cg-title-txt">Advanced Treatment Room 1</span></div></div>
-      <div class="cg-card"><img class="cg-img" src="/clinic-room2.webp" alt="Dental Treatment Room 2" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Treatment Room</span><span class="cg-title-txt">Advanced Treatment Room 2</span></div></div>
-      <div class="cg-card"><img class="cg-img" src="/clinic-room3.webp" alt="Dental Treatment Room 3" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Treatment Room</span><span class="cg-title-txt">Advanced Treatment Room 3</span></div></div>
-    </div>
-    <div class="auto-car-controls" id="clinicCarTrackControls"><button class="acar-arrow" data-car="clinicCarTrack" data-dir="prev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button><div class="acar-dots" id="clinicCarTrackDots"><button class="acar-dot active" data-i="0"></button><button class="acar-dot" data-i="1"></button><button class="acar-dot" data-i="2"></button><button class="acar-dot" data-i="3"></button></div><button class="acar-arrow" data-car="clinicCarTrack" data-dir="next" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div>
-  </div>
-</section>/div>
     </div>
   </div>
 </section>
@@ -1852,7 +1624,6 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
 <!-- ── PATIENT TESTIMONIALS ── -->
 <section class="testimonials" id="testimonials">
   <div class="container" style="position:relative;z-index:2">
-  <div class="container" style="position:relative;z-index:2">
 
     <!-- Section Header -->
     <div class="reveal-zoom" style="text-align:center;max-width:600px;margin:0 auto 36px">
@@ -1862,10 +1633,11 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
     </div>
 
     <!-- Patient Video Cards — horizontal swipe on mobile, grid on desktop -->
-  </div>
-  <div class="auto-car-wrap fade-dark" style="margin-top:36px">
-    <div class="auto-car-track speed-slow" id="testAutoTrack">
-      <a class="patient-card" href="https://youtube.com/shorts/1Mj-qF49u00" target="_blank" rel="noopener">
+    <div class="patient-scroll-wrap reveal">
+      <div class="patient-scroll-track" id="patientTrack">
+
+        <!-- Card 1 -->
+        <a class="patient-card" href="https://youtube.com/shorts/1Mj-qF49u00" target="_blank" rel="noopener">
           <div class="patient-thumb">
             <img src="https://i.ytimg.com/vi/1Mj-qF49u00/hqdefault.jpg" alt="Happy Patient Testimonial" loading="lazy">
             <div class="patient-thumb-overlay">
@@ -1892,7 +1664,9 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
             </div>
           </div>
         </a>
-      <a class="patient-card" href="https://youtu.be/SiVr92EqeJ8" target="_blank" rel="noopener">
+
+        <!-- Card 2 -->
+        <a class="patient-card" href="https://youtu.be/SiVr92EqeJ8" target="_blank" rel="noopener">
           <div class="patient-thumb">
             <img src="https://i.ytimg.com/vi/SiVr92EqeJ8/hqdefault.jpg" alt="Satisfied Patient Testimonial" loading="lazy">
             <div class="patient-thumb-overlay">
@@ -1919,7 +1693,9 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
             </div>
           </div>
         </a>
-      <a class="patient-card" href="https://youtu.be/CNYb7G19Ny4" target="_blank" rel="noopener">
+
+        <!-- Card 3 -->
+        <a class="patient-card" href="https://youtu.be/CNYb7G19Ny4" target="_blank" rel="noopener">
           <div class="patient-thumb">
             <img src="https://i.ytimg.com/vi/CNYb7G19Ny4/hqdefault.jpg" alt="Delighted Patient Testimonial" loading="lazy">
             <div class="patient-thumb-overlay">
@@ -1946,7 +1722,9 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
             </div>
           </div>
         </a>
-      <a class="patient-card" href="https://youtu.be/zF9DYHj2BlE" target="_blank" rel="noopener">
+
+        <!-- Card 4 -->
+        <a class="patient-card" href="https://youtu.be/zF9DYHj2BlE" target="_blank" rel="noopener">
           <div class="patient-thumb">
             <img src="https://i.ytimg.com/vi/zF9DYHj2BlE/hqdefault.jpg" alt="Grateful Patient Testimonial" loading="lazy">
             <div class="patient-thumb-overlay">
@@ -1973,7 +1751,7 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
             </div>
           </div>
         </a>
-      <a class="patient-card" href="https://youtube.com/shorts/klH-Gr_OAfs?si=gaqF4s_U64JhAt8X" target="_blank" rel="noopener">
+        <a class="patient-card" href="https://youtube.com/shorts/klH-Gr_OAfs?si=gaqF4s_U64JhAt8X" target="_blank" rel="noopener">
           <div class="patient-thumb">
             <img src="https://i.ytimg.com/vi/klH-Gr_OAfs/hqdefault.jpg" alt="Patient Testimonial Sri Sai Dental Karmanghat" loading="lazy">
             <div class="patient-thumb-overlay">
@@ -1998,143 +1776,31 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
             </div>
           </div>
         </a>
-      <a class="patient-card" href="https://youtube.com/shorts/1Mj-qF49u00" target="_blank" rel="noopener">
-          <div class="patient-thumb">
-            <img src="https://i.ytimg.com/vi/1Mj-qF49u00/hqdefault.jpg" alt="Happy Patient Testimonial" loading="lazy">
-            <div class="patient-thumb-overlay">
-              <div class="patient-play-btn">
-                <svg viewBox="0 0 68 48"><path d="M66.5 7.7C65.7 4.8 63.4 2.5 60.5 1.7 55.2 0 34 0 34 0S12.8 0 7.5 1.7C4.6 2.5 2.3 4.8 1.5 7.7 0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 3.1 5.2 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7c2.9-.8 5.2-3.1 6-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
-              </div>
-              <span class="patient-yt-badge">▶ Watch on YouTube</span>
-            </div>
-          </div>
-          <div class="patient-card-body">
-            <div class="patient-card-header">
-              <div class="patient-avatar-icon">⭐</div>
-              <div class="patient-meta">
-                <span class="patient-name">Happy Patient</span>
-                <div class="patient-stars">
-                  <span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span>
-                </div>
-              </div>
-            </div>
-            <p class="patient-quote">"Wonderful experience! The treatment was thorough and the team made me feel completely at ease throughout."</p>
-            <div class="patient-card-footer">
-              <span class="patient-watch-text">Watch Story</span>
-              <div class="patient-arrow"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-            </div>
-          </div>
-        </a>
-      <a class="patient-card" href="https://youtu.be/SiVr92EqeJ8" target="_blank" rel="noopener">
-          <div class="patient-thumb">
-            <img src="https://i.ytimg.com/vi/SiVr92EqeJ8/hqdefault.jpg" alt="Satisfied Patient Testimonial" loading="lazy">
-            <div class="patient-thumb-overlay">
-              <div class="patient-play-btn">
-                <svg viewBox="0 0 68 48"><path d="M66.5 7.7C65.7 4.8 63.4 2.5 60.5 1.7 55.2 0 34 0 34 0S12.8 0 7.5 1.7C4.6 2.5 2.3 4.8 1.5 7.7 0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 3.1 5.2 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7c2.9-.8 5.2-3.1 6-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
-              </div>
-              <span class="patient-yt-badge">▶ Watch on YouTube</span>
-            </div>
-          </div>
-          <div class="patient-card-body">
-            <div class="patient-card-header">
-              <div class="patient-avatar-icon">😊</div>
-              <div class="patient-meta">
-                <span class="patient-name">Satisfied Patient</span>
-                <div class="patient-stars">
-                  <span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span>
-                </div>
-              </div>
-            </div>
-            <p class="patient-quote">"Professional team and completely painless treatment. I was nervous at first but they were so caring and gentle."</p>
-            <div class="patient-card-footer">
-              <span class="patient-watch-text">Watch Story</span>
-              <div class="patient-arrow"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-            </div>
-          </div>
-        </a>
-      <a class="patient-card" href="https://youtu.be/CNYb7G19Ny4" target="_blank" rel="noopener">
-          <div class="patient-thumb">
-            <img src="https://i.ytimg.com/vi/CNYb7G19Ny4/hqdefault.jpg" alt="Delighted Patient Testimonial" loading="lazy">
-            <div class="patient-thumb-overlay">
-              <div class="patient-play-btn">
-                <svg viewBox="0 0 68 48"><path d="M66.5 7.7C65.7 4.8 63.4 2.5 60.5 1.7 55.2 0 34 0 34 0S12.8 0 7.5 1.7C4.6 2.5 2.3 4.8 1.5 7.7 0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 3.1 5.2 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7c2.9-.8 5.2-3.1 6-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
-              </div>
-              <span class="patient-yt-badge">▶ Watch on YouTube</span>
-            </div>
-          </div>
-          <div class="patient-card-body">
-            <div class="patient-card-header">
-              <div class="patient-avatar-icon"><img src="/icon-rootcanal.webp" alt="Root Canal" width="22" height="22" loading="lazy"></div>
-              <div class="patient-meta">
-                <span class="patient-name">Delighted Patient</span>
-                <div class="patient-stars">
-                  <span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span>
-                </div>
-              </div>
-            </div>
-            <p class="patient-quote">"Best dental care in Hyderabad! Dr. T. Venkat Rao is incredibly skilled. My whole family visits this clinic."</p>
-            <div class="patient-card-footer">
-              <span class="patient-watch-text">Watch Story</span>
-              <div class="patient-arrow"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-            </div>
-          </div>
-        </a>
-      <a class="patient-card" href="https://youtu.be/zF9DYHj2BlE" target="_blank" rel="noopener">
-          <div class="patient-thumb">
-            <img src="https://i.ytimg.com/vi/zF9DYHj2BlE/hqdefault.jpg" alt="Grateful Patient Testimonial" loading="lazy">
-            <div class="patient-thumb-overlay">
-              <div class="patient-play-btn">
-                <svg viewBox="0 0 68 48"><path d="M66.5 7.7C65.7 4.8 63.4 2.5 60.5 1.7 55.2 0 34 0 34 0S12.8 0 7.5 1.7C4.6 2.5 2.3 4.8 1.5 7.7 0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 3.1 5.2 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7c2.9-.8 5.2-3.1 6-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
-              </div>
-              <span class="patient-yt-badge">▶ Watch on YouTube</span>
-            </div>
-          </div>
-          <div class="patient-card-body">
-            <div class="patient-card-header">
-              <div class="patient-avatar-icon">💫</div>
-              <div class="patient-meta">
-                <span class="patient-name">Grateful Patient</span>
-                <div class="patient-stars">
-                  <span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span>
-                </div>
-              </div>
-            </div>
-            <p class="patient-quote">"Transformed my smile and confidence! Dr. Sai Vakula did an amazing root canal — completely painless."</p>
-            <div class="patient-card-footer">
-              <span class="patient-watch-text">Watch Story</span>
-              <div class="patient-arrow"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-            </div>
-          </div>
-        </a>
-      <a class="patient-card" href="https://youtube.com/shorts/klH-Gr_OAfs?si=gaqF4s_U64JhAt8X" target="_blank" rel="noopener">
-          <div class="patient-thumb">
-            <img src="https://i.ytimg.com/vi/klH-Gr_OAfs/hqdefault.jpg" alt="Patient Testimonial Sri Sai Dental Karmanghat" loading="lazy">
-            <div class="patient-thumb-overlay">
-              <div class="patient-play-btn">
-                <svg viewBox="0 0 68 48"><path d="M66.5 7.7C65.7 4.8 63.4 2.5 60.5 1.7 55.2 0 34 0 34 0S12.8 0 7.5 1.7C4.6 2.5 2.3 4.8 1.5 7.7 0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 3.1 5.2 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7c2.9-.8 5.2-3.1 6-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#ff0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
-              </div>
-              <span class="patient-yt-badge">▶ Watch on YouTube</span>
-            </div>
-          </div>
-          <div class="patient-card-body">
-            <div class="patient-card-header">
-              <div class="patient-avatar-icon">😊</div>
-              <div class="patient-meta">
-                <span class="patient-name">Happy Patient</span>
-                <div class="patient-stars"><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span><span class="patient-star">★</span></div>
-              </div>
-            </div>
-            <p class="patient-quote">"Excellent treatment at Sri Sai Speciality Dental Care. Very caring doctors. Highly recommended!"</p>
-            <div class="patient-card-footer">
-              <span class="patient-watch-text">Watch Story</span>
-              <div class="patient-arrow"><svg viewBox="0 0 12 12"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-            </div>
-          </div>
-        </a>
+
+      </div><!-- /.patient-scroll-track -->
+
+      <!-- Dot Indicators (mobile only) -->
+      <div class="patient-dots" id="patientDots" role="tablist" aria-label="Patient testimonials">
+        <button class="patient-dot active" aria-label="Patient 1"></button>
+        <button class="patient-dot" aria-label="Patient 2"></button>
+        <button class="patient-dot" aria-label="Patient 3"></button>
+        <button class="patient-dot" aria-label="Patient 4"></button>
+      </div>
+
+    </div><!-- /.patient-scroll-wrap -->
+
+    <!-- CTA -->
+    <div class="test-cta reveal" style="margin-top:40px">
+      <div class="test-cta-inner">
+        <p>Want to share your experience? We'd love to hear from you!</p>
+        <div class="test-cta-btns">
+          <a href="https://share.google/bokcJmb61by02FVTg" target="_blank" rel="noopener" class="btn-gold" style="font-size:13px;padding:12px 28px">⭐ Leave a Google Review</a>
+          <a href="javascript:void(0)" onclick="openBooking()" class="btn-ghost" style="font-size:13px;padding:12px 28px">📅 Book Your Visit</a>
+        </div>
+      </div>
     </div>
-    <div class="auto-car-controls" id="testAutoTrackControls"><button class="acar-arrow" data-car="testAutoTrack" data-dir="prev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button><div class="acar-dots" id="testAutoTrackDots"><button class="acar-dot active" data-i="0"></button><button class="acar-dot" data-i="1"></button><button class="acar-dot" data-i="2"></button><button class="acar-dot" data-i="3"></button><button class="acar-dot" data-i="4"></button></div><button class="acar-arrow" data-car="testAutoTrack" data-dir="next" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div>
+
   </div>
-  <div style="text-align:center;margin-top:14px;color:rgba(255,255,255,.5);font-size:13px">★★★★★ <strong style="color:#e8cc78;margin:0 6px">5.0</strong> · 241+ Google Reviews</div>
 </section>
 
 
@@ -2422,33 +2088,6 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
   </div>
 </div>
 
-
-<!-- FAQ -->
-<section class="faq-section" id="faq" style="background:#f0f7f5">
-  <div class="container" style="max-width:840px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:36px">
-      <p class="sec-eyebrow" style="justify-content:center">Common Questions</p>
-      <h2 class="sec-title">Frequently Asked <em>Questions</em></h2>
-      <p class="sec-body" style="max-width:480px;margin:0 auto">Everything you need to know about our clinic and treatments.</p>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item open"><div class="faq-question"><span class="faq-q-badge">Q</span><span class="faq-q-text">Where is Sri Sai Speciality Dental Care located?</span><div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></div></div><div class="faq-answer"><div class="faq-answer-inner">TKR College Road, Karmanghat, Hyderabad 500079 — accessible from LB Nagar, Meerpet, Hayath Nagar, and Hastinapuram.</div></div></div>
-      <div class="faq-item"><div class="faq-question"><span class="faq-q-badge">Q</span><span class="faq-q-text">What are your clinic timings?</span><div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></div></div><div class="faq-answer"><div class="faq-answer-inner">Open every day 9:00 AM to 9:00 PM — including Sundays and public holidays.</div></div></div>
-      <div class="faq-item"><div class="faq-question"><span class="faq-q-badge">Q</span><span class="faq-q-text">Do you offer dental implants?</span><div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></div></div><div class="faq-answer"><div class="faq-answer-inner">Yes. Dr. T. Venkat Rao has 35+ years of implant experience. First consultation free — call <a href="tel:8688033072" style="color:#0a7c6e;font-weight:700">86880 33072</a>.</div></div></div>
-      <div class="faq-item"><div class="faq-question"><span class="faq-q-badge">Q</span><span class="faq-q-text">Is root canal treatment painful?</span><div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></div></div><div class="faq-answer"><div class="faq-answer-inner">No — modern root canal with local anaesthesia is completely painless.</div></div></div>
-      <div class="faq-item"><div class="faq-question"><span class="faq-q-badge">Q</span><span class="faq-q-text">How much do dental implants cost?</span><div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></div></div><div class="faq-answer"><div class="faq-answer-inner">A single dental implant including crown typically costs ₹30,000–₹50,000. Book a free assessment for an exact quote.</div></div></div>
-      <div class="faq-item"><div class="faq-question"><span class="faq-q-badge">Q</span><span class="faq-q-text">How do I book an appointment?</span><div class="faq-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></div></div><div class="faq-answer"><div class="faq-answer-inner">Call <a href="tel:8688033072" style="color:#0a7c6e;font-weight:700">86880 33072</a>, WhatsApp, or walk in 9AM–9PM any day.</div></div></div>
-    </div>
-    <div style="margin-top:28px;background:linear-gradient(135deg,#06243c,#0a3a55);border-radius:16px;padding:22px;text-align:center">
-      <p style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:12px">Still have questions? <span style="color:#e8cc78">Happy to help.</span></p>
-      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-        <a href="tel:8688033072" style="background:linear-gradient(135deg,#c8a84b,#e8cc78);color:#06243c;font-weight:800;font-size:13px;padding:10px 20px;border-radius:100px;text-decoration:none">📞 Call 86880 33072</a>
-        <a href="https://wa.me/918688033072" target="_blank" style="background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.25);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:100px;text-decoration:none">💬 WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ── CONTACT ── -->
 <section class="contact" id="contact">
   <div class="container">
@@ -2514,35 +2153,13 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
   </p>
 </section>
 <!-- ── LOCAL SEO SECTION ── -->
-<section style="background:#f0f7f5;padding:48px 0 72px;" aria-label="Areas we serve" id="areas">
-  <div style="max-width:1100px;margin:0 auto;text-align:center;padding:0 24px 32px">
-    <p style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#0a7c6e;margin-bottom:12px">Areas We Serve in Hyderabad</p>
-    <p style="font-size:13.5px;color:#3d5a54;line-height:1.8;max-width:700px;margin:0 auto"><strong>Sri Sai Speciality Dental Care</strong> is located on <strong>TKR College Road, Karmanghat</strong> and serves patients from these areas:</p>
-  </div>
-  <div class="auto-car-wrap fade-light" style="padding-bottom:52px">
-    <div class="auto-car-track fast" id="areasCarTrack">
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Karmanghat</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 LB Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Meerpet</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 TKR Road</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 TKR College</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 BN Reddy Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Hastinapuram</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Chintalkunta</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Hayath Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Bhupesh Gupta Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Greenlands Colony</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Sri Ramnagar Colony</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Nandi Hills</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Almasguda</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Jillalguda</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Gayatri Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Saroor Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Bairamlal Guda</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Kakitaya Colony</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Chandrapuri Colony</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 RTC Colony</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 ZP Road</span>
+<section style="background:#f0f7f5;padding:50px 40px;" aria-label="Areas we serve">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <p style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#0a7c6e;margin-bottom:18px;">Areas We Serve in Hyderabad</p>
+    <p style="font-family:'Nunito',sans-serif;font-size:13.5px;color:#3d5a54;line-height:2;max-width:900px;margin:0 auto 20px;">
+      <strong>Sri Sai Speciality Dental Care</strong> is conveniently located on <strong>TKR College Road, Karmanghat</strong> and proudly serves patients from:
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px;">
       <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Karmanghat</span>
       <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 LB Nagar</span>
       <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Meerpet</span>
@@ -2566,10 +2183,12 @@ a.treat-card{text-decoration:none;display:block;flex-shrink:0;width:240px}
       <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 RTC Colony</span>
       <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 ZP Road</span>
     </div>
-    <div class="auto-car-controls" id="areasCarTrackControls"><button class="acar-arrow" data-car="areasCarTrack" data-dir="prev" aria-label="Previous"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button><div class="acar-dots" id="areasCarTrackDots"><button class="acar-dot active" data-i="0"></button><button class="acar-dot" data-i="1"></button><button class="acar-dot" data-i="2"></button><button class="acar-dot" data-i="3"></button><button class="acar-dot" data-i="4"></button><button class="acar-dot" data-i="5"></button><button class="acar-dot" data-i="6"></button><button class="acar-dot" data-i="7"></button><button class="acar-dot" data-i="8"></button><button class="acar-dot" data-i="9"></button><button class="acar-dot" data-i="10"></button><button class="acar-dot" data-i="11"></button><button class="acar-dot" data-i="12"></button><button class="acar-dot" data-i="13"></button><button class="acar-dot" data-i="14"></button><button class="acar-dot" data-i="15"></button><button class="acar-dot" data-i="16"></button><button class="acar-dot" data-i="17"></button><button class="acar-dot" data-i="18"></button><button class="acar-dot" data-i="19"></button><button class="acar-dot" data-i="20"></button><button class="acar-dot" data-i="21"></button></div><button class="acar-arrow" data-car="areasCarTrack" data-dir="next" aria-label="Next"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button></div>
-  </div>
-  <div style="text-align:center;margin-top:8px;padding:0 24px">
-    <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0a7c6e,#12a992);color:#fff;font-weight:700;font-size:13.5px;padding:12px 28px;border-radius:100px;text-decoration:none;box-shadow:0 6px 20px rgba(10,124,110,.28)">📍 Book Appointment at Karmanghat →</a>
+    <p style="font-family:'Nunito',sans-serif;font-size:13px;color:#6b8f88;line-height:1.9;max-width:800px;margin:0 auto;">
+      Looking for a <strong>dentist near Karmanghat</strong>? <strong>Dental clinic near LB Nagar</strong>? <strong>Best implants near Meerpet</strong>? 
+      <strong>Painless root canal near Hastinapuram</strong>? <strong>Braces treatment near Hayath Nagar</strong>? 
+      <strong>Dental clinic near TKR College</strong>? <strong>Teeth whitening near Saroor Nagar</strong>?
+      <br>Visit Sri Sai Speciality Dental Care — <strong>open all 7 days, 9AM to 9PM. No waiting. Affordable prices.</strong>
+    </p>
   </div>
 </section>
 <footer>
@@ -4428,110 +4047,5 @@ From Sri Sai Speciality Dental Care`;
   </div>
 </div>
 
-<script>
-(function(){
-  function initCarousel(id,total){
-    var t=document.getElementById(id);if(!t)return;
-    var w=t.closest('.auto-car-wrap'),cb=document.getElementById(id+'Controls');
-    var dots=cb?Array.from(cb.querySelectorAll('.acar-dot')):[];
-    var cur=0,drag=false,dx=0,pt=null;
-    function cw(){var c=t.children[0];return c?c.offsetWidth+parseInt(window.getComputedStyle(t).gap||'20'):260;}
-    function sd(i){cur=((i%total)+total)%total;dots.forEach(function(d,j){d.classList.toggle('active',j===cur);});}
-    function jump(i){var dur=parseFloat(window.getComputedStyle(t).animationDuration||'28')*1000;t.style.animationDelay='-'+(((i%total+total)%total)/total*dur)+'ms';t.classList.add('paused');sd(i);clearTimeout(pt);pt=setTimeout(function(){t.classList.remove('paused');},3000);}
-    if(w){w.addEventListener('mouseenter',function(){t.classList.add('paused');clearTimeout(pt);});w.addEventListener('mouseleave',function(){clearTimeout(pt);t.classList.remove('paused');});}
-    t.addEventListener('touchstart',function(e){dx=e.touches[0].clientX;t.classList.add('paused');},{passive:true});
-    t.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-dx;if(Math.abs(d)>30)jump(cur+(d<0?1:-1));clearTimeout(pt);pt=setTimeout(function(){t.classList.remove('paused');},1200);},{passive:true});
-    t.addEventListener('mousedown',function(e){drag=true;dx=e.pageX;t.classList.add('paused');});
-    window.addEventListener('mousemove',function(e){if(!drag)return;t.style.animationDelay=(parseFloat(t.style.animationDelay||'0')+(e.pageX-dx)*0.07)+'ms';dx=e.pageX;});
-    window.addEventListener('mouseup',function(){if(!drag)return;drag=false;clearTimeout(pt);pt=setTimeout(function(){t.classList.remove('paused');},1200);});
-    if(cb){cb.querySelectorAll('.acar-arrow').forEach(function(b){b.addEventListener('click',function(){jump(cur+(b.dataset.dir==='next'?1:-1));});});}
-    dots.forEach(function(d){d.addEventListener('click',function(){jump(parseInt(d.dataset.i));});});
-    function tick(){if(!t.classList.contains('paused')){var cw2=cw(),tot=cw2*total,mx=new DOMMatrix(window.getComputedStyle(t).transform),idx=Math.round(Math.abs(mx.m41)%tot/cw2)%total;if(idx!==cur)sd(idx);}requestAnimationFrame(tick);}
-    requestAnimationFrame(tick);
-  }
-  initCarousel('docCarTrack',2);
-  initCarousel('treatCarTrack',10);
-  initCarousel('clinicCarTrack',4);
-  initCarousel('areasCarTrack',22);
-  
-  initCarousel('testAutoTrack',5);
-})();
-
-(function(){
-  var t=document.getElementById('treatGridTrack');
-  var cb=document.getElementById('treatGridTrackControls');
-  var dots=cb?Array.from(cb.querySelectorAll('.acar-dot')):[];
-  if(!t)return;
-  var total=10,cur=0;
-  function cw(){var c=t.children[0];return c?c.offsetWidth+parseInt(window.getComputedStyle(t).gap||'20'):260;}
-  function sd(i){cur=((i%total)+total)%total;dots.forEach(function(d,j){d.classList.toggle('active',j===cur);});}
-  function go(i){sd(i);t.style.transform='translateX(-'+(cur*cw())+'px)';}
-  if(cb){cb.querySelectorAll('.acar-arrow').forEach(function(b){b.addEventListener('click',function(){go(cur+(b.dataset.dir==='next'?1:-1));});});}
-  dots.forEach(function(d){d.addEventListener('click',function(){go(parseInt(d.dataset.i));});});
-  var tx=0;
-  t.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
-  t.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));},{passive:true});
-})();
-
-(function(){
-  var slides=Array.from(document.querySelectorAll('.ba-slide'));
-  if(!slides.length)return;
-  var total=slides.length,cur=0,drag=false,autoT=null;
-  var slider=document.getElementById('baSlides'),divL=document.getElementById('baDL'),divH=document.getElementById('baDH'),cnt=document.getElementById('baCnt');
-  function getAH(i){return document.getElementById('baAH'+i);}
-  function getCS(i){return document.getElementById('baCS'+i);}
-  function setPos(p){p=Math.max(5,Math.min(95,p));if(divL)divL.style.left=p+'%';if(divH)divH.style.left=p+'%';var ah=getAH(cur);if(ah)ah.style.clipPath='inset(0 0 0 '+p+'%)';}
-  function goTo(n){var nx=((n%total)+total)%total;slides[cur].classList.remove('active');var os=getCS(cur);if(os)os.style.display='none';Array.from(document.querySelectorAll('.ba-thumb-btn')).forEach(function(tb,i){tb.classList.toggle('active',i===nx);});cur=nx;slides[cur].classList.add('active');var ns=getCS(cur);if(ns)ns.style.display='flex';if(cnt)cnt.textContent=(cur+1)+' / '+total;setPos(50);resetAuto();}
-  function start(){autoT=setInterval(function(){goTo(cur+1);},4000);}
-  function stop(){clearInterval(autoT);}
-  function resetAuto(){stop();start();}
-  function getX(e){return e.touches?e.touches[0].clientX:e.clientX;}
-  if(slider){
-    slider.addEventListener('mousedown',function(){drag=true;});
-    window.addEventListener('mouseup',function(){drag=false;});
-    window.addEventListener('mousemove',function(e){if(!drag||!slider)return;var r=slider.getBoundingClientRect();setPos(((getX(e)-r.left)/r.width)*100);});
-    slider.addEventListener('touchstart',function(){drag=true;},{passive:true});
-    window.addEventListener('touchend',function(){drag=false;},{passive:true});
-    window.addEventListener('touchmove',function(e){if(!drag||!slider)return;var r=slider.getBoundingClientRect();setPos(((getX(e)-r.left)/r.width)*100);},{passive:true});
-    slider.addEventListener('mouseenter',stop);slider.addEventListener('mouseleave',start);
-  }
-  document.querySelectorAll('.ba-thumb-btn').forEach(function(tb){tb.addEventListener('click',function(){goTo(parseInt(tb.dataset.goto));});});
-  var pb=document.getElementById('baPrev'),nb=document.getElementById('baNext');
-  if(pb)pb.addEventListener('click',function(){goTo(cur-1);});
-  if(nb)nb.addEventListener('click',function(){goTo(cur+1);});
-  goTo(0);start();
-})();
-
-(function(){
-  Array.from(document.querySelectorAll('.faq-item')).forEach(function(item){
-    var q=item.querySelector('.faq-question');
-    if(!q)return;
-    q.addEventListener('click',function(){
-      var open=item.classList.contains('open');
-      Array.from(document.querySelectorAll('.faq-item')).forEach(function(o){o.classList.remove('open');});
-      if(!open)item.classList.add('open');
-    });
-  });
-})();
-
-// WHY GRID CAROUSEL
-(function(){
-  var t=document.getElementById('whyGridTrack');
-  var cb=document.getElementById('whyGridTrackControls');
-  var dots=cb?Array.from(cb.querySelectorAll('.acar-dot')):[];
-  if(!t)return;
-  // 6 cards, 3-per-row grid = 2 pages (page 0: cards 0-2, page 1: cards 3-5)
-  var total=2,cur=0;
-  function pageW(){return t.offsetWidth;}
-  function setDot(i){cur=((i%total)+total)%total;dots.forEach(function(d,j){d.classList.toggle('active',j===cur);});}
-  function go(i){setDot(i);t.style.transform='translateY(-'+(cur*50)+'%)';}
-  if(cb){cb.querySelectorAll('.acar-arrow').forEach(function(b){b.addEventListener('click',function(){go(cur+(b.dataset.dir==='next'?1:-1));});});}
-  dots.forEach(function(d){d.addEventListener('click',function(){go(parseInt(d.dataset.i));});});
-  var tx=0;
-  t.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
-  t.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));},{passive:true});
-})();
-
-</script>
 </body>
 </html>
