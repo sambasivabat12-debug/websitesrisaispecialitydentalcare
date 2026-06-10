@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.srisaispecialitydentalcare.in/sitemap.xml
+
+# Block form submissions and modal pages
+Disallow: /#booking
+Disallow: /#registration

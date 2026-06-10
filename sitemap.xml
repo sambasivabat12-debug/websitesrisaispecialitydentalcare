@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.srisaispecialitydentalcare.in/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.srisaispecialitydentalcare.in/clinic-exterior.jpg</image:loc>
+      <image:title>Sri Sai Speciality Dental Care - Karmanghat Hyderabad</image:title>
+      <image:caption>Best dental clinic in Karmanghat, Hyderabad</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.srisaispecialitydentalcare.in/doctor-venkat-rao.jpg</image:loc>
+      <image:title>Dr. T. Venkat Rao - Chief Dental Surgeon &amp; Implantologist</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.srisaispecialitydentalcare.in/doctor-sai-vakula.jpg</image:loc>
+      <image:title>Dr. T. Sai Vakula - Root Canal Specialist Hyderabad</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.srisaispecialitydentalcare.in/gallery-implant.jpg</image:loc>
+      <image:title>Full Mouth Dental Implant Rehabilitation - Sri Sai Dental</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.srisaispecialitydentalcare.in/gallery-smile.jpg</image:loc>
+      <image:title>Smile Design Before After - Sri Sai Speciality Dental Care Hyderabad</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.srisaispecialitydentalcare.in/gallery-crown.jpg</image:loc>
+      <image:title>Zirconium Crown Treatment - Sri Sai Dental Karmanghat</image:title>
+    </image:image>
+  </url>
+</urlset>

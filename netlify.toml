@@ -1,0 +1,26 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "https://srisaispecialitydentalcare.in"
+  to = "https://www.srisaispecialitydentalcare.in"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://srisaispecialitydentalcare.in/*"
+  to = "https://www.srisaispecialitydentalcare.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://srisaispecialitydentalcare.in"
+  to = "https://www.srisaispecialitydentalcare.in"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://srisaispecialitydentalcare.in/*"
+  to = "https://www.srisaispecialitydentalcare.in/:splat"
+  status = 301
+  force = true
