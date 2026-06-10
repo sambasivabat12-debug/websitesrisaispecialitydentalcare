@@ -1,0 +1,6 @@
+name = "testing-sri-sai-speciality-dentalcare"
+compatibility_date = "2024-09-23"
+
+[assets]
+directory = "."
+html_handling = "auto-trailing-slash"
