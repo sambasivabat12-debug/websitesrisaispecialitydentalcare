@@ -6,15 +6,31 @@
 <title>Sri Sai Dental — Blog Admin</title>
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/tinacms@latest/dist/tina-cms.umd.min.js"></script>
 <script>
-if (window.location.hash && (
-  window.location.hash.includes('invite_token') ||
-  window.location.hash.includes('recovery_token') ||
-  window.location.hash.includes('confirmation_token')
-)) {
-  window.location.href = '/admin/' + window.location.hash;
-}
+TinaCMS.init({
+  clientId: "b9f0d4c9-03a3-4a3e-b3b2-b4a2385634d2",
+  branch: "main",
+  schema: {
+    collections: [
+      {
+        name: "blog",
+        label: "Blog Posts",
+        path: "blog/_posts",
+        format: "md",
+        fields: [
+          { name: "title", label: "Title", type: "string", isTitle: true, required: true },
+          { name: "date", label: "Publish Date", type: "datetime" },
+          { name: "author", label: "Author", type: "string" },
+          { name: "category", label: "Category", type: "string" },
+          { name: "description", label: "Short Description", type: "string" },
+          { name: "tags", label: "Tags", type: "string" },
+          { name: "body", label: "Body", type: "rich-text", isBody: true }
+        ]
+      }
+    ]
+  }
+});
 </script>
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
