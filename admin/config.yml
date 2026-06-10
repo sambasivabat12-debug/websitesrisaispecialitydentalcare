@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: sambasivabat12-debug/testing-sri-sai-speciality-dental-care-
   branch: main
 
 media_folder: "images/blog"
@@ -37,6 +38,5 @@ collections:
       - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
       - { label: "Short Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "SEO Meta Description", name: "meta_description", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "string", required: false }
-      - { label: "Published", name: "draft", widget: "boolean", default: true }
+      - { label: "Published", name: "draft", widget: "boolean", default: false }
