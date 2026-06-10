@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Sai Dental — Blog Admin</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/tinacms@latest/dist/tina-cms.umd.min.js"></script>
+<script>
+TinaCMS.init({
+  clientId: "b9f0d4c9-03a3-4a3e-b3b2-b4a2385634d2",
+  branch: "main",
+  schema: {
+    collections: [
+      {
+        name: "blog",
+        label: "Blog Posts",
+        path: "blog/_posts",
+        format: "md",
+        fields: [
+          { name: "title", label: "Title", type: "string", isTitle: true, required: true },
+          { name: "date", label: "Publish Date", type: "datetime" },
+          { name: "author", label: "Author", type: "string" },
+          { name: "category", label: "Category", type: "string" },
+          { name: "description", label: "Short Description", type: "string" },
+          { name: "tags", label: "Tags", type: "string" },
+          { name: "body", label: "Body", type: "rich-text", isBody: true }
+        ]
+      }
+    ]
+  }
+});
+</script>
+</body>
+</html>
