@@ -1,36 +1,246 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sri Sai Dental — Blog Admin</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0a1628; --teal: #0d6e6e; --teal-light: #0f8080;
+    --gold: #c9a84c; --white: #ffffff; --bg: #f4f7f9;
+    --border: #dde3ea; --text: #1a2535; --muted: #6b7a8d;
+    --error: #dc3545; --success: #198754;
+  }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  #login-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0a1628 0%, #0d2137 60%, #0a3030 100%); }
+  .login-card { background: white; border-radius: 16px; padding: 48px 40px; width: 100%; max-width: 400px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center; }
+  .login-logo { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--navy); margin-bottom: 4px; }
+  .login-sub { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+  .login-card h2 { font-size: 18px; color: var(--navy); margin-bottom: 24px; font-family: 'Playfair Display', serif; }
+  .login-input { width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 10px; font-size: 15px; font-family: 'Nunito', sans-serif; outline: none; transition: border-color 0.2s; margin-bottom: 16px; }
+  .login-input:focus { border-color: var(--teal); }
+  .login-btn { width: 100%; padding: 14px; background: var(--teal); color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; font-family: 'Nunito', sans-serif; cursor: pointer; }
+  .login-error { color: var(--error); font-size: 13px; margin-top: 12px; display: none; }
+  #admin-screen { display: none; min-height: 100vh; }
+  .topbar { background: var(--navy); padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .topbar-brand { font-family: 'Playfair Display', serif; color: white; font-size: 18px; }
+  .topbar-brand span { color: var(--gold); }
+  .btn-logout { padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; font-family: 'Nunito', sans-serif; cursor: pointer; background: transparent; color: var(--muted); border: 1px solid #2a3a50; }
+  .btn-logout:hover { color: white; border-color: white; }
+  .admin-body { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+  .tabs { display: flex; gap: 4px; background: white; border-radius: 12px; padding: 6px; margin-bottom: 28px; border: 1px solid var(--border); width: fit-content; }
+  .tab { padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; border: none; background: transparent; color: var(--muted); font-family: 'Nunito', sans-serif; }
+  .tab.active { background: var(--teal); color: white; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--navy); margin-bottom: 6px; }
+  .section-sub { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1 / -1; }
+  label { font-size: 13px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; }
+  input[type="text"], input[type="date"], select, textarea { padding: 12px 14px; border: 2px solid var(--border); border-radius: 10px; font-size: 14px; font-family: 'Nunito', sans-serif; color: var(--text); outline: none; background: white; width: 100%; }
+  input:focus, select:focus, textarea:focus { border-color: var(--teal); }
+  textarea#body { min-height: 380px; resize: vertical; line-height: 1.7; }
+  .editor-toolbar { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 12px; background: var(--bg); border: 2px solid var(--border); border-bottom: none; border-radius: 10px 10px 0 0; }
+  .editor-toolbar button { padding: 5px 12px; border: 1px solid var(--border); border-radius: 6px; background: white; font-size: 12px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; color: var(--navy); }
+  .editor-toolbar button:hover { background: var(--navy); color: white; }
+  textarea#body { border-top-left-radius: 0; border-top-right-radius: 0; }
+  .action-row { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+  .btn-primary { padding: 14px 32px; background: var(--teal); color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; font-family: 'Nunito', sans-serif; cursor: pointer; }
+  .btn-secondary { padding: 14px 24px; background: transparent; color: var(--teal); border: 2px solid var(--teal); border-radius: 10px; font-size: 15px; font-weight: 700; font-family: 'Nunito', sans-serif; cursor: pointer; }
+  #output-section { display: none; margin-top: 32px; }
+  .output-card { background: var(--navy); border-radius: 12px; overflow: hidden; }
+  .output-header { padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .output-header h3 { color: var(--gold); font-size: 14px; font-weight: 700; }
+  .output-steps { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+  .step { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; }
+  .step-label { font-size: 12px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .step-filename { font-size: 13px; color: #7dd3d3; margin-bottom: 10px; font-family: monospace; }
+  .copy-box { position: relative; }
+  .copy-btn { position: absolute; top: 10px; right: 10px; padding: 6px 14px; background: var(--teal); color: white; border: none; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; z-index: 1; }
+  .copy-btn.copied { background: var(--success); }
+  pre { background: rgba(0,0,0,0.3); border-radius: 8px; padding: 16px; padding-right: 80px; font-size: 12px; line-height: 1.6; color: #c8e6c9; white-space: pre-wrap; word-break: break-word; max-height: 300px; overflow-y: auto; }
+  .github-guide { padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+  .github-guide h4 { color: white; font-size: 14px; margin-bottom: 12px; }
+  .guide-steps { display: flex; flex-direction: column; gap: 8px; }
+  .guide-step { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+  .guide-step .num { background: var(--teal); color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+  #posts-tab { display: none; }
+  .posts-list { display: flex; flex-direction: column; gap: 12px; }
+  .post-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .post-card-info h4 { font-size: 15px; color: var(--navy); margin-bottom: 4px; }
+  .post-card-meta { font-size: 12px; color: var(--muted); display: flex; gap: 12px; }
+  .tag { padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; background: #e8f5f5; color: var(--teal); }
+  .posts-empty { text-align: center; padding: 60px 20px; color: var(--muted); }
+  .toast { position: fixed; bottom: 24px; right: 24px; background: var(--navy); color: white; padding: 14px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; border-left: 4px solid var(--teal); transform: translateY(80px); opacity: 0; transition: all 0.3s; z-index: 999; }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } .login-card { padding: 32px 24px; margin: 16px; } }
+</style>
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/tinacms@latest/dist/tina-cms.umd.min.js"></script>
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">Sri Sai Speciality Dental Care</div>
+    <div class="login-sub">Karmanghat · Hyderabad · Est. 1989</div>
+    <h2>Blog Admin Panel</h2>
+    <input type="password" id="pwd-input" class="login-input" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="login-btn" onclick="doLogin()">Login →</button>
+    <div class="login-error" id="login-error">Incorrect password. Please try again.</div>
+  </div>
+</div>
+<div id="admin-screen">
+  <div class="topbar">
+    <div class="topbar-brand">Sri Sai <span>Dental</span> — Blog Admin</div>
+    <div><button class="btn-logout" onclick="doLogout()">Logout</button></div>
+  </div>
+  <div class="admin-body">
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('write',this)">✏️ Write Post</button>
+      <button class="tab" onclick="switchTab('posts',this)">📋 My Posts</button>
+    </div>
+    <div id="write-tab">
+      <div class="section-title">Write a New Blog Post</div>
+      <div class="section-sub">Fill in the details below. Click Generate Files to get ready-to-paste GitHub content.</div>
+      <div class="form-grid">
+        <div class="form-group full"><label>Post Title *</label><input type="text" id="f-title" placeholder="e.g. Root Canal Treatment in Hyderabad — Complete Guide"></div>
+        <div class="form-group"><label>Author</label><select id="f-author"><option value="Dr. T. Venkat Rao">Dr. T. Venkat Rao</option><option value="Dr. T. Sai Vakula">Dr. T. Sai Vakula</option></select></div>
+        <div class="form-group"><label>Publish Date</label><input type="date" id="f-date"></div>
+        <div class="form-group"><label>Category</label><select id="f-category"><option>Dental Tips</option><option>Oral Health</option><option>Root Canal Treatment</option><option>Dental Implants</option><option>Dental Braces</option><option>Dental Aligners</option><option>Wisdom Tooth Removal</option><option>Dental Fillings</option><option>Teeth Whitening Treatment</option><option>Dental Bridges</option><option>Dental Dentures</option><option>Dental Crown</option><option>Smile Makeover</option><option>Children's Dentistry</option><option>Clinic News</option></select></div>
+        <div class="form-group"><label>Tags</label><input type="text" id="f-tags" placeholder="root canal, RCT, Hyderabad"></div>
+        <div class="form-group full"><label>Short Description</label><input type="text" id="f-desc" placeholder="1-2 sentence summary for blog listing page"></div>
+        <div class="form-group full">
+          <label>Post Body (Markdown)</label>
+          <div class="editor-toolbar">
+            <button onclick="insertMd('## ','')">H2</button>
+            <button onclick="insertMd('### ','')">H3</button>
+            <button onclick="insertMd('**','**')"><b>B</b></button>
+            <button onclick="insertMd('*','*')"><i>I</i></button>
+            <button onclick="insertMd('\n- ','')">List</button>
+            <button onclick="insertMd('\n---\n','')">Divider</button>
+            <button onclick="insertMd('\n> ','')">Quote</button>
+          </div>
+          <textarea id="body" placeholder="Write your blog post here..."></textarea>
+        </div>
+      </div>
+      <div class="action-row">
+        <button class="btn-primary" onclick="generateFiles()">⚡ Generate Files</button>
+        <button class="btn-secondary" onclick="clearForm()">Clear Form</button>
+      </div>
+      <div id="output-section">
+        <div class="output-card">
+          <div class="output-header"><h3>✅ Files ready — paste into GitHub</h3><span id="output-filename-display"></span></div>
+          <div class="output-steps">
+            <div class="step">
+              <div class="step-label">Step 1 — Create this file in GitHub</div>
+              <div class="step-filename" id="step1-filename"></div>
+              <div class="copy-box"><button class="copy-btn" onclick="copyText('post-content',this)">Copy</button><pre id="post-content"></pre></div>
+            </div>
+            <div class="step">
+              <div class="step-label">Step 2 — Add to posts-index.json (at the TOP)</div>
+              <div class="step-filename">blog/posts-index.json</div>
+              <div class="copy-box"><button class="copy-btn" onclick="copyText('index-entry',this)">Copy</button><pre id="index-entry"></pre></div>
+            </div>
+          </div>
+          <div class="github-guide">
+            <h4>📌 How to publish (2 minutes)</h4>
+            <div class="guide-steps">
+              <div class="guide-step"><span class="num">1</span><span>GitHub → blog/_posts/ → Add file → Create new file → paste filename + Step 1 → Commit</span></div>
+              <div class="guide-step"><span class="num">2</span><span>GitHub → blog/posts-index.json → pencil ✏️ → paste Step 2 at very top inside [ → Commit</span></div>
+              <div class="guide-step"><span class="num">3</span><span>Wait 30 seconds → post is live! 🎉</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="posts-tab">
+      <div class="section-title">Published Posts</div>
+      <div class="section-sub">Posts written using this admin panel</div>
+      <div class="posts-list" id="posts-list"><div class="posts-empty"><div style="font-size:40px">📝</div><p>No posts yet. Write your first post!</p></div></div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
 <script>
-TinaCMS.init({
-  clientId: "b9f0d4c9-03a3-4a3e-b3b2-b4a2385634d2",
-  branch: "main",
-  schema: {
-    collections: [
-      {
-        name: "blog",
-        label: "Blog Posts",
-        path: "blog/_posts",
-        format: "md",
-        fields: [
-          { name: "title", label: "Title", type: "string", isTitle: true, required: true },
-          { name: "date", label: "Publish Date", type: "datetime" },
-          { name: "author", label: "Author", type: "string" },
-          { name: "category", label: "Category", type: "string" },
-          { name: "description", label: "Short Description", type: "string" },
-          { name: "tags", label: "Tags", type: "string" },
-          { name: "body", label: "Body", type: "rich-text", isBody: true }
-        ]
-      }
-    ]
+  const ADMIN_PASS = 'SriSai@2024';
+  function doLogin() {
+    if (document.getElementById('pwd-input').value === ADMIN_PASS) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('admin-screen').style.display = 'block';
+      document.getElementById('login-error').style.display = 'none';
+      document.getElementById('f-date').value = new Date().toISOString().split('T')[0];
+      loadPosts();
+    } else { document.getElementById('login-error').style.display = 'block'; }
   }
-});
+  function doLogout() {
+    document.getElementById('login-screen').style.display = 'flex';
+    document.getElementById('admin-screen').style.display = 'none';
+    document.getElementById('pwd-input').value = '';
+  }
+  function switchTab(tab, el) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('write-tab').style.display = tab === 'write' ? 'block' : 'none';
+    document.getElementById('posts-tab').style.display = tab === 'posts' ? 'block' : 'none';
+    if (tab === 'posts') loadPosts();
+  }
+  function insertMd(before, after) {
+    const ta = document.getElementById('body');
+    const s = ta.selectionStart, e = ta.selectionEnd;
+    const sel = ta.value.substring(s, e);
+    ta.value = ta.value.substring(0, s) + before + sel + after + ta.value.substring(e);
+    ta.focus(); ta.selectionStart = s + before.length; ta.selectionEnd = s + before.length + sel.length;
+  }
+  function makeSlug(t) { return t.toLowerCase().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').substring(0,60); }
+  function generateFiles() {
+    const title = document.getElementById('f-title').value.trim();
+    const author = document.getElementById('f-author').value;
+    const dateVal = document.getElementById('f-date').value;
+    const category = document.getElementById('f-category').value;
+    const tags = document.getElementById('f-tags').value.trim();
+    const desc = document.getElementById('f-desc').value.trim();
+    const body = document.getElementById('body').value.trim();
+    if (!title) { showToast('Please enter a title!'); return; }
+    if (!body) { showToast('Please write some content!'); return; }
+    const slug = makeSlug(title);
+    const d = new Date(dateVal);
+    const yyyy = d.getFullYear(), mm = String(d.getMonth()+1).padStart(2,'0'), dd = String(d.getDate()).padStart(2,'0');
+    const iso = `${yyyy}-${mm}-${dd}T10:00:00.000Z`;
+    const filename = `${yyyy}-${mm}-${dd}-${slug}.md`;
+    const url = `/blog/${yyyy}-${mm}-${dd}-${slug}`;
+    document.getElementById('step1-filename').textContent = `blog/_posts/${filename}`;
+    document.getElementById('output-filename-display').textContent = filename;
+    document.getElementById('post-content').textContent = `---\ntitle: "${title}"\ndate: ${iso}\nauthor: "${author}"\ncategory: "${category}"\nthumbnail: ""\ndescription: "${desc}"\ntags: "${tags}"\ndraft: false\n---\n\n${body}`;
+    document.getElementById('index-entry').textContent = `  {\n    "title": "${title}",\n    "date": "${iso}",\n    "author": "${author}",\n    "category": "${category}",\n    "thumbnail": "",\n    "description": "${desc}",\n    "url": "${url}",\n    "tags": "${tags}"\n  },`;
+    document.getElementById('output-section').style.display = 'block';
+    const posts = JSON.parse(localStorage.getItem('ssd-posts')||'[]');
+    posts.unshift({title,date:dateVal,category,author,filename,url});
+    localStorage.setItem('ssd-posts', JSON.stringify(posts.slice(0,50)));
+    document.getElementById('output-section').scrollIntoView({behavior:'smooth'});
+    showToast('Files generated! Copy and paste into GitHub.');
+  }
+  function copyText(id, btn) {
+    navigator.clipboard.writeText(document.getElementById(id).textContent).then(() => {
+      btn.textContent = '✓ Copied!'; btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+  function clearForm() {
+    ['f-title','f-tags','f-desc','body'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('f-date').value = new Date().toISOString().split('T')[0];
+    document.getElementById('output-section').style.display = 'none';
+    showToast('Form cleared.');
+  }
+  function loadPosts() {
+    const posts = JSON.parse(localStorage.getItem('ssd-posts')||'[]');
+    const c = document.getElementById('posts-list');
+    if (!posts.length) { c.innerHTML = '<div class="posts-empty"><div style="font-size:40px">📝</div><p>No posts yet!</p></div>'; return; }
+    c.innerHTML = posts.map(p => `<div class="post-card"><div class="post-card-info"><h4>${p.title}</h4><div class="post-card-meta"><span>${p.date}</span><span>${p.author}</span><span class="tag">${p.category}</span></div></div><a href="${p.url}" target="_blank" style="font-size:12px;color:var(--teal);font-weight:700">View →</a></div>`).join('');
+  }
+  function showToast(msg) {
+    const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
 </script>
 </body>
 </html>
