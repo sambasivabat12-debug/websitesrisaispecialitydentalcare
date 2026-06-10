@@ -1,6 +1,15 @@
 [build]
   publish = "."
 
+[identity]
+  registration = "invite_only"
+
+[identity.emails]
+  confirmation = false
+  invite = false
+  recovery = false
+  email_change = false
+
 [[redirects]]
   from = "/blog/:slug"
   to = "/blog/post-template.html"
