@@ -3,6 +3,14 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
+    // Handle homepage
+    if (path === '/' || path === '') {
+      return env.ASSETS.fetch(
+        new Request(new URL('/index.html', url).toString())
+      );
+    }
+
+    // Route blog posts to post-template.html
     if (path.startsWith('/blog/') &&
         !path.match(/\.[a-zA-Z0-9]+$/) &&
         path !== '/blog/' &&
@@ -23,6 +31,7 @@ export default {
         headers: {'Content-Type': 'text/html; charset=UTF-8'}
       });
     }
+
     return env.ASSETS.fetch(request);
   }
 }
