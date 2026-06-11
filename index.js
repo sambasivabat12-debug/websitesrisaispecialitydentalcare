@@ -9,11 +9,18 @@ export default {
         path !== '/blog') {
 
       const templateUrl = new URL('/blog/post-template.html', url).toString();
-      const templateResp = await env.ASSETS.fetch(new Request(templateUrl));
+      let resp = await env.ASSETS.fetch(new Request(templateUrl));
 
-      return new Response(templateResp.body, {
+      if (resp.status >= 300 && resp.status < 400) {
+        const loc = resp.headers.get('Location');
+        if (loc) resp = await env.ASSETS.fetch(
+          new Request(new URL(loc, url).toString())
+        );
+      }
+
+      return new Response(resp.body, {
         status: 200,
-        headers: { 'Content-Type': 'text/html; charset=UTF-8' }
+        headers: {'Content-Type': 'text/html; charset=UTF-8'}
       });
     }
     return env.ASSETS.fetch(request);
