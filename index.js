@@ -3,15 +3,19 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // Route blog post URLs to post-template.html
-    if (path.startsWith('/blog/') && 
-        !path.match(/\.[a-zA-Z0-9]+$/) && 
-        path !== '/blog/' && 
+    if (path.startsWith('/blog/') &&
+        !path.match(/\.[a-zA-Z0-9]+$/) &&
+        path !== '/blog/' &&
         path !== '/blog') {
-      const templateUrl = new URL('/blog/post-template.html', url);
-      return env.ASSETS.fetch(new Request(templateUrl.toString(), request));
-    }
 
+      const templateUrl = new URL('/blog/post-template.html', url).toString();
+      const templateResp = await env.ASSETS.fetch(new Request(templateUrl));
+
+      return new Response(templateResp.body, {
+        status: 200,
+        headers: { 'Content-Type': 'text/html; charset=UTF-8' }
+      });
+    }
     return env.ASSETS.fetch(request);
   }
 }
