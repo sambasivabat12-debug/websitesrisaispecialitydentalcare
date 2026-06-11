@@ -1282,8 +1282,47 @@ footer a{color:var(--gold2);text-decoration:none}
   .ac-track{animation:none!important;padding:8px 16px 16px;gap:14px}
   .why-ac-outer,.ba-ac-outer,.cg-ac-outer,.patient-ac-outer,.areas-ac-outer{margin:24px -16px 0}
 }
+
+/* ══ GSAP PREMIUM OVERRIDES ══ */
+/* Let GSAP handle cursor — kill CSS transition */
+#cursor,#cursor-ring{transition:none!important}
+/* Hide elements before GSAP animates them */
+.gsap-hero-item{opacity:0;visibility:hidden}
+/* Premium glass card effect */
+.stat-card{background:rgba(255,255,255,.07)!important;backdrop-filter:blur(20px)!important;-webkit-backdrop-filter:blur(20px)!important}
+/* Gradient text shimmer on hero title */
+.h1-sub{animation:goldShimmer 4s ease infinite}
+/* Premium 3D card perspective */
+.treat-card,.doc-card,.why-card,.bpc{transform-style:preserve-3d;will-change:transform}
+/* Smooth box shadow transition for cards */
+.treat-card,.doc-card,.why-card{transition:box-shadow .4s ease!important}
+/* Lottie hero decoration */
+#hero-lottie-wrap{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:260px;height:260px;opacity:.18;pointer-events:none;z-index:1}
+@media(max-width:1100px){#hero-lottie-wrap{display:none}}
+/* Lottie in Why section header */
+#why-lottie-wrap{width:80px;height:80px;margin:0 auto 20px;display:block}
+/* Premium section divider line */
+.gsap-divider{width:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--gold));border-radius:2px;margin:0 auto 40px}
+/* Magnetic button — no existing transform conflict */
+.btn-gold,.btn-ghost,.btn-book-hero,.nav-book{transform-origin:center center}
+/* Section heading reveal split */
+.split-char{display:inline-block;opacity:0;transform:translateY(60px)}
+/* CTA Glow pulse */
+@keyframes ctaGlow{
+  0%,100%{box-shadow:0 6px 24px rgba(200,168,75,.45)}
+  50%{box-shadow:0 6px 40px rgba(200,168,75,.8),0 0 80px rgba(200,168,75,.25)}
+}
+.btn-gold{animation:ctaGlow 2.5s ease infinite}
+/* Premium nav glass on scroll */
+nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!important;-webkit-backdrop-filter:blur(28px)!important;border-bottom:1px solid rgba(255,255,255,.06)!important}
+/* Cards — premium shadow on hover */
+.treat-card:hover{box-shadow:0 30px 80px rgba(10,124,110,.2),0 0 0 1px rgba(18,169,146,.3)!important}
+.doc-card:hover{box-shadow:0 40px 100px rgba(10,124,110,.22)!important}
+/* reveal CSS opacity removed - GSAP handles this internally */
 </style>
 <script>if(window.location.hash&&(window.location.hash.includes('invite_token')||window.location.hash.includes('recovery_token')||window.location.hash.includes('confirmation_token'))){window.location.href='/admin/'+window.location.hash;}</script>
+
+<!-- GSAP loaded dynamically below -->
 </head>
 <body>
 <!-- GTM noscript -->
@@ -1377,6 +1416,7 @@ footer a{color:var(--gold2);text-decoration:none}
 <!-- ── HERO ── -->
 <div class="hero">
   <div class="hero-dots"></div>
+  <div id="hero-lottie-wrap"><div id="hero-lottie" style="width:100%;height:100%"></div></div>
   <div class="hero-ring"></div>
   <div class="hero-ring"></div>
   <div class="hero-ring"></div>
@@ -2799,7 +2839,224 @@ footer a{color:var(--gold2);text-decoration:none}
         📞 +91 86880 33072 &nbsp;|&nbsp; 📍 Hyderabad<br>
         Please carry this confirmation when you visit the clinic.
       </div>
-    </body></html>`);
+    
+<script>
+/* ══════════════════════════════════════════════════════════
+   GSAP PREMIUM — Dynamic Loader (no CDN blocking)
+   Loads GSAP only after page is ready & interactive
+   Fails silently if CDN unavailable (e.g. preview/offline)
+══════════════════════════════════════════════════════════ */
+(function(){
+  'use strict';
+
+  /* ── Dynamic script loader ── */
+  function loadScript(src, cb){
+    var s = document.createElement('script');
+    s.src = src;
+    s.async = true;
+    s.onload  = function(){ cb(true);  };
+    s.onerror = function(){ cb(false); };
+    document.head.appendChild(s);
+  }
+
+  /* ── Full GSAP animation suite — runs only if GSAP loaded ── */
+  function initGSAP(){
+    try{ gsap.registerPlugin(ScrollTrigger); }catch(e){ return; }
+
+    /* 1. CURSOR */
+    try{
+      var cur = document.getElementById('cursor');
+      var ring = document.getElementById('cursor-ring');
+      if(cur && ring && window.matchMedia('(hover:hover)').matches){
+        document.addEventListener('mousemove',function(e){
+          gsap.to(cur, {x:e.clientX,y:e.clientY,duration:.08,overwrite:'auto'});
+          gsap.to(ring,{x:e.clientX,y:e.clientY,duration:.38,ease:'power2.out',overwrite:'auto'});
+        });
+        document.querySelectorAll('a,button,.treat-card,.doc-card,.why-card,.bpc').forEach(function(el){
+          el.addEventListener('mouseenter',function(){
+            gsap.to(cur, {width:18,height:18,background:'var(--teal2)',duration:.2});
+            gsap.to(ring,{width:58,height:58,borderColor:'var(--gold)',duration:.3});
+          });
+          el.addEventListener('mouseleave',function(){
+            gsap.to(cur, {width:10,height:10,background:'var(--gold)',duration:.2});
+            gsap.to(ring,{width:38,height:38,borderColor:'var(--teal)',duration:.3});
+          });
+        });
+      }
+    }catch(e){}
+
+    /* 2. HERO TIMELINE */
+    function runHero(){
+      try{
+        var h1 = document.querySelector('.h1-name');
+        if(h1 && !h1.dataset.split){
+          h1.dataset.split='1';
+          var nodes = Array.from(h1.childNodes);
+          h1.innerHTML='';
+          nodes.forEach(function(n){
+            if(n.nodeType===3){
+              n.textContent.trim().split(' ').forEach(function(w){
+                var sp=document.createElement('span');
+                sp.className='split-w';
+                sp.style.display='inline-block';
+                sp.textContent=w+' ';
+                h1.appendChild(sp);
+              });
+            } else { h1.appendChild(n); }
+          });
+        }
+        var tl=gsap.timeline({defaults:{ease:'power4.out',overwrite:'auto'}});
+        tl.from('.hero-badge',     {y:-40,opacity:0,duration:.8,ease:'back.out(2)'},0.1)
+          .from('.h1-welcome',     {x:-40,opacity:0,duration:.7},0.4)
+          .from('.split-w',        {y:70,opacity:0,duration:.9,stagger:.07},0.6)
+          .from('.h1-sub',         {x:-60,opacity:0,duration:1},0.7)
+          .from('.h1-tvrao',       {x:-30,opacity:0,duration:.6},1.0)
+          .from('.hero-sub',       {y:30,opacity:0,duration:.8},1.1)
+          .from('.pill',           {y:20,opacity:0,duration:.5,stagger:.07},1.2)
+          .from('.hero-actions > *',{y:24,opacity:0,duration:.6,stagger:.12},1.4)
+          .from('.stat-card',      {x:50,opacity:0,duration:.7,stagger:.15},1.5)
+          .from('.scroll-ind',     {y:20,opacity:0,duration:.6},1.9);
+      }catch(e){}
+    }
+
+    var pre=document.getElementById('preloader');
+    if(pre){
+      var obs=new MutationObserver(function(ms){
+        ms.forEach(function(m){
+          if(m.target.classList.contains('hidden')){runHero();obs.disconnect();}
+        });
+      });
+      try{ obs.observe(pre,{attributes:true,attributeFilter:['class']}); }catch(e){}
+      setTimeout(runHero,3600);
+    } else { runHero(); }
+
+    /* 3. SCROLL REVEALS */
+    try{
+      [
+        ['.sec-eyebrow,.sec-title,.sec-body,.form-title,.test-title',{y:50,opacity:0,duration:.9,ease:'power3.out'}],
+        ['.reveal',     {y:60,opacity:0,duration:1,ease:'power3.out'}],
+        ['.reveal-left',{x:-70,opacity:0,duration:.95,ease:'power3.out'}],
+        ['.reveal-right',{x:70,opacity:0,duration:.95,ease:'power3.out'}],
+        ['.reveal-zoom', {scale:.85,opacity:0,duration:.9,ease:'back.out(1.6)'}],
+        ['.reveal-drop', {y:-50,opacity:0,duration:.9,ease:'power3.out'}],
+        ['.reveal-flip', {rotateX:22,opacity:0,duration:.95,ease:'power3.out',transformOrigin:'top center'}],
+      ].forEach(function(p){
+        gsap.utils.toArray(p[0]).forEach(function(el){
+          gsap.from(el,Object.assign({},p[1],{
+            scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'}
+          }));
+        });
+      });
+      gsap.utils.toArray('.stagger,.stagger-zoom,.stagger-left').forEach(function(wrap){
+        var from=wrap.classList.contains('stagger-left')?{x:-50,opacity:0}
+                :wrap.classList.contains('stagger-zoom')?{scale:.85,opacity:0}:{y:40,opacity:0};
+        gsap.from(Array.from(wrap.children),Object.assign({},from,{
+          duration:.75,ease:'power3.out',stagger:.1,
+          scrollTrigger:{trigger:wrap,start:'top 86%',toggleActions:'play none none none'}
+        }));
+      });
+    }catch(e){}
+
+    /* 4. COUNTER */
+    try{
+      ScrollTrigger.create({
+        trigger:'.hero-stats',start:'top 80%',once:true,
+        onEnter:function(){
+          document.querySelectorAll('.count-val').forEach(function(el){
+            var obj={v:0},target=parseInt(el.dataset.target)||0;
+            gsap.to(obj,{v:target,duration:2.5,ease:'power2.out',
+              onUpdate:function(){el.textContent=Math.round(obj.v);}});
+          });
+        }
+      });
+    }catch(e){}
+
+    /* 5. PARALLAX */
+    try{
+      var tb=document.querySelector('.hero-tooth-bg');
+      if(tb) gsap.to(tb,{y:'-25%',ease:'none',
+        scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.5}});
+    }catch(e){}
+
+    /* 6. MAGNETIC BUTTONS */
+    try{
+      document.querySelectorAll('.btn-gold,.btn-ghost,.btn-book-hero,.nav-book').forEach(function(btn){
+        btn.addEventListener('mousemove',function(e){
+          var r=btn.getBoundingClientRect();
+          gsap.to(btn,{x:(e.clientX-r.left-r.width/2)*.28,
+                       y:(e.clientY-r.top-r.height/2)*.28,
+                       duration:.3,ease:'power2.out',overwrite:'auto'});
+        });
+        btn.addEventListener('mouseleave',function(){
+          gsap.to(btn,{x:0,y:0,duration:.8,ease:'elastic.out(1,.45)'});
+        });
+      });
+    }catch(e){}
+
+    /* 7. 3D CARD TILT */
+    try{
+      if(!('ontouchstart' in window)){
+        document.querySelectorAll('.treat-card,.doc-card,.why-card').forEach(function(card){
+          card.addEventListener('mousemove',function(e){
+            var r=card.getBoundingClientRect();
+            gsap.to(card,{
+              rotateX:((e.clientY-r.top)/r.height-.5)*-14,
+              rotateY:((e.clientX-r.left)/r.width-.5)*14,
+              transformPerspective:900,transformStyle:'preserve-3d',
+              duration:.35,ease:'power2.out',overwrite:'auto'
+            });
+          });
+          card.addEventListener('mouseleave',function(){
+            gsap.to(card,{rotateX:0,rotateY:0,duration:.9,ease:'elastic.out(1,.5)'});
+          });
+        });
+      }
+    }catch(e){}
+
+    /* 8. NAV ENTRANCE */
+    try{ gsap.from('nav',{y:-80,opacity:0,duration:1,ease:'power3.out',delay:.15}); }catch(e){}
+
+    /* 9. HERO RINGS */
+    try{
+      gsap.utils.toArray('.hero-ring').forEach(function(el,i){
+        gsap.to(el,{scale:1.06,opacity:.6,duration:3+i*.8,
+          repeat:-1,yoyo:true,ease:'sine.inOut',delay:i*.5});
+      });
+    }catch(e){}
+
+  } /* end initGSAP */
+
+  /* ── Load GSAP dynamically after page ready ── */
+  function boot(){
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', function(ok){
+      if(!ok){ return; } /* CDN failed — page still works without GSAP */
+      loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', function(ok2){
+        initGSAP();
+        /* Load Lottie optionally */
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js', function(ok3){
+          if(!ok3) return;
+          try{
+            var c=document.getElementById('hero-lottie');
+            if(c) lottie.loadAnimation({container:c,renderer:'svg',loop:true,autoplay:true,
+              path:'https://assets9.lottiefiles.com/packages/lf20_kkflmtur.json'});
+          }catch(e){}
+        });
+      });
+    });
+  }
+
+  /* Start after page is interactive */
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    /* Small delay so preloader gets priority */
+    setTimeout(boot, 200);
+  }
+
+})();
+</script>
+
+</body></html>`);
     pw.document.close();
     setTimeout(()=>{pw.print();},300);
   };
