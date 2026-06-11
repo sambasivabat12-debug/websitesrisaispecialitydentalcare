@@ -1248,6 +1248,40 @@ footer a{color:var(--gold2);text-decoration:none}
   section{padding:90px 60px}
   .container{max-width:1280px;padding:0 60px}
 }
+
+/* ══ SECTION AUTO-CAROUSELS ══ */
+.ac-outer{position:relative;overflow:hidden}
+.ac-outer::before,.ac-outer::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:5;pointer-events:none}
+.ac-track{display:flex;width:max-content;animation:acScroll 20s linear infinite;padding:16px 0 24px}
+.ac-track:hover{animation-play-state:paused}
+@keyframes acScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.why-ac-outer{margin:40px -60px 0;padding:0}
+.why-ac-outer::before{left:0;background:linear-gradient(to right,var(--navy) 0%,transparent 100%)}
+.why-ac-outer::after{right:0;background:linear-gradient(to left,var(--navy) 0%,transparent 100%)}
+.why-ac-outer .ac-track{gap:20px;padding:16px 60px 28px}
+.ba-ac-outer{margin:40px -60px 0}
+.ba-ac-outer::before{left:0;background:linear-gradient(to right,var(--white) 0%,transparent 100%)}
+.ba-ac-outer::after{right:0;background:linear-gradient(to left,var(--white) 0%,transparent 100%)}
+.ba-ac-outer .ac-track{gap:22px;padding:16px 60px 28px}
+.cg-ac-outer{margin:40px -60px 0}
+.cg-ac-outer::before{left:0;background:linear-gradient(to right,var(--soft-gray) 0%,transparent 100%)}
+.cg-ac-outer::after{right:0;background:linear-gradient(to left,var(--soft-gray) 0%,transparent 100%)}
+.cg-ac-outer .ac-track{gap:18px;padding:16px 60px 28px}
+.patient-ac-outer{margin:0 -60px}
+.patient-ac-outer::before{left:0;background:linear-gradient(to right,rgba(6,36,60,.97) 0%,transparent 100%)}
+.patient-ac-outer::after{right:0;background:linear-gradient(to left,rgba(6,36,60,.97) 0%,transparent 100%)}
+.patient-ac-outer .ac-track{gap:20px;padding:8px 60px 28px}
+.areas-ac-outer{margin:16px -60px}
+.areas-ac-outer::before{left:0;background:linear-gradient(to right,#f0f7f5 0%,transparent 100%)}
+.areas-ac-outer::after{right:0;background:linear-gradient(to left,#f0f7f5 0%,transparent 100%)}
+.areas-ac-outer .ac-track{gap:10px;padding:8px 60px 16px;animation-duration:40s}
+@media(max-width:768px){
+  .ac-outer{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .ac-outer::-webkit-scrollbar{display:none}
+  .ac-outer::before,.ac-outer::after{display:none}
+  .ac-track{animation:none!important;padding:8px 16px 16px;gap:14px}
+  .why-ac-outer,.ba-ac-outer,.cg-ac-outer,.patient-ac-outer,.areas-ac-outer{margin:24px -16px 0}
+}
 </style>
 <script>if(window.location.hash&&(window.location.hash.includes('invite_token')||window.location.hash.includes('recovery_token')||window.location.hash.includes('confirmation_token'))){window.location.href='/admin/'+window.location.hash;}</script>
 </head>
@@ -2160,7 +2194,7 @@ footer a{color:var(--gold2);text-decoration:none}
     <p style="font-family:'Nunito',sans-serif;font-size:13.5px;color:#3d5a54;line-height:2;max-width:900px;margin:0 auto 20px;">
       <strong>Sri Sai Speciality Dental Care</strong> is conveniently located on <strong>TKR College Road, Karmanghat</strong> and proudly serves patients from:
     </p>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px;">
+    <div id="areas-pills" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px;">
       <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Karmanghat</span>
       <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 LB Nagar</span>
       <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Meerpet</span>
@@ -2997,6 +3031,104 @@ footer a{color:var(--gold2);text-decoration:none}
   }
 
   document.addEventListener('DOMContentLoaded', tcInit);
+
+  /* ══ SECTION AUTO-CAROUSELS ══ */
+  (function(){
+    function acBuild(selector, outerClass, duration, fixedW, fixedH){
+      var grid = document.querySelector(selector);
+      if(!grid) return;
+      var items = Array.from(grid.children);
+      if(!items.length) return;
+      // Remove conflicting animation classes
+      ['stagger','stagger-zoom','stagger-left','reveal','reveal-zoom','reveal-left'].forEach(function(c){
+        grid.classList.remove(c);
+      });
+      // Make all items immediately visible
+      items.forEach(function(el){
+        el.style.opacity='1'; el.style.transform='none'; el.style.transition='transform .35s ease, box-shadow .35s ease';
+        el.style.flexShrink='0';
+        if(fixedW) el.style.width=fixedW;
+        if(fixedH) el.style.height=fixedH;
+      });
+      // Build outer wrapper
+      var outer = document.createElement('div');
+      outer.className = 'ac-outer '+outerClass;
+      // Build track
+      var track = document.createElement('div');
+      track.className = 'ac-track';
+      track.style.animationDuration = duration+'s';
+      // Move items into track
+      while(grid.firstChild) track.appendChild(grid.firstChild);
+      // Duplicate for seamless infinite loop
+      items.forEach(function(el){ track.appendChild(el.cloneNode(true)); });
+      outer.appendChild(track);
+      grid.parentNode.replaceChild(outer, grid);
+    }
+
+    function acPatient(){
+      var wrap = document.querySelector('.patient-scroll-wrap');
+      if(!wrap) return;
+      var track = document.getElementById('patientTrack');
+      if(!track) return;
+      var cards = Array.from(track.querySelectorAll('.patient-card'));
+      if(!cards.length) return;
+      // Duplicate cards for infinite loop
+      cards.forEach(function(c){
+        var clone = c.cloneNode(true);
+        clone.style.opacity='1'; clone.style.transform='none';
+        track.appendChild(clone);
+      });
+      // Override desktop grid to flex carousel
+      var style = document.createElement('style');
+      style.textContent = '@media(min-width:769px){'
+        +'.patient-scroll-track{display:flex!important;grid-template-columns:unset!important;'
+        +'width:max-content!important;animation:acScroll 30s linear infinite;'
+        +'overflow:visible!important;flex-wrap:nowrap!important;}'
+        +'.patient-scroll-track:hover{animation-play-state:paused}'
+        +'.patient-card{flex:0 0 300px!important;max-width:300px!important;}'
+        +'.patient-dots{display:none}}';
+      document.head.appendChild(style);
+      // Wrap for gradient edges
+      var outer = document.createElement('div');
+      outer.className = 'ac-outer patient-ac-outer';
+      wrap.parentNode.insertBefore(outer, wrap);
+      outer.appendChild(wrap);
+    }
+
+    function acAreas(){
+      var container = document.getElementById('areas-pills');
+      if(!container) return;
+      var pills = Array.from(container.querySelectorAll('span'));
+      if(!pills.length) return;
+      var outer = document.createElement('div');
+      outer.className = 'ac-outer areas-ac-outer';
+      var track = document.createElement('div');
+      track.className = 'ac-track';
+      track.style.animationDuration = '40s';
+      pills.forEach(function(p){ p.style.flexShrink='0'; track.appendChild(p); });
+      pills.forEach(function(p){ track.appendChild(p.cloneNode(true)); });
+      outer.appendChild(track);
+      container.parentNode.replaceChild(outer, container);
+    }
+
+    function initAllCarousels(){
+      // 1. Why Us — Health is Priority
+      acBuild('.why-grid','why-ac-outer', 18, '250px', null);
+      // 2. Before & After — Patient Transformations
+      acBuild('.ba-grid','ba-ac-outer', 25, '310px', null);
+      // 3. Clinic Gallery
+      acBuild('.cg-grid','cg-ac-outer', 15, '380px', null);
+      // 4. Patient Testimonials (Real Stories)
+      acPatient();
+      // 5. Areas We Serve
+      acAreas();
+    }
+
+    if(document.readyState==='loading'){
+      document.addEventListener('DOMContentLoaded', initAllCarousels);
+    } else { initAllCarousels(); }
+  })();
+
 
 
   /* ══ BLOG CAROUSEL LOADER ══ */
