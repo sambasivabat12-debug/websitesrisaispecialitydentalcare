@@ -5,3 +5,4 @@ main = "index.js"
 [assets]
 directory = "."
 binding = "ASSETS"
+html_handling = "none"
