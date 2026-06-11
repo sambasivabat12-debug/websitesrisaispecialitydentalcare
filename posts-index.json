@@ -1,12 +1,7 @@
-[
-  {
-    "title": "5 Signs You Need to Visit a Dentist Immediately",
-    "date": "2026-06-10T10:00:00.000Z",
-    "author": "Dr. T. Venkat Rao",
-    "category": "Dental Tips",
-    "thumbnail": "",
-    "description": "Ignoring dental pain can lead to serious problems. Here are 5 warning signs you should never ignore — and why visiting Sri Sai Speciality Dental Care can save your smile.",
-    "url": "/blog/2026-06-10-5-signs-you-need-dentist",
-    "tags": "dental pain, oral health, emergency dentist, Hyderabad"
-  }
-]
+name = "testing-sri-sai-speciality-dentalcare"
+compatibility_date = "2024-09-23"
+main = "index.js"
+
+[assets]
+directory = "."
+binding = "ASSETS"
