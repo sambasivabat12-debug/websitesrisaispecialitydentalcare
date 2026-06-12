@@ -3,7 +3,7 @@ title: "Dental Emergencies — What to Do When a Tooth Breaks or Falls Out"
 date: 2026-06-10T08:45:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Dental Tips"
-thumbnail: "/blog/img/emergency.svg"
+thumbnail: "/blog/img/emergency.webp"
 description: "Knocked-out tooth, unbearable pain, or broken tooth? The first 30 minutes matter. Learn exactly what to do in common dental emergencies."
 tags: "dental emergency, knocked out tooth, broken tooth, tooth pain Hyderabad"
 draft: false

@@ -3,7 +3,7 @@ title: "Teeth Whitening in Hyderabad — Get a Brighter Smile Safely"
 date: 2026-06-10T09:50:00.000Z
 author: "Dr. T. Sai Vakula"
 category: "Teeth Whitening Treatment"
-thumbnail: "/blog/img/whitening.svg"
+thumbnail: "/blog/img/whitening.webp"
 description: "Yellow or stained teeth? Professional teeth whitening can brighten your smile by several shades in one sitting. Learn how it works, safety facts, and cost."
 tags: "teeth whitening, smile brightening, stained teeth, dental cleaning Hyderabad"
 draft: false

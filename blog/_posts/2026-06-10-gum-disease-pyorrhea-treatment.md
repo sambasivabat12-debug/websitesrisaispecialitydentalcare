@@ -3,7 +3,7 @@ title: "Bleeding Gums & Pyorrhea — Warning Signs You Should Never Ignore"
 date: 2026-06-10T09:10:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Oral Health"
-thumbnail: "/blog/img/gum-disease.svg"
+thumbnail: "/blog/img/gum-disease.webp"
 description: "Bleeding gums while brushing? It could be gingivitis or pyorrhea. Learn the warning signs, stages of gum disease, and how to stop it before tooth loss."
 tags: "gum disease, bleeding gums, pyorrhea, gingivitis, periodontitis Hyderabad"
 draft: false

@@ -3,7 +3,7 @@ title: "Zirconium Crowns — The Strongest, Most Natural-Looking Dental Crown"
 date: 2026-06-10T09:35:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Dental Crown"
-thumbnail: "/blog/img/crowns.svg"
+thumbnail: "/blog/img/crowns.webp"
 description: "Need a dental crown? Zirconium crowns offer unmatched strength with a completely natural appearance. Compare crown types, costs, and lifespans."
 tags: "zirconium crown, dental crown, tooth cap, crown cost Hyderabad"
 draft: false

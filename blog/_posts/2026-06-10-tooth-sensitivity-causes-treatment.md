@@ -3,7 +3,7 @@ title: "Tooth Sensitivity — Why Cold Water Makes You Wince (And How to Fix It)
 date: 2026-06-10T08:55:00.000Z
 author: "Dr. T. Sai Vakula"
 category: "Dental Tips"
-thumbnail: "/blog/img/sensitivity.svg"
+thumbnail: "/blog/img/sensitivity.webp"
 description: "Sharp pain when you eat ice cream or drink cold water? Tooth sensitivity has clear causes and effective treatments. Stop suffering silently."
 tags: "tooth sensitivity, sensitive teeth, cold sensitivity, enamel erosion Hyderabad"
 draft: false

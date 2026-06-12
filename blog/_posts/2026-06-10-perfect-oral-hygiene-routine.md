@@ -3,7 +3,7 @@ title: "The Perfect Daily Oral Hygiene Routine — A Dentist's Step-by-Step Guid
 date: 2026-06-10T08:50:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Dental Tips"
-thumbnail: "/blog/img/oral-hygiene.svg"
+thumbnail: "/blog/img/oral-hygiene.webp"
 description: "Are you brushing correctly? Most people aren't. Follow this dentist-approved daily routine to keep your teeth and gums healthy for life."
 tags: "oral hygiene, brushing technique, flossing, dental care routine"
 draft: false

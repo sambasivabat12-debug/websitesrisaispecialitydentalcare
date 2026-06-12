@@ -3,7 +3,7 @@ title: "Diabetes and Your Teeth — The Two-Way Connection You Must Know"
 date: 2026-06-10T08:35:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Oral Health"
-thumbnail: "/blog/img/diabetes.svg"
+thumbnail: "/blog/img/diabetes.webp"
 description: "Diabetes and gum disease feed each other in a dangerous cycle. If you're diabetic, your dental care needs special attention. Here's why and how."
 tags: "diabetes dental care, diabetes gum disease, blood sugar oral health"
 draft: false

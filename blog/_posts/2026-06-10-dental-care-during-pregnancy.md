@@ -3,7 +3,7 @@ title: "Dental Care During Pregnancy — What's Safe and What to Avoid"
 date: 2026-06-10T08:40:00.000Z
 author: "Dr. T. Sai Vakula"
 category: "Oral Health"
-thumbnail: "/blog/img/pregnancy.svg"
+thumbnail: "/blog/img/pregnancy.webp"
 description: "Pregnant and worried about dental treatment? Good oral health protects both mother and baby. Learn what's safe, what to postpone, and why it matters."
 tags: "pregnancy dental care, dental treatment pregnancy, pregnancy gingivitis"
 draft: false
