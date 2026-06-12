@@ -3,7 +3,7 @@ title: "Dental Bridges — Fill the Gap of Missing Teeth Permanently"
 date: 2026-06-10T09:25:00.000Z
 author: "Dr. T. Sai Vakula"
 category: "Dental Bridges"
-thumbnail: ""
+thumbnail: "https://www.srisaispecialitydentalcare.in/gallery-implant.webp"
 description: "A dental bridge replaces missing teeth using neighbouring teeth as support. Learn how bridges work, types available, cost, and bridge vs implant."
 tags: "dental bridge, missing tooth, fixed teeth replacement Hyderabad"
 draft: false

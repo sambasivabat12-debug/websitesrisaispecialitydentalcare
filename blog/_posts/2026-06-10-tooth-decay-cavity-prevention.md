@@ -3,7 +3,7 @@ title: "Tooth Decay & Cavities — Causes, Treatment and Prevention"
 date: 2026-06-10T09:05:00.000Z
 author: "Dr. T. Sai Vakula"
 category: "Oral Health"
-thumbnail: ""
+thumbnail: "https://www.srisaispecialitydentalcare.in/clinic-room2.webp"
 description: "Cavities are the most common dental problem at every age. Understand how decay happens, treatment options at each stage, and proven prevention tips."
 tags: "cavity, tooth decay, dental caries, fillings, tooth pain Hyderabad"
 draft: false

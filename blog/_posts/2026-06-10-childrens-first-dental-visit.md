@@ -3,7 +3,7 @@ title: "Your Child's First Dental Visit — A Parent's Complete Guide"
 date: 2026-06-10T09:15:00.000Z
 author: "Dr. T. Sai Vakula"
 category: "Children's Dentistry"
-thumbnail: ""
+thumbnail: "https://www.srisaispecialitydentalcare.in/clinic-exterior.webp"
 description: "When should your child first see a dentist? How do you prepare them? Everything parents need to know about children's dental care."
 tags: "children dentist, kids dental care, first dental visit, pediatric dentistry Hyderabad"
 draft: false

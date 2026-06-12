@@ -3,7 +3,7 @@ title: "Bad Breath (Halitosis) — Real Causes and Permanent Solutions"
 date: 2026-06-10T09:00:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Oral Health"
-thumbnail: ""
+thumbnail: "https://www.srisaispecialitydentalcare.in/clinic-exterior.webp"
 description: "Embarrassed by bad breath? Mints and mouthwash only mask it. Discover the real causes of halitosis and how to eliminate it permanently."
 tags: "bad breath, halitosis, mouth odour, fresh breath Hyderabad"
 draft: false

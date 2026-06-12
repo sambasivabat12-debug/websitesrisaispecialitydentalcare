@@ -165,7 +165,7 @@ function render(posts){
   if(!posts.length){grid.innerHTML='<div class="no-posts"><h3>No posts found</h3></div>';return;}
   grid.innerHTML=posts.map(p=>`
     <div class="blog-card">
-      ${p.thumbnail?`<img class="blog-card-img" src="${p.thumbnail}" alt="${p.title}" loading="lazy">`:`<div class="blog-card-img-placeholder">🦷</div>`}
+      ${p.thumbnail?`<img class="blog-card-img" src="${p.thumbnail}" alt="${p.title}" loading="lazy" onerror="this.onerror=null;this.src='/logo.webp';this.style.objectFit='contain';this.style.background='#d8f5ef';this.style.padding='30px';">`:`<div class="blog-card-img-placeholder">🦷</div>`}
       <div class="blog-card-body">
         ${p.category?`<span class="blog-card-tag">${p.category}</span>`:''}
         <div class="blog-card-title">${p.title}</div>

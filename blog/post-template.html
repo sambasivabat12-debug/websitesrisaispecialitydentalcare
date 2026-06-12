@@ -141,7 +141,7 @@ async function loadPost(){
     document.getElementById('post-date').textContent='📅 '+fmtDate(fm.date);
     document.getElementById('post-author').textContent='✍️ '+(fm.author||'Sri Sai Dental');
     if(fm.category){const b=document.getElementById('post-cat-badge');b.textContent=fm.category;b.style.display='inline-block';}
-    if(fm.thumbnail){const i=document.getElementById('post-featured-img');i.src=fm.thumbnail;i.alt=fm.title;i.style.display='block';}
+    if(fm.thumbnail){const i=document.getElementById('post-featured-img');i.src=fm.thumbnail;i.alt=fm.title;i.style.display='block';i.onerror=function(){this.onerror=null;this.src='/logo.webp';this.style.objectFit='contain';this.style.background='#d8f5ef';this.style.padding='40px';};}
     document.getElementById('post-content').innerHTML=marked.parse(body);
     if(fm.tags){document.getElementById('post-tags').innerHTML=fm.tags.split(',').map(t=>'<span class="post-tag"># '+t.trim()+'</span>').join('');}
     if(fm.author&&fm.author.includes('Sai Vakula')){document.getElementById('author-initials').textContent='SV';document.getElementById('author-name').textContent='Dr. T. Sai Vakula';}

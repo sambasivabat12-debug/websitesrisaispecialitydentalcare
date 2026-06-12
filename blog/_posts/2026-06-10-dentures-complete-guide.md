@@ -3,7 +3,7 @@ title: "Complete & Partial Dentures — Restore Your Smile at Any Age"
 date: 2026-06-10T09:30:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Dental Dentures"
-thumbnail: ""
+thumbnail: "https://www.srisaispecialitydentalcare.in/gallery-dentures.webp"
 description: "Missing many or all teeth? Modern dentures are comfortable, natural-looking, and affordable. Learn about types, costs, and care tips."
 tags: "dentures, false teeth, complete dentures, partial dentures Hyderabad"
 draft: false
