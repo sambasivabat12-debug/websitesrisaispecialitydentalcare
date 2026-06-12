@@ -61,6 +61,12 @@ This is a one-time investment that can last decades — often cheaper than repla
 Most healthy adults are. Good candidates have adequate jawbone, healthy gums, and good general health. Even diabetic patients can get implants if blood sugar is controlled. Visit us for a free implant assessment.
 ---
 
+<a href="/dental-implants" style="display:block;background:linear-gradient(135deg,#d8f5ef 0%,#f8fffe 100%);border:1px solid rgba(10,124,110,.35);border-left:5px solid #0a7c6e;border-radius:14px;padding:20px 24px;margin:34px 0;text-decoration:none">
+<span style="display:block;font-size:12.5px;font-weight:700;color:#0a7c6e;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px">Related Treatment at Our Clinic</span>
+<span style="display:block;font-size:19px;font-weight:800;color:#06243c;margin-bottom:5px">Dental Implants in Hyderabad &rarr;</span>
+<span style="display:block;font-size:14px;color:#475569;line-height:1.5">Permanent, natural-looking tooth replacement by experienced implant surgeons.</span>
+</a>
+
 ## Book Your Consultation Today
 
 **Sri Sai Speciality Dental Care**

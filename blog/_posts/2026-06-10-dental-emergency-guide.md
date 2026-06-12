@@ -63,6 +63,12 @@ Keep the crown safe. Avoid chewing on that side. Temporary dental cement from a 
 - Treat small cavities before they become painful emergencies
 ---
 
+<a href="/treatments" style="display:block;background:linear-gradient(135deg,#d8f5ef 0%,#f8fffe 100%);border:1px solid rgba(10,124,110,.35);border-left:5px solid #0a7c6e;border-radius:14px;padding:20px 24px;margin:34px 0;text-decoration:none">
+<span style="display:block;font-size:12.5px;font-weight:700;color:#0a7c6e;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px">Related Treatment at Our Clinic</span>
+<span style="display:block;font-size:19px;font-weight:800;color:#06243c;margin-bottom:5px">Same-Day Emergency Care &rarr;</span>
+<span style="display:block;font-size:14px;color:#475569;line-height:1.5">From a broken tooth to severe pain — see how we can help fast.</span>
+</a>
+
 ## Book Your Consultation Today
 
 **Sri Sai Speciality Dental Care**

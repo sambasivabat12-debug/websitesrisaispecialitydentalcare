@@ -65,6 +65,12 @@ Choose **braces** if you have complex corrections, a tighter budget, or worry ab
 The best way to decide? A consultation with X-rays — we'll tell you honestly which option suits your teeth and budget.
 ---
 
+<a href="/dental-braces" style="display:block;background:linear-gradient(135deg,#d8f5ef 0%,#f8fffe 100%);border:1px solid rgba(10,124,110,.35);border-left:5px solid #0a7c6e;border-radius:14px;padding:20px 24px;margin:34px 0;text-decoration:none">
+<span style="display:block;font-size:12.5px;font-weight:700;color:#0a7c6e;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px">Related Treatment at Our Clinic</span>
+<span style="display:block;font-size:19px;font-weight:800;color:#06243c;margin-bottom:5px">Braces & Clear Aligners &rarr;</span>
+<span style="display:block;font-size:14px;color:#475569;line-height:1.5">Straighten your teeth with metal/ceramic braces or invisible aligners.</span>
+</a>
+
 ## Book Your Consultation Today
 
 **Sri Sai Speciality Dental Care**
