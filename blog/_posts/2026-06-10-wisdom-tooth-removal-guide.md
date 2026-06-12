@@ -3,7 +3,7 @@ title: "Wisdom Tooth Pain & Removal — When Is Extraction Necessary?"
 date: 2026-06-10T09:40:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Wisdom Tooth Removal"
-thumbnail: "https://www.srisaispecialitydentalcare.in/clinic-room3.webp"
+thumbnail: "/blog/img/wisdom-tooth.svg"
 description: "Wisdom tooth pain troubling you? Learn when wisdom teeth need removal, what the procedure involves, recovery tips, and the cost in Hyderabad."
 tags: "wisdom tooth, wisdom tooth pain, tooth extraction, impacted tooth Hyderabad"
 draft: false

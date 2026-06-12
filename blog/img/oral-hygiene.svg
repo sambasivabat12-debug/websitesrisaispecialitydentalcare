@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Daily Oral Hygiene">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0e9f8c"/><stop offset="1" stop-color="#0a6457"/>
+</linearGradient>
+<linearGradient id="enamel" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dcefe9"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.45" r="0.6">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+<circle cx="3" cy="3" r="2.4" fill="#ffffff" opacity="0.10"/>
+</pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="160" cy="120" r="240" fill="#ffffff" opacity="0.06"/>
+<circle cx="1060" cy="560" r="280" fill="#06243c" opacity="0.07"/>
+<circle cx="600" cy="300" r="250" fill="url(#glow)"/>
+<g transform="rotate(-20 600 300)"><rect x="470" y="285" width="230" height="34" rx="17" fill="#12a992"/><rect x="660" y="270" width="70" height="64" rx="14" fill="#ffffff" stroke="#0a7c6e" stroke-width="4"/><rect x="672" y="258" width="7" height="20" rx="3" fill="#0a7c6e"/><rect x="683" y="258" width="7" height="20" rx="3" fill="#0a7c6e"/><rect x="694" y="258" width="7" height="20" rx="3" fill="#0a7c6e"/><rect x="705" y="258" width="7" height="20" rx="3" fill="#0a7c6e"/><rect x="716" y="258" width="7" height="20" rx="3" fill="#0a7c6e"/><path d="M470 302 q-30 0 -40 -16 q40 6 40 16" fill="#f7b8c2"/></g><path d="M 560 182 L 565.04 194.96 L 578 200 L 565.04 205.04 L 560 218 L 554.96 205.04 L 542 200 L 554.96 194.96 Z" fill="#e8cc78"/>
+<g>
+<rect x="417" y="500" width="366" height="62" rx="31" fill="#06243c" opacity="0.92"/>
+<rect x="417" y="500" width="6" height="62" rx="3" fill="#c8a84b"/>
+<text x="600" y="540" font-family="'Segoe UI',Arial,sans-serif" font-size="27" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Daily Oral Hygiene</text>
+</g>
+<circle cx="1120" cy="80" r="10" fill="#c8a84b"/>
+<circle cx="90" cy="540" r="8" fill="#c8a84b" opacity="0.8"/>
+</svg>

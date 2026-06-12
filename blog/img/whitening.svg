@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Teeth Whitening">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#1aa6c4"/><stop offset="1" stop-color="#0d6f86"/>
+</linearGradient>
+<linearGradient id="enamel" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dcefe9"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.45" r="0.6">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+<circle cx="3" cy="3" r="2.4" fill="#ffffff" opacity="0.10"/>
+</pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="160" cy="120" r="240" fill="#ffffff" opacity="0.06"/>
+<circle cx="1060" cy="560" r="280" fill="#06243c" opacity="0.07"/>
+<circle cx="600" cy="300" r="250" fill="url(#glow)"/>
+<path d="M 537.0 175.0 C 526.5 248.5 530.7 322.0 558.0 395.5 C 570.6 427.0 593.7 427.0 600.0 393.4 C 606.3 427.0 629.4 427.0 642.0 395.5 C 669.3 322.0 673.5 248.5 663.0 175.0 C 642.0 149.8 558.0 149.8 537.0 175.0 Z" fill="url(#enamel)" stroke="#0a7c6e" stroke-width="7" stroke-linejoin="round"/><path d="M 690 150 L 698.4 171.6 L 720 180 L 698.4 188.4 L 690 210 L 681.6 188.4 L 660 180 L 681.6 171.6 Z" fill="#c8a84b"/><path d="M 520 188 L 526.16 203.84 L 542 210 L 526.16 216.16 L 520 232 L 513.84 216.16 L 498 210 L 513.84 203.84 Z" fill="#e8cc78"/><path d="M 700 312 L 705.04 324.96 L 718 330 L 705.04 335.04 L 700 348 L 694.96 335.04 L 682 330 L 694.96 324.96 Z" fill="#e8cc78"/><g opacity="0.9"><rect x="470" y="250" width="26" height="70" rx="5" fill="#fff"/><rect x="500" y="250" width="26" height="70" rx="5" fill="#f0ede2"/></g>
+<g>
+<rect x="443" y="500" width="315" height="62" rx="31" fill="#06243c" opacity="0.92"/>
+<rect x="443" y="500" width="6" height="62" rx="3" fill="#c8a84b"/>
+<text x="600" y="540" font-family="'Segoe UI',Arial,sans-serif" font-size="27" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Teeth Whitening</text>
+</g>
+<circle cx="1120" cy="80" r="10" fill="#c8a84b"/>
+<circle cx="90" cy="540" r="8" fill="#c8a84b" opacity="0.8"/>
+</svg>

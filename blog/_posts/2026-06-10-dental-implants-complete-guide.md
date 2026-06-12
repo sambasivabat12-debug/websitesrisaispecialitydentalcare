@@ -3,7 +3,7 @@ title: "Dental Implants in Hyderabad — Cost, Procedure & Benefits Explained"
 date: 2026-06-10T09:55:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Dental Implants"
-thumbnail: "https://www.srisaispecialitydentalcare.in/gallery-implant.webp"
+thumbnail: "/blog/img/implants.svg"
 description: "Missing teeth? Dental implants are the gold standard permanent replacement. Learn the procedure, cost in Hyderabad, and why implants beat dentures and bridges."
 tags: "dental implants, implant cost Hyderabad, missing teeth, tooth replacement"
 draft: false

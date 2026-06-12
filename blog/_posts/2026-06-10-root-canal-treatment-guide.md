@@ -3,7 +3,7 @@ title: "Root Canal Treatment in Hyderabad — Everything You Need to Know"
 date: 2026-06-10T10:00:00.000Z
 author: "Dr. T. Sai Vakula"
 category: "Root Canal Treatment"
-thumbnail: "https://www.srisaispecialitydentalcare.in/clinic-room1.webp"
+thumbnail: "/blog/img/root-canal.svg"
 description: "Scared of root canal? Don't be. At Sri Sai Speciality Dental Care, Karmanghat, we perform completely painless root canal treatment. Here is everything you need to know."
 tags: "root canal, RCT, painless root canal, dentist Karmanghat"
 draft: false

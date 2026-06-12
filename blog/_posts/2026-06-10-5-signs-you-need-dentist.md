@@ -3,7 +3,7 @@ title: "5 Signs You Need to Visit a Dentist Immediately"
 date: 2026-06-10T10:00:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Dental Tips"
-thumbnail: "https://www.srisaispecialitydentalcare.in/clinic-room3.webp"
+thumbnail: "/blog/img/dental-signs.svg"
 description: "Ignoring dental pain can lead to serious problems. Here are 5 warning signs you should never ignore — and why visiting Sri Sai Speciality Dental Care can save your smile."
 meta_description: "Experiencing tooth pain or bleeding gums? Learn the 5 dental warning signs you must not ignore. Expert advice from Sri Sai Speciality Dental Care, Karmanghat, Hyderabad."
 tags: "dental pain, oral health, emergency dentist, Hyderabad"

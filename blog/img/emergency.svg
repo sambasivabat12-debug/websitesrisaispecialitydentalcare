@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dental Emergencies">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#c87b3c"/><stop offset="1" stop-color="#5a3a1e"/>
+</linearGradient>
+<linearGradient id="enamel" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dcefe9"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.45" r="0.6">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+<circle cx="3" cy="3" r="2.4" fill="#ffffff" opacity="0.10"/>
+</pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="160" cy="120" r="240" fill="#ffffff" opacity="0.06"/>
+<circle cx="1060" cy="560" r="280" fill="#06243c" opacity="0.07"/>
+<circle cx="600" cy="300" r="250" fill="url(#glow)"/>
+<path d="M 560.0 175.0 C 490.0 175.0 448.0 221.0 450.0 277.0 C 452.0 325.0 464.0 363.0 488.0 405.0 C 500.0 427.0 520.0 425.0 526.0 399.0 C 532.0 371.0 538.0 355.0 550.0 355.0 C 562.0 355.0 568.0 375.0 574.0 401.0 C 582.0 429.0 604.0 427.0 616.0 403.0 C 642.0 359.0 658.0 323.0 664.0 273.0 C 670.0 219.0 630.0 175.0 560.0 175.0 Z" fill="url(#enamel)" stroke="#0a7c6e" stroke-width="7" stroke-linejoin="round"/><path d="M560 180 L536 250 L566 260 L540 360" stroke="#e0564a" stroke-width="8" fill="none" stroke-linejoin="round" stroke-linecap="round"/><g transform="translate(690,210)"><path d="M0 -50 L50 40 L-50 40 Z" fill="#c8a84b" stroke="#06243c" stroke-width="5" stroke-linejoin="round"/><rect x="-6" y="-22" width="12" height="34" rx="6" fill="#06243c"/><circle cx="0" cy="24" r="7" fill="#06243c"/></g>
+<g>
+<rect x="417" y="500" width="366" height="62" rx="31" fill="#06243c" opacity="0.92"/>
+<rect x="417" y="500" width="6" height="62" rx="3" fill="#ffffff"/>
+<text x="600" y="540" font-family="'Segoe UI',Arial,sans-serif" font-size="27" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Dental Emergencies</text>
+</g>
+<circle cx="1120" cy="80" r="10" fill="#c8a84b"/>
+<circle cx="90" cy="540" r="8" fill="#ffffff" opacity="0.8"/>
+</svg>

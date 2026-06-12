@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dental Implants">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#12a992"/><stop offset="1" stop-color="#0a6e62"/>
+</linearGradient>
+<linearGradient id="enamel" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dcefe9"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.45" r="0.6">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+<circle cx="3" cy="3" r="2.4" fill="#ffffff" opacity="0.10"/>
+</pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="160" cy="120" r="240" fill="#ffffff" opacity="0.06"/>
+<circle cx="1060" cy="560" r="280" fill="#06243c" opacity="0.07"/>
+<circle cx="600" cy="300" r="250" fill="url(#glow)"/>
+<rect x="470" y="330" width="260" height="120" rx="20" fill="#dcefe9" opacity="0.7"/><g><path d="M600 318 L600 430" stroke="#0a7c6e" stroke-width="0"/><path d="M572 330 L628 330 L620 440 Q600 460 580 440 Z" fill="#12a992" stroke="#0a7c6e" stroke-width="6" stroke-linejoin="round"/><path d="M578 348 L622 348" stroke="#0a7c6e" stroke-width="4"/><path d="M578 364 L622 364" stroke="#0a7c6e" stroke-width="4"/><path d="M578 380 L622 380" stroke="#0a7c6e" stroke-width="4"/><path d="M578 396 L622 396" stroke="#0a7c6e" stroke-width="4"/><path d="M578 412 L622 412" stroke="#0a7c6e" stroke-width="4"/><path d="M578 428 L622 428" stroke="#0a7c6e" stroke-width="4"/></g><path d="M585 300 L615 300 L610 330 L590 330 Z" fill="#c8a84b"/><path d="M 600.0 170.8 C 549.6 170.8 519.4 203.9 520.8 244.2 C 522.2 278.8 530.9 306.2 548.2 336.4 C 556.8 352.2 571.2 350.8 575.5 332.1 C 579.8 311.9 584.2 300.4 592.8 300.4 C 601.4 300.4 605.8 314.8 610.1 333.5 C 615.8 353.7 631.7 352.2 640.3 335.0 C 659.0 303.3 670.6 277.4 674.9 241.4 C 679.2 202.5 650.4 170.8 600.0 170.8 Z" fill="url(#enamel)" stroke="#0a7c6e" stroke-width="6" stroke-linejoin="round"/>
+<g>
+<rect x="443" y="500" width="315" height="62" rx="31" fill="#06243c" opacity="0.92"/>
+<rect x="443" y="500" width="6" height="62" rx="3" fill="#c8a84b"/>
+<text x="600" y="540" font-family="'Segoe UI',Arial,sans-serif" font-size="27" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Dental Implants</text>
+</g>
+<circle cx="1120" cy="80" r="10" fill="#c8a84b"/>
+<circle cx="90" cy="540" r="8" fill="#c8a84b" opacity="0.8"/>
+</svg>

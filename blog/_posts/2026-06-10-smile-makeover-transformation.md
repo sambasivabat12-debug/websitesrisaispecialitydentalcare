@@ -3,7 +3,7 @@ title: "Smile Makeover — Transform Your Smile, Transform Your Confidence"
 date: 2026-06-10T09:20:00.000Z
 author: "Dr. T. Sai Vakula"
 category: "Smile Makeover"
-thumbnail: "https://www.srisaispecialitydentalcare.in/gallery-smile-2.webp"
+thumbnail: "/blog/img/smile-makeover.svg"
 description: "A smile makeover combines treatments like veneers, whitening, and alignment to give you the smile you've always wanted. See what's possible."
 tags: "smile makeover, smile designing, veneers, cosmetic dentistry Hyderabad"
 draft: false

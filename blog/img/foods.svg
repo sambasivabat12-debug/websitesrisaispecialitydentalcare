@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Best &amp; Worst Foods">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#3a9f6e"/><stop offset="1" stop-color="#5a3a1e"/>
+</linearGradient>
+<linearGradient id="enamel" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dcefe9"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.45" r="0.6">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+<circle cx="3" cy="3" r="2.4" fill="#ffffff" opacity="0.10"/>
+</pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="160" cy="120" r="240" fill="#ffffff" opacity="0.06"/>
+<circle cx="1060" cy="560" r="280" fill="#06243c" opacity="0.07"/>
+<circle cx="600" cy="300" r="250" fill="url(#glow)"/>
+<path d="M 540.0 180.5 C 473.5 180.5 433.6 224.2 435.5 277.4 C 437.4 323.0 448.8 359.1 471.6 399.0 C 483.0 419.9 502.0 418.0 507.7 393.3 C 513.4 366.7 519.1 351.5 530.5 351.5 C 541.9 351.5 547.6 370.5 553.3 395.2 C 560.9 421.8 581.8 419.9 593.2 397.1 C 617.9 355.3 633.1 321.1 638.8 273.6 C 644.5 222.3 606.5 180.5 540.0 180.5 Z" fill="url(#enamel)" stroke="#0a7c6e" stroke-width="7" stroke-linejoin="round"/><g transform="translate(700,290)"><path d="M0 -34 C -34 -54 -64 -24 -56 6 C -50 36 -22 56 0 44 C 22 56 50 36 56 6 C 64 -24 34 -54 0 -34 Z" fill="#e0564a"/><rect x="-4" y="-52" width="8" height="22" rx="4" fill="#7a5230"/><path d="M4 -44 Q30 -56 36 -40 Q14 -36 4 -44 Z" fill="#12a992"/></g>
+<g>
+<rect x="417" y="500" width="366" height="62" rx="31" fill="#06243c" opacity="0.92"/>
+<rect x="417" y="500" width="6" height="62" rx="3" fill="#c8a84b"/>
+<text x="600" y="540" font-family="'Segoe UI',Arial,sans-serif" font-size="27" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Best &amp; Worst Foods</text>
+</g>
+<circle cx="1120" cy="80" r="10" fill="#c8a84b"/>
+<circle cx="90" cy="540" r="8" fill="#c8a84b" opacity="0.8"/>
+</svg>

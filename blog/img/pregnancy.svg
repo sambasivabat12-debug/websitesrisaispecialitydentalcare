@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dental Care &amp; Pregnancy">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#b05f8f"/><stop offset="1" stop-color="#5f2f4f"/>
+</linearGradient>
+<linearGradient id="enamel" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dcefe9"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.45" r="0.6">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+<circle cx="3" cy="3" r="2.4" fill="#ffffff" opacity="0.10"/>
+</pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="160" cy="120" r="240" fill="#ffffff" opacity="0.06"/>
+<circle cx="1060" cy="560" r="280" fill="#06243c" opacity="0.07"/>
+<circle cx="600" cy="300" r="250" fill="url(#glow)"/>
+<path d="M 560.0 175.0 C 490.0 175.0 448.0 221.0 450.0 277.0 C 452.0 325.0 464.0 363.0 488.0 405.0 C 500.0 427.0 520.0 425.0 526.0 399.0 C 532.0 371.0 538.0 355.0 550.0 355.0 C 562.0 355.0 568.0 375.0 574.0 401.0 C 582.0 429.0 604.0 427.0 616.0 403.0 C 642.0 359.0 658.0 323.0 664.0 273.0 C 670.0 219.0 630.0 175.0 560.0 175.0 Z" fill="url(#enamel)" stroke="#0a7c6e" stroke-width="7" stroke-linejoin="round"/><path d="M700 220 c-18 -20 -52 -8 -52 18 c0 24 34 44 52 60 c18 -16 52 -36 52 -60 c0 -26 -34 -38 -52 -18 Z" fill="#f3879a"/><path d="M 520 194 L 524.48 205.52 L 536 210 L 524.48 214.48 L 520 226 L 515.52 214.48 L 504 210 L 515.52 205.52 Z" fill="#e8cc78"/>
+<g>
+<rect x="375" y="500" width="451" height="62" rx="31" fill="#06243c" opacity="0.92"/>
+<rect x="375" y="500" width="6" height="62" rx="3" fill="#ffffff"/>
+<text x="600" y="540" font-family="'Segoe UI',Arial,sans-serif" font-size="27" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Dental Care &amp; Pregnancy</text>
+</g>
+<circle cx="1120" cy="80" r="10" fill="#c8a84b"/>
+<circle cx="90" cy="540" r="8" fill="#ffffff" opacity="0.8"/>
+</svg>

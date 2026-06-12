@@ -3,7 +3,7 @@ title: "Why You Need a Dental Check-up Every 6 Months (Even Without Pain)"
 date: 2026-06-10T08:25:00.000Z
 author: "Dr. T. Venkat Rao"
 category: "Awareness"
-thumbnail: "https://www.srisaispecialitydentalcare.in/clinic-exterior.webp"
+thumbnail: "/blog/img/checkup.svg"
 description: "Most Indians only visit a dentist when in pain — by then it's expensive. Discover why routine 6-monthly check-ups save your teeth, money, and health."
 tags: "dental checkup, regular dental visit, preventive dentistry, dental health Hyderabad"
 draft: false

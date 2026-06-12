@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bad Breath (Halitosis)">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#12a992"/><stop offset="1" stop-color="#0a6e62"/>
+</linearGradient>
+<linearGradient id="enamel" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dcefe9"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.45" r="0.6">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+<circle cx="3" cy="3" r="2.4" fill="#ffffff" opacity="0.10"/>
+</pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="160" cy="120" r="240" fill="#ffffff" opacity="0.06"/>
+<circle cx="1060" cy="560" r="280" fill="#06243c" opacity="0.07"/>
+<circle cx="600" cy="300" r="250" fill="url(#glow)"/>
+<path d="M 540.0 183.8 C 475.6 183.8 437.0 226.1 438.8 277.6 C 440.6 321.8 451.7 356.8 473.8 395.4 C 484.8 415.6 503.2 413.8 508.7 389.9 C 514.2 364.1 519.8 349.4 530.8 349.4 C 541.8 349.4 547.4 367.8 552.9 391.7 C 560.2 417.5 580.5 415.6 591.5 393.6 C 615.4 353.1 630.2 320.0 635.7 274.0 C 641.2 224.3 604.4 183.8 540.0 183.8 Z" fill="url(#enamel)" stroke="#0a7c6e" stroke-width="7" stroke-linejoin="round"/><path d="M640 230 q40 0 40 26 M640 280 q60 0 60 26 M640 330 q40 0 40 26" stroke="#7fb7ad" stroke-width="7" fill="none" stroke-linecap="round"/><g transform="translate(720,300)"><path d="M0 0 Q40 -30 70 0 Q40 30 0 0 Z" fill="#12a992"/><path d="M6 0 L64 0" stroke="#0a7c6e" stroke-width="3"/></g>
+<g>
+<rect x="383" y="500" width="434" height="62" rx="31" fill="#06243c" opacity="0.92"/>
+<rect x="383" y="500" width="6" height="62" rx="3" fill="#c8a84b"/>
+<text x="600" y="540" font-family="'Segoe UI',Arial,sans-serif" font-size="27" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Bad Breath (Halitosis)</text>
+</g>
+<circle cx="1120" cy="80" r="10" fill="#c8a84b"/>
+<circle cx="90" cy="540" r="8" fill="#c8a84b" opacity="0.8"/>
+</svg>

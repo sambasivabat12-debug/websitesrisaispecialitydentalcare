@@ -3,7 +3,7 @@ title: "Best and Worst Foods for Your Teeth — Eat Your Way to a Healthy Smile"
 date: 2026-06-10T08:30:00.000Z
 author: "Dr. T. Sai Vakula"
 category: "Dental Tips"
-thumbnail: "https://www.srisaispecialitydentalcare.in/gallery-smile-2.webp"
+thumbnail: "/blog/img/foods.svg"
 description: "What you eat directly shapes your dental health. Discover the foods that strengthen your teeth and the everyday culprits silently damaging them."
 tags: "foods for teeth, dental diet, tooth friendly food, sugar and teeth"
 draft: false
