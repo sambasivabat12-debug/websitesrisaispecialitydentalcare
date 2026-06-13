@@ -1355,7 +1355,7 @@ nav.scrolled{background:rgba(10,37,64,.88)!important;backdrop-filter:blur(28px)!
 .h1-welcome{color:var(--teal)!important}
 .h1-name{color:var(--navy)!important}
 .h1-name em{color:var(--teal)!important}
-.h1-sub{background:linear-gradient(135deg,var(--teal) 0%,var(--teal2) 45%,var(--navy) 100%)!important;-webkit-text-fill-color:transparent!important;filter:none!important}
+.h1-sub{background-image:linear-gradient(135deg,var(--teal) 0%,var(--teal2) 45%,var(--navy) 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;filter:none!important}
 .h1-tvrao{color:var(--teal)!important}
 .hero-sub{color:var(--mid)!important}
 .hero-timing{color:var(--soft)!important}
@@ -1372,6 +1372,12 @@ nav.scrolled{background:rgba(10,37,64,.88)!important;backdrop-filter:blur(28px)!
 .hero-ticker{background:#eef4fb!important;border-top:1px solid var(--border)!important}
 .hero-ticker-item{color:var(--mid)!important}
 .ticker-highlight{color:var(--teal)!important}
+/* HEADER / NAV: dark text on light, light scrolled bar */
+nav.scrolled{background:rgba(255,255,255,.96)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important;box-shadow:0 4px 22px rgba(12,99,179,.09)!important;border-bottom:1px solid var(--border)!important}
+.nav-brand-text,.nav-brand-main{color:var(--navy)!important}
+.nav-brand-sub{color:var(--mid)!important}
+.hamburger{background:rgba(12,99,179,.06)!important;border:1px solid var(--border)!important}
+.hamburger span{background:var(--navy)!important}
 /* TRUST STRIP: navy -> light */
 .trust-strip{background:#eef4fb!important;border-top:1px solid var(--border)!important;border-bottom:1px solid var(--border)!important}
 .trust-item{color:var(--mid)!important}
