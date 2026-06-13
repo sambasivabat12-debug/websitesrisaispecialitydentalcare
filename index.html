@@ -23,7 +23,7 @@
 
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#06243c">
+<meta name="theme-color" content="#0a2540">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -95,15 +95,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    DESIGN TOKENS  — Clean Clinical Palette
 ══════════════════════════════════════ */
 :root{
-  --teal:#0a7c6e;   --teal2:#12a992;  --teal3:#d8f5ef;
-  --navy:#06243c;   --navy2:#0d3554;
-  --gold:#c8a84b;   --gold2:#e8cc78;  --gold3:#fff8e0;
-  --cream:#f8fffe;  --white:#ffffff;
-  --soft-gray:#f0f7f5;
-  --mid:#3d5a54;    --soft:#6b8f88;   --border:#cce8e2;
-  --text:#0d2b26;
-  --shadow-teal:rgba(10,124,110,.14);
-  --shadow-gold:rgba(200,168,75,.25);
+  --teal:#0c63b3;   --teal2:#2f8ae0;  --teal3:#dbeefb;
+  --navy:#0a2540;   --navy2:#123a63;
+  --gold:#3d9be8;   --gold2:#9fcef5;  --gold3:#eef6fe;
+  --cream:#f5f9fe;  --white:#ffffff;
+  --soft-gray:#eef4fb;
+  --mid:#3a5570;    --soft:#6885a0;   --border:#d2e4f5;
+  --text:#0e2940;
+  --shadow-teal:rgba(12,99,179,.14);
+  --shadow-gold:rgba(61,155,232,.25);
   --r-sm:14px; --r-md:20px; --r-lg:28px; --r-xl:40px;
 }
 
@@ -124,12 +124,12 @@ a,button{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent
 
 /* ══════════════════════════════════════  NAV  ══════ */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 52px;display:flex;align-items:center;justify-content:space-between;transition:all .4s cubic-bezier(.4,0,.2,1)}
-nav.scrolled{background:rgba(6,36,60,.96);backdrop-filter:blur(22px);padding:10px 52px;box-shadow:0 4px 30px rgba(0,0,0,.25)}
+nav.scrolled{background:rgba(10,37,64,.96);backdrop-filter:blur(22px);padding:10px 52px;box-shadow:0 4px 30px rgba(0,0,0,.25)}
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;min-width:0}
-.nav-logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),var(--teal2));border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(10,124,110,.4)}
+.nav-logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),var(--teal2));border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(12,99,179,.4)}
 .nav-logo-icon svg{width:22px;height:22px;fill:white}
-.nav-logo-img,.nav-logo img{width:56px;height:56px;object-fit:contain;border-radius:50%;background:rgba(255,255,255,0.12);padding:3px;box-shadow:0 4px 16px rgba(10,124,110,.35);transition:transform .3s ease,box-shadow .3s ease;flex-shrink:0}
-.nav-logo:hover .nav-logo-img{transform:scale(1.08);box-shadow:0 6px 24px rgba(10,124,110,.5)}
+.nav-logo-img,.nav-logo img{width:56px;height:56px;object-fit:contain;border-radius:50%;background:rgba(255,255,255,0.12);padding:3px;box-shadow:0 4px 16px rgba(12,99,179,.35);transition:transform .3s ease,box-shadow .3s ease;flex-shrink:0}
+.nav-logo:hover .nav-logo-img{transform:scale(1.08);box-shadow:0 6px 24px rgba(12,99,179,.5)}
 .nav-brand-text{color:#fff;line-height:1.1;min-width:0;overflow:hidden}
 .nav-brand-main{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;display:block;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .nav-brand-sub{font-size:9.5px;letter-spacing:2.5px;color:var(--gold2);text-transform:uppercase;display:block;font-weight:600;margin-top:2px}
@@ -157,12 +157,12 @@ nav.scrolled{background:rgba(6,36,60,.96);backdrop-filter:blur(22px);padding:10p
 }
 
 /* ══════════════════════════════════════  PRELOADER ══ */
-#preloader{position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#06243c 0%,#0a4a3a 60%,#0d3554 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease;overflow:hidden}
+#preloader{position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#0a2540 0%,#0a4a3a 60%,#123a63 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease;overflow:hidden}
 #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
 
 /* Background animated rings */
 .pre-bg-rings{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
-.pre-ring{position:absolute;border-radius:50%;border:1px solid rgba(18,169,146,.12);animation:preRingPulse 3s ease-in-out infinite}
+.pre-ring{position:absolute;border-radius:50%;border:1px solid rgba(47,138,224,.12);animation:preRingPulse 3s ease-in-out infinite}
 .pre-ring:nth-child(1){width:200px;height:200px;animation-delay:0s}
 .pre-ring:nth-child(2){width:320px;height:320px;animation-delay:.6s}
 .pre-ring:nth-child(3){width:440px;height:440px;animation-delay:1.2s}
@@ -178,7 +178,7 @@ nav.scrolled{background:rgba(6,36,60,.96);backdrop-filter:blur(22px);padding:10p
 @keyframes preLogoEntry{from{opacity:0;transform:scale(.5) rotate(-20deg)}to{opacity:1;transform:scale(1) rotate(0deg)}}
 .pre-logo-ring{position:absolute;inset:-12px;border-radius:50%;border:2.5px solid transparent;border-top-color:var(--teal2);border-right-color:var(--gold2);animation:preLogoRingSpin 2s linear infinite}
 @keyframes preLogoRingSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.pre-logo-bg{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,rgba(10,124,110,.3),rgba(200,168,75,.2));backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(18,169,146,.3),0 0 80px rgba(18,169,146,.1)}
+.pre-logo-bg{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,rgba(12,99,179,.3),rgba(61,155,232,.2));backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(47,138,224,.3),0 0 80px rgba(47,138,224,.1)}
 .pre-logo-bg img{width:76px;height:76px;object-fit:contain;border-radius:50%}
 
 /* Tooth icon orbit */
@@ -192,7 +192,7 @@ nav.scrolled{background:rgba(6,36,60,.96);backdrop-filter:blur(22px);padding:10p
 
 /* Progress */
 .pre-bar-wrap{width:clamp(160px,50vw,220px);height:3px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;animation:preFade .8s .42s both cubic-bezier(.16,1,.3,1);position:relative}
-.pre-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--teal2),var(--gold));border-radius:3px;box-shadow:0 0 8px rgba(18,169,146,.6);position:relative}
+.pre-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--teal2),var(--gold));border-radius:3px;box-shadow:0 0 8px rgba(47,138,224,.6);position:relative}
 .pre-bar::after{content:'';position:absolute;right:0;top:-2px;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 8px var(--teal2)}
 .pre-pct{font-family:'Nunito',sans-serif;font-size:11px;color:rgba(255,255,255,.72);letter-spacing:3px;margin-top:12px;animation:preFade .8s .5s both cubic-bezier(.16,1,.3,1);font-weight:600}
 .pre-loading-dots{display:flex;gap:6px;margin-top:16px;animation:preFade .8s .6s both cubic-bezier(.16,1,.3,1)}
@@ -201,7 +201,7 @@ nav.scrolled{background:rgba(6,36,60,.96);backdrop-filter:blur(22px);padding:10p
 .pre-loading-dots span:nth-child(3){animation-delay:.4s;background:var(--teal2)}
 @keyframes dotBounce{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
 
-.pre-glow{position:absolute;width:200px;height:200px;background:radial-gradient(circle,rgba(18,169,146,.2),transparent 70%);border-radius:50%;animation:preGlow 2.5s ease infinite;pointer-events:none}
+.pre-glow{position:absolute;width:200px;height:200px;background:radial-gradient(circle,rgba(47,138,224,.2),transparent 70%);border-radius:50%;animation:preGlow 2.5s ease infinite;pointer-events:none}
 @keyframes preGlow{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.4);opacity:1}}
 @keyframes preFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
@@ -217,7 +217,7 @@ nav.scrolled{background:rgba(6,36,60,.96);backdrop-filter:blur(22px);padding:10p
 .hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
 
 /* animated rings */
-.hero-ring{position:absolute;border-radius:50%;border:1px solid rgba(18,169,146,.12);pointer-events:none;animation:ringExpand 6s ease-in-out infinite}
+.hero-ring{position:absolute;border-radius:50%;border:1px solid rgba(47,138,224,.12);pointer-events:none;animation:ringExpand 6s ease-in-out infinite}
 .hero-ring:nth-child(1){width:300px;height:300px;right:12%;top:15%;animation-delay:0s}
 .hero-ring:nth-child(2){width:500px;height:500px;right:5%;top:5%;animation-delay:1.5s}
 .hero-ring:nth-child(3){width:700px;height:700px;right:-5%;top:-5%;animation-delay:3s}
@@ -231,7 +231,7 @@ nav.scrolled{background:rgba(6,36,60,.96);backdrop-filter:blur(22px);padding:10p
 @media(max-width:1000px){.hero-content{padding:90px 52px 60px;max-width:100%}}
 @media(max-width:768px){.hero-content{padding:80px 16px 24px;max-width:100%;width:100%;flex:1}}
 
-.hero-badge{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;color:var(--navy);font-size:12px;letter-spacing:1.8px;text-transform:uppercase;padding:10px 22px;border-radius:100px;margin-bottom:28px;font-weight:800;white-space:normal;word-break:break-word;box-shadow:0 6px 24px rgba(200,168,75,.45),0 0 0 3px rgba(200,168,75,.18);animation:fadeSlide .8s .1s both cubic-bezier(.16,1,.3,1)}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;color:var(--navy);font-size:12px;letter-spacing:1.8px;text-transform:uppercase;padding:10px 22px;border-radius:100px;margin-bottom:28px;font-weight:800;white-space:normal;word-break:break-word;box-shadow:0 6px 24px rgba(61,155,232,.45),0 0 0 3px rgba(61,155,232,.18);animation:fadeSlide .8s .1s both cubic-bezier(.16,1,.3,1)}
 .hero-badge-dot{width:6px;height:6px;background:var(--navy);border-radius:50%;animation:dotPulse 1.8s ease infinite;flex-shrink:0}
 @keyframes dotPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.6);opacity:.4}}
 
@@ -240,7 +240,7 @@ nav.scrolled{background:rgba(6,36,60,.96);backdrop-filter:blur(22px);padding:10p
 .h1-name{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.8rem);font-weight:700;color:#fff;line-height:1.05;letter-spacing:-.5px}
 .h1-name em{color:var(--gold2);font-style:italic}
 @keyframes goldShimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.h1-sub{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,3.2rem);font-weight:900;background:linear-gradient(135deg,var(--gold) 0%,#fff8c0 40%,var(--gold2) 70%,var(--gold) 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;letter-spacing:1px;filter:drop-shadow(0 0 18px rgba(200,168,75,.55));font-style:italic;animation:goldShimmer 4s ease infinite}
+.h1-sub{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,3.2rem);font-weight:900;background:linear-gradient(135deg,var(--gold) 0%,#fff8c0 40%,var(--gold2) 70%,var(--gold) 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;letter-spacing:1px;filter:drop-shadow(0 0 18px rgba(61,155,232,.55));font-style:italic;animation:goldShimmer 4s ease infinite}
 .h1-tvrao{font-size:clamp(.85rem,1.8vw,1rem);font-weight:500;color:var(--gold2);letter-spacing:2px;margin-top:6px}
 
 .hero-sub{font-size:.98rem;color:rgba(255,255,255,.68);line-height:1.9;max-width:480px;margin-bottom:34px;animation:fadeSlide .8s .35s both cubic-bezier(.16,1,.3,1);font-weight:400}
@@ -259,7 +259,7 @@ nav.scrolled{background:rgba(6,36,60,.96);backdrop-filter:blur(22px);padding:10p
 .patient-avatar-icon img{width:22px!important;height:22px!important;max-width:22px!important;object-fit:contain}
 /* Global safety: any img NOT explicitly a full-size image must not overflow its container */
 .hero *:not(.hero-tooth-bg) img:not([class*="logo"]):not([class*="ba-img"]):not([class*="cg-img"]):not([class*="patient-thumb"]):not([class*="doc-avatar"]){max-width:100%;height:auto}
-.pill:hover{background:rgba(18,169,146,.2);border-color:rgba(18,169,146,.45);color:#fff;transform:translateY(-2px)}
+.pill:hover{background:rgba(47,138,224,.2);border-color:rgba(47,138,224,.45);color:#fff;transform:translateY(-2px)}
 
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;animation:fadeSlide .8s .6s both cubic-bezier(.16,1,.3,1)}
 @keyframes fadeSlide{from{opacity:0;transform:translateX(-32px)}to{opacity:1;transform:translateX(0)}}
@@ -269,8 +269,8 @@ nav.scrolled{background:rgba(6,36,60,.96);backdrop-filter:blur(22px);padding:10p
 .btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 36px var(--shadow-gold)}
 .btn-ghost{background:transparent;border:1.5px solid rgba(255,255,255,.28);color:#fff;font-size:14.5px;padding:15px 30px;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;font-weight:500}
 .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.55);transform:translateY(-3px)}
-.btn-book-hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;font-weight:700;font-size:14.5px;padding:15px 30px;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;box-shadow:0 6px 24px rgba(10,124,110,.4)}
-.btn-book-hero:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(10,124,110,.55)}
+.btn-book-hero{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;font-weight:700;font-size:14.5px;padding:15px 30px;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;box-shadow:0 6px 24px rgba(12,99,179,.4)}
+.btn-book-hero:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(12,99,179,.55)}
 
 /* stats panel */
 .hero-stats{position:absolute;right:72px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:18px;z-index:10;animation:statsFade .8s .7s both cubic-bezier(.16,1,.3,1)}
@@ -342,11 +342,11 @@ section{padding:80px 40px}
 .doc-badge-yrs{position:absolute;bottom:-8px;right:-8px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);font-size:12px;font-weight:800;padding:7px 16px;border-radius:100px;white-space:nowrap;box-shadow:0 4px 18px var(--shadow-gold);letter-spacing:.4px;border:2px solid #fff}
 .doc-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--text);margin-bottom:5px;letter-spacing:-.2px}
 .doc-qual{font-size:11.5px;color:var(--teal);font-weight:700;letter-spacing:.8px;margin-bottom:12px;text-transform:uppercase}
-.doc-exp-banner{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;font-size:13px;font-weight:700;padding:8px 20px;border-radius:100px;margin-bottom:16px;letter-spacing:.3px;box-shadow:0 4px 16px rgba(10,124,110,.3)}
+.doc-exp-banner{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;font-size:13px;font-weight:700;padding:8px 20px;border-radius:100px;margin-bottom:16px;letter-spacing:.3px;box-shadow:0 4px 16px rgba(12,99,179,.3)}
 .doc-exp-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);box-shadow:0 4px 16px var(--shadow-gold)}
 .doc-role{font-size:13.5px;color:var(--mid);line-height:1.8;margin-bottom:22px;font-weight:400}
 .doc-tags{display:flex;flex-wrap:wrap;gap:6px}
-.doc-tag{background:rgba(10,124,110,.08);border:1px solid rgba(10,124,110,.18);color:var(--teal);font-size:11px;font-weight:600;padding:5px 12px;border-radius:100px}
+.doc-tag{background:rgba(12,99,179,.08);border:1px solid rgba(12,99,179,.18);color:var(--teal);font-size:11px;font-weight:600;padding:5px 12px;border-radius:100px}
 
 /* ══════════════════════════════════════  TREATMENTS ══ */
 .treatments{background:var(--soft-gray)}
@@ -372,13 +372,13 @@ section{padding:80px 40px}
 .treat-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:8px}
 .treat-desc{font-size:13px;color:var(--soft);line-height:1.75;margin-bottom:14px;font-weight:400}
 .treat-tags{display:flex;flex-wrap:wrap;gap:5px}
-.treat-tag{font-size:10.5px;color:var(--teal);background:rgba(10,124,110,.08);padding:3px 9px;border-radius:100px;font-weight:600}
+.treat-tag{font-size:10.5px;color:var(--teal);background:rgba(12,99,179,.08);padding:3px 9px;border-radius:100px;font-weight:600}
 
 /* ══════════════════════════════════════  WHY US ══════ */
 .why{background:var(--navy);position:relative;overflow:hidden}
 .why-blob{position:absolute;pointer-events:none;border-radius:50%}
-.why-blob1{top:-120px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(10,124,110,.22),transparent 70%)}
-.why-blob2{bottom:-80px;left:-80px;width:420px;height:420px;background:radial-gradient(circle,rgba(200,168,75,.1),transparent 70%)}
+.why-blob1{top:-120px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(12,99,179,.22),transparent 70%)}
+.why-blob2{bottom:-80px;left:-80px;width:420px;height:420px;background:radial-gradient(circle,rgba(61,155,232,.1),transparent 70%)}
 /* DNA helix decoration */
 .why-deco{position:absolute;right:60px;top:50%;transform:translateY(-50%);opacity:.06;pointer-events:none}
 .why-deco svg{width:180px;height:400px;stroke:var(--teal2);stroke-width:1.5;fill:none}
@@ -388,11 +388,11 @@ section{padding:80px 40px}
 .why .sec-body{color:rgba(255,255,255,.72)}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;margin-top:52px;position:relative;z-index:2}
 .why-card{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-md);padding:30px 22px;text-align:center;min-width:0;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);cursor:default;position:relative;overflow:hidden}
-.why-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,124,110,.18),transparent);opacity:0;transition:opacity .4s ease}
-.why-card:hover{background:rgba(255,255,255,.07);border-color:rgba(18,169,146,.35);transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+.why-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,99,179,.18),transparent);opacity:0;transition:opacity .4s ease}
+.why-card:hover{background:rgba(255,255,255,.07);border-color:rgba(47,138,224,.35);transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.2)}
 .why-card:hover::before{opacity:1}
 .why-icon-wrap{width:58px;height:58px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:26px;transition:transform .4s cubic-bezier(.34,1.56,.64,1),background .3s}
-.why-card:hover .why-icon-wrap{transform:scale(1.15) rotate(-6deg);background:rgba(18,169,146,.18)}
+.why-card:hover .why-icon-wrap{transform:scale(1.15) rotate(-6deg);background:rgba(47,138,224,.18)}
 .why-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:8px}
 .why-desc{font-size:12px;color:rgba(255,255,255,.72);line-height:1.75;font-weight:400}
 
@@ -406,7 +406,7 @@ section{padding:80px 40px}
 .ba-img{width:100%;height:268px;object-fit:cover;object-position:center;display:block;transition:transform .5s cubic-bezier(.16,1,.3,1)}
 .ba-card:hover .ba-img{transform:scale(1.06)}
 .ba-label{padding:16px 20px;display:flex;align-items:center;gap:10px}
-.ba-badge{background:rgba(10,124,110,.1);color:var(--teal);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:100px;border:1px solid rgba(10,124,110,.2)}
+.ba-badge{background:rgba(12,99,179,.1);color:var(--teal);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:100px;border:1px solid rgba(12,99,179,.2)}
 .ba-title{font-size:12.5px;color:var(--mid);font-weight:500}
 
 /* ══════════════════════════════════════  CLINIC GALLERY ══ */
@@ -417,15 +417,15 @@ section{padding:80px 40px}
 .cg-card:hover{transform:translateY(-10px);box-shadow:0 32px 72px var(--shadow-teal);border-color:var(--teal2)}
 .cg-img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.16,1,.3,1)}
 .cg-card:hover .cg-img{transform:scale(1.07)}
-.cg-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,36,60,.8) 0%,transparent 55%);opacity:0;transition:opacity .4s}
+.cg-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,37,64,.8) 0%,transparent 55%);opacity:0;transition:opacity .4s}
 .cg-card:hover .cg-overlay{opacity:1}
 .cg-label{position:absolute;bottom:0;left:0;right:0;padding:22px;transform:translateY(12px);opacity:0;transition:all .4s cubic-bezier(.16,1,.3,1);z-index:3}
 .cg-card:hover .cg-label{transform:translateY(0);opacity:1}
-.cg-badge{background:rgba(200,168,75,.92);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:6px}
+.cg-badge{background:rgba(61,155,232,.92);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:6px}
 .cg-title-txt{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;display:block}
 
 /* ══════════════════════════════════════  FORM CARDS ══ */
-.forms-section{background:linear-gradient(135deg,#f8fffe 0%,#f0f7f5 100%);padding:60px 0;position:relative;overflow:hidden}
+.forms-section{background:linear-gradient(135deg,#f5f9fe 0%,#eef4fb 100%);padding:60px 0;position:relative;overflow:hidden}
 .forms-section::before{content:'';position:absolute;top:0;right:0;width:300px;height:300px;background:radial-gradient(circle,var(--shadow-teal) 0%,transparent 70%);pointer-events:none;opacity:.4}
 .forms-section::after{content:'';position:absolute;bottom:0;left:0;width:250px;height:250px;background:radial-gradient(circle,var(--shadow-gold) 0%,transparent 70%);pointer-events:none;opacity:.3}
 .form-eyebrow{font-size:10.5px;letter-spacing:3.5px;text-transform:uppercase;color:var(--teal);margin-bottom:14px;font-weight:700;display:flex;align-items:center;gap:10px}
@@ -445,13 +445,13 @@ section{padding:80px 40px}
 .form-card-btn:active{transform:scale(.98)}
 
 /* ══════════════════════════════════════  FORM MODAL ══ */
-.form-modal-overlay{display:none;position:fixed;inset:0;background:rgba(6,36,60,.6);backdrop-filter:blur(8px);z-index:9000;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
+.form-modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,37,64,.6);backdrop-filter:blur(8px);z-index:9000;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
 .form-modal-overlay.active{display:flex}
-.form-modal-container{background:#fff;border-radius:24px;max-width:90vw;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(10,124,110,.3);position:relative;animation:modalSlideIn .4s cubic-bezier(.34,1.56,.64,1)}
+.form-modal-container{background:#fff;border-radius:24px;max-width:90vw;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(12,99,179,.3);position:relative;animation:modalSlideIn .4s cubic-bezier(.34,1.56,.64,1)}
 @media(max-width:580px){.form-modal-container{max-width:calc(100vw - 16px);border-radius:18px;max-height:94vh}}
 @media(min-width:769px){.form-modal-container{max-width:680px}}
 @keyframes modalSlideIn{from{opacity:0;transform:scale(.95) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.form-modal-close{position:absolute;top:20px;right:20px;width:40px;height:40px;background:linear-gradient(135deg,#f0f7f5,#d8f5ef);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--teal);transition:all .3s ease;z-index:9001}
+.form-modal-close{position:absolute;top:20px;right:20px;width:40px;height:40px;background:linear-gradient(135deg,#eef4fb,#dbeefb);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--teal);transition:all .3s ease;z-index:9001}
 .form-modal-close:hover{background:linear-gradient(135deg,var(--teal3),#c8f5ec);transform:rotate(90deg)}
 .form-modal-close::before{content:'✕';font-weight:bold}
 
@@ -469,12 +469,12 @@ section{padding:80px 40px}
 .patient-scroll-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 16px 24px;scroll-padding-left:16px}
 .patient-scroll-track::-webkit-scrollbar{display:none}
 .patient-card{flex:0 0 calc(85vw - 32px);max-width:340px;min-width:260px;scroll-snap-align:start;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s ease,border-color .3s ease;text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent}
-.patient-card:hover{transform:translateY(-4px);border-color:rgba(200,168,75,.4)}
+.patient-card:hover{transform:translateY(-4px);border-color:rgba(61,155,232,.4)}
 .patient-card:active{transform:scale(.98)}
 .patient-thumb{position:relative;width:100%;padding-bottom:56.25%;background:#000;overflow:hidden;flex-shrink:0}
 .patient-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
 .patient-card:hover .patient-thumb img{transform:scale(1.06)}
-.patient-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,36,60,.85) 0%,rgba(0,0,0,.25) 60%,transparent 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.patient-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,37,64,.85) 0%,rgba(0,0,0,.25) 60%,transparent 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
 .patient-play-btn{width:52px;height:36px;background:rgba(255,0,0,.92);border-radius:10px;display:flex;align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s ease;box-shadow:0 4px 16px rgba(255,0,0,.4)}
 .patient-card:hover .patient-play-btn{transform:scale(1.15);box-shadow:0 8px 24px rgba(255,0,0,.5)}
 .patient-play-btn svg{width:48px;height:34px;display:block}
@@ -485,12 +485,12 @@ section{padding:80px 40px}
 .patient-meta{flex:1;min-width:0}
 .patient-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .patient-stars{display:flex;gap:2px;margin-top:2px}
-.patient-star{color:var(--gold2);font-size:11px}
+.patient-star{color:var(--teal);font-size:11px}
 .patient-quote{font-size:12.5px;color:rgba(255,255,255,.68);line-height:1.7;font-weight:400;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .patient-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid rgba(255,255,255,.08)}
 .patient-watch-text{font-size:11px;color:var(--teal2);font-weight:700;letter-spacing:.5px;text-transform:uppercase}
-.patient-arrow{width:28px;height:28px;border-radius:50%;background:rgba(18,169,146,.18);display:flex;align-items:center;justify-content:center;transition:background .25s}
-.patient-card:hover .patient-arrow{background:rgba(18,169,146,.35)}
+.patient-arrow{width:28px;height:28px;border-radius:50%;background:rgba(47,138,224,.18);display:flex;align-items:center;justify-content:center;transition:background .25s}
+.patient-card:hover .patient-arrow{background:rgba(47,138,224,.35)}
 .patient-arrow svg{width:12px;height:12px;fill:var(--teal2)}
 
 /* ── SCROLL DOTS ── */
@@ -519,9 +519,9 @@ section{padding:80px 40px}
 .contact-val a:hover{color:var(--teal2)}
 .hours-box{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px;box-shadow:0 8px 30px var(--shadow-teal)}
 .hours-box-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--text);margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
-.hours-row{display:flex;justify-content:space-between;align-items:center;padding:10px 8px;border-bottom:1px solid rgba(204,232,226,.5);font-size:13.5px;transition:background .2s;border-radius:8px}
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding:10px 8px;border-bottom:1px solid rgba(210,228,245,.5);font-size:13.5px;transition:background .2s;border-radius:8px}
 .hours-row:last-child{border-bottom:none}
-.hours-row:hover{background:rgba(10,124,110,.04)}
+.hours-row:hover{background:rgba(12,99,179,.04)}
 .hours-day{color:var(--mid);font-weight:500}
 .hours-time{color:var(--teal);font-weight:700;font-size:13px}
 .cta-block{margin-top:30px;background:linear-gradient(135deg,var(--teal),var(--teal2));border-radius:var(--r-md);padding:30px;text-align:center;position:relative;overflow:hidden}
@@ -546,7 +546,7 @@ section{padding:80px 40px}
 .videos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 @media(max-width:768px){.videos-grid{grid-template-columns:1fr;gap:18px}}
 .video-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);overflow:hidden;transition:all .45s cubic-bezier(.16,1,.3,1);position:relative}
-.video-card:hover{border-color:rgba(200,168,75,.4);box-shadow:0 24px 64px rgba(0,0,0,.35),0 0 0 1px rgba(200,168,75,.2);transform:translateY(-8px)}
+.video-card:hover{border-color:rgba(61,155,232,.4);box-shadow:0 24px 64px rgba(0,0,0,.35),0 0 0 1px rgba(61,155,232,.2);transform:translateY(-8px)}
 .video-card:first-child{grid-column:1;grid-row:1}
 @media(min-width:769px){.videos-grid .video-card:first-child{grid-column:1;grid-row:1 / span 1}}
 .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000}
@@ -582,21 +582,21 @@ footer{background:var(--navy);color:rgba(255,255,255,.72);padding:52px;text-alig
 @media(min-width:769px) and (max-width:1024px){footer{padding:44px 32px}}
 footer strong{color:rgba(255,255,255,.8);font-family:'Playfair Display',serif;font-size:1.1rem}
 footer a{color:var(--gold2);text-decoration:none}
-.footer-logo{width:52px;height:52px;background:linear-gradient(135deg,var(--teal),var(--teal2));border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 6px 20px rgba(10,124,110,.4)}
+.footer-logo{width:52px;height:52px;background:linear-gradient(135deg,var(--teal),var(--teal2));border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 6px 20px rgba(12,99,179,.4)}
 .footer-logo svg{width:26px;height:26px;fill:white}
 
 /* ══════════════════════════════════════  FAB ══════════ */
 .fab{position:fixed;bottom:30px;left:30px;z-index:500;display:flex;flex-direction:column;align-items:center;gap:8px}
 .fab-call{position:fixed;bottom:30px;right:30px;z-index:500;display:flex;flex-direction:column;align-items:center;gap:8px}
 .fab-call:hover .fab-label{opacity:1;transform:scale(1)}
-.fab-btn{width:58px;height:58px;background:linear-gradient(135deg,var(--teal),var(--teal2));border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;font-size:22px;box-shadow:0 8px 28px rgba(10,124,110,.5);transition:all .3s;animation:fabPulse 2.5s ease infinite}
-.fab-btn:hover{transform:scale(1.12);box-shadow:0 14px 42px rgba(10,124,110,.7)}
-@keyframes fabPulse{0%,100%{box-shadow:0 8px 28px rgba(10,124,110,.5)}50%{box-shadow:0 8px 28px rgba(10,124,110,.5),0 0 0 14px rgba(10,124,110,.08)}}
+.fab-btn{width:58px;height:58px;background:linear-gradient(135deg,var(--teal),var(--teal2));border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;font-size:22px;box-shadow:0 8px 28px rgba(12,99,179,.5);transition:all .3s;animation:fabPulse 2.5s ease infinite}
+.fab-btn:hover{transform:scale(1.12);box-shadow:0 14px 42px rgba(12,99,179,.7)}
+@keyframes fabPulse{0%,100%{box-shadow:0 8px 28px rgba(12,99,179,.5)}50%{box-shadow:0 8px 28px rgba(12,99,179,.5),0 0 0 14px rgba(12,99,179,.08)}}
 .fab-label{background:var(--navy);color:#fff;font-size:9.5px;letter-spacing:1.5px;padding:4px 10px;border-radius:100px;white-space:nowrap;opacity:0;transform:scale(.8);transition:all .25s;font-weight:600}
 .fab:hover .fab-label{opacity:1;transform:scale(1)}
 
 /* ══════════════════════════════════════  MODAL ════════ */
-.modal-overlay{position:fixed;inset:0;background:rgba(6,36,60,.88);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.modal-overlay{position:fixed;inset:0;background:rgba(10,37,64,.88);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .modal-overlay.active{display:flex;animation:modalFadeIn .3s ease}
 @keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
 .modal{background:var(--white);border-radius:var(--r-xl);max-width:520px;width:100%;max-height:none;overflow-y:visible;position:relative;animation:modalSlide .5s cubic-bezier(.16,1,.3,1);margin:auto}
@@ -617,7 +617,7 @@ footer a{color:var(--gold2);text-decoration:none}
 .form-group{margin-bottom:16px}
 .form-label{display:block;font-size:11.5px;font-weight:700;color:var(--mid);margin-bottom:7px;letter-spacing:.4px;text-transform:uppercase}
 .form-label .req{color:#e53e3e;margin-left:2px}
-.form-input,.form-select,.form-textarea{width:100%;padding:12px 15px;border:1.5px solid var(--border);border-radius:12px;font-family:'Nunito',sans-serif;font-size:16px;color:var(--text);background:var(--cream);transition:all .25s;outline:none;-webkit-appearance:none;appearance:none}.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--teal);background:#fff;box-shadow:0 0 0 4px rgba(10,124,110,.1)}
+.form-input,.form-select,.form-textarea{width:100%;padding:12px 15px;border:1.5px solid var(--border);border-radius:12px;font-family:'Nunito',sans-serif;font-size:16px;color:var(--text);background:var(--cream);transition:all .25s;outline:none;-webkit-appearance:none;appearance:none}.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--teal);background:#fff;box-shadow:0 0 0 4px rgba(12,99,179,.1)}
 .form-textarea{resize:vertical;min-height:80px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:480px){.form-row{grid-template-columns:1fr}}
@@ -628,8 +628,8 @@ footer a{color:var(--gold2);text-decoration:none}
 .form-submit{width:100%;color:#fff;font-weight:700;font-size:14px;padding:15px 10px;border:none;border-radius:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .3s;font-family:'Nunito',sans-serif}
 .form-submit.wa{background:linear-gradient(135deg,#25d366,#128c7e);box-shadow:0 6px 20px rgba(37,211,102,.32)}
 .form-submit.wa:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.44)}
-.form-submit.gs{background:linear-gradient(135deg,#0a7c6e,#12a992);box-shadow:0 6px 20px rgba(10,124,110,.32)}
-.form-submit.gs:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(10,124,110,.44)}
+.form-submit.gs{background:linear-gradient(135deg,#0c63b3,#2f8ae0);box-shadow:0 6px 20px rgba(12,99,179,.32)}
+.form-submit.gs:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(12,99,179,.44)}
 .form-submit svg{width:18px;height:18px;fill:#fff}
 @media(max-width:480px){.form-submit-row{grid-template-columns:1fr}}
 .form-footer-note{text-align:center;font-size:10.5px;color:var(--soft);margin-top:12px}
@@ -639,7 +639,7 @@ footer a{color:var(--gold2);text-decoration:none}
 /* Floating elements */
 @keyframes floatUpDown{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @keyframes floatSway{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
-@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(18,169,146,0)}50%{box-shadow:0 0 32px 8px rgba(18,169,146,.22)}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(47,138,224,0)}50%{box-shadow:0 0 32px 8px rgba(47,138,224,.22)}}
 @keyframes slideInLeft{from{opacity:0;transform:translateX(-80px)}to{opacity:1;transform:translateX(0)}}
 @keyframes slideInRight{from{opacity:0;transform:translateX(80px)}to{opacity:1;transform:translateX(0)}}
 @keyframes slideInUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:translateY(0)}}
@@ -652,7 +652,7 @@ footer a{color:var(--gold2);text-decoration:none}
 @keyframes morphIn{from{opacity:0;transform:scale(.8) skewY(6deg)}to{opacity:1;transform:scale(1) skewY(0)}}
 @keyframes bounceIn{0%{opacity:0;transform:scale(.3)}50%{transform:scale(1.1)}70%{transform:scale(.95)}100%{opacity:1;transform:scale(1)}}
 @keyframes typewriter{from{width:0}to{width:100%}}
-@keyframes glowPulse{0%,100%{text-shadow:0 0 0 transparent}50%{text-shadow:0 0 20px rgba(200,168,75,.6)}}
+@keyframes glowPulse{0%,100%{text-shadow:0 0 0 transparent}50%{text-shadow:0 0 20px rgba(61,155,232,.6)}}
 @keyframes borderDraw{from{width:0;opacity:0}to{width:28px;opacity:1}}
 @keyframes countUp{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
 @keyframes waveIn{0%{transform:translateY(40px) scaleX(1.1);opacity:0}60%{transform:translateY(-8px) scaleX(.98)}100%{transform:translateY(0) scaleX(1);opacity:1}}
@@ -663,7 +663,7 @@ footer a{color:var(--gold2);text-decoration:none}
 @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 @keyframes orbitFloat{0%{transform:translateY(0) translateX(0)}25%{transform:translateY(-8px) translateX(4px)}50%{transform:translateY(-4px) translateX(8px)}75%{transform:translateY(-10px) translateX(2px)}100%{transform:translateY(0) translateX(0)}}
 @keyframes shimmerSlide{0%{background-position:-200% center}100%{background-position:200% center}}
-@keyframes borderPulse{0%,100%{border-color:rgba(18,169,146,.2)}50%{border-color:rgba(18,169,146,.7)}}
+@keyframes borderPulse{0%,100%{border-color:rgba(47,138,224,.2)}50%{border-color:rgba(47,138,224,.7)}}
 @keyframes iconBounce{0%,100%{transform:translateY(0)}40%{transform:translateY(-6px)}60%{transform:translateY(-3px)}}
 
 /* Match-move: cards lift & match on hover */
@@ -804,9 +804,9 @@ footer a{color:var(--gold2);text-decoration:none}
 /* tooth-shimmer on hover for cards */
 @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
 @keyframes cardShimmer{
-  0%{box-shadow:0 0 0 0 rgba(18,169,146,0)}
-  50%{box-shadow:0 0 0 6px rgba(18,169,146,.18)}
-  100%{box-shadow:0 0 0 0 rgba(18,169,146,0)}
+  0%{box-shadow:0 0 0 0 rgba(47,138,224,0)}
+  50%{box-shadow:0 0 0 6px rgba(47,138,224,.18)}
+  100%{box-shadow:0 0 0 0 rgba(47,138,224,0)}
 }
 @keyframes floatIn{
   from{opacity:0;transform:translateY(28px)}
@@ -829,7 +829,7 @@ footer a{color:var(--gold2);text-decoration:none}
 .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-.mobile-menu{display:none;position:fixed;inset:0;z-index:190;background:rgba(6,36,60,.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:0;opacity:0;transform:translateY(-18px);transition:opacity .38s cubic-bezier(.16,1,.3,1),transform .38s cubic-bezier(.16,1,.3,1);overflow-y:auto;padding:60px 16px 24px}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:190;background:rgba(10,37,64,.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:0;opacity:0;transform:translateY(-18px);transition:opacity .38s cubic-bezier(.16,1,.3,1),transform .38s cubic-bezier(.16,1,.3,1);overflow-y:auto;padding:60px 16px 24px}
 .mobile-menu.open{opacity:1;transform:none;display:flex}
 .mobile-menu-links{list-style:none;text-align:center;margin-bottom:24px;width:100%}
 .mobile-menu-links li{opacity:0;transform:translateY(22px);transition:opacity .4s,transform .4s}
@@ -1188,16 +1188,16 @@ footer a{color:var(--gold2);text-decoration:none}
 .bpc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s ease;z-index:2}
 .bpc:hover{transform:translateY(-8px);box-shadow:0 24px 60px var(--shadow-teal);border-color:var(--teal2)}
 .bpc:hover::before{transform:scaleX(1)}
-.bpc-img{width:100%;height:180px;overflow:hidden;background:linear-gradient(135deg,#d8f5ef,#b8ede4);display:flex;align-items:center;justify-content:center;font-size:48px;flex-shrink:0}
+.bpc-img{width:100%;height:180px;overflow:hidden;background:linear-gradient(135deg,#dbeefb,#b8ede4);display:flex;align-items:center;justify-content:center;font-size:48px;flex-shrink:0}
 .bpc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.16,1,.3,1)}
 .bpc:hover .bpc-img img{transform:scale(1.08)}
 .bpc-body{padding:18px;flex:1;display:flex;flex-direction:column}
-.bpc-cat{display:inline-block;background:rgba(10,124,110,.09);border:1px solid rgba(10,124,110,.18);color:var(--teal);font-size:10px;font-weight:700;padding:3px 11px;border-radius:100px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.bpc-cat{display:inline-block;background:rgba(12,99,179,.09);border:1px solid rgba(12,99,179,.18);color:var(--teal);font-size:10px;font-weight:700;padding:3px 11px;border-radius:100px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
 .bpc-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:7px}
 .bpc-desc{font-size:12.5px;color:var(--soft);line-height:1.7;flex:1;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .bpc-meta{font-size:10.5px;color:var(--mid);opacity:.75;margin-bottom:13px}
 .bpc-btn{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;padding:8px 16px;border-radius:100px;font-size:12px;font-weight:700;align-self:flex-start;transition:all .25s}
-.bpc:hover .bpc-btn{box-shadow:0 4px 14px rgba(10,124,110,.35)}
+.bpc:hover .bpc-btn{box-shadow:0 4px 14px rgba(12,99,179,.35)}
 /* Mobile: snap align */
 @media(max-width:768px){.bpc{width:82vw;max-width:320px;scroll-snap-align:start}}
 /* Pause indicator */
@@ -1268,12 +1268,12 @@ footer a{color:var(--gold2);text-decoration:none}
 .cg-ac-outer::after{right:0;background:linear-gradient(to left,var(--soft-gray) 0%,transparent 100%)}
 .cg-ac-outer .ac-track{gap:18px;padding:16px 60px 28px}
 .patient-ac-outer{margin:0 -60px}
-.patient-ac-outer::before{left:0;background:linear-gradient(to right,rgba(6,36,60,.97) 0%,transparent 100%)}
-.patient-ac-outer::after{right:0;background:linear-gradient(to left,rgba(6,36,60,.97) 0%,transparent 100%)}
+.patient-ac-outer::before{left:0;background:linear-gradient(to right,rgba(10,37,64,.97) 0%,transparent 100%)}
+.patient-ac-outer::after{right:0;background:linear-gradient(to left,rgba(10,37,64,.97) 0%,transparent 100%)}
 .patient-ac-outer .ac-track{gap:20px;padding:8px 60px 28px}
 .areas-ac-outer{margin:16px -60px}
-.areas-ac-outer::before{left:0;background:linear-gradient(to right,#f0f7f5 0%,transparent 100%)}
-.areas-ac-outer::after{right:0;background:linear-gradient(to left,#f0f7f5 0%,transparent 100%)}
+.areas-ac-outer::before{left:0;background:linear-gradient(to right,#eef4fb 0%,transparent 100%)}
+.areas-ac-outer::after{right:0;background:linear-gradient(to left,#eef4fb 0%,transparent 100%)}
 .areas-ac-outer .ac-track{gap:10px;padding:8px 60px 16px;animation-duration:40s}
 @media(max-width:768px){
   .ac-outer{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none}
@@ -1309,15 +1309,15 @@ footer a{color:var(--gold2);text-decoration:none}
 .split-char{display:inline-block;opacity:0;transform:translateY(60px)}
 /* CTA Glow pulse */
 @keyframes ctaGlow{
-  0%,100%{box-shadow:0 6px 24px rgba(200,168,75,.45)}
-  50%{box-shadow:0 6px 40px rgba(200,168,75,.8),0 0 80px rgba(200,168,75,.25)}
+  0%,100%{box-shadow:0 6px 24px rgba(61,155,232,.45)}
+  50%{box-shadow:0 6px 40px rgba(61,155,232,.8),0 0 80px rgba(61,155,232,.25)}
 }
 .btn-gold{animation:ctaGlow 2.5s ease infinite}
 /* Premium nav glass on scroll */
-nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!important;-webkit-backdrop-filter:blur(28px)!important;border-bottom:1px solid rgba(255,255,255,.06)!important}
+nav.scrolled{background:rgba(10,37,64,.88)!important;backdrop-filter:blur(28px)!important;-webkit-backdrop-filter:blur(28px)!important;border-bottom:1px solid rgba(255,255,255,.06)!important}
 /* Cards — premium shadow on hover */
-.treat-card:hover{box-shadow:0 30px 80px rgba(10,124,110,.2),0 0 0 1px rgba(18,169,146,.3)!important}
-.doc-card:hover{box-shadow:0 40px 100px rgba(10,124,110,.22)!important}
+.treat-card:hover{box-shadow:0 30px 80px rgba(12,99,179,.2),0 0 0 1px rgba(47,138,224,.3)!important}
+.doc-card:hover{box-shadow:0 40px 100px rgba(12,99,179,.22)!important}
 /* reveal CSS opacity removed - GSAP handles this internally */
 </style>
 <script>if(window.location.hash&&(window.location.hash.includes('invite_token')||window.location.hash.includes('recovery_token')||window.location.hash.includes('confirmation_token'))){window.location.href='/admin/'+window.location.hash;}</script>
@@ -1326,18 +1326,18 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
 <style id="m-callbar-css">
 .m-callbar{display:none}
 @media(max-width:768px){
-  .m-callbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:900;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(6,36,60,.96);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 -8px 26px rgba(6,36,60,.42);border-top:1px solid rgba(200,168,75,.34);font-family:'Nunito',sans-serif}
+  .m-callbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:900;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(10,37,64,.96);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 -8px 26px rgba(10,37,64,.42);border-top:1px solid rgba(61,155,232,.34);font-family:'Nunito',sans-serif}
   .m-cb-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;padding:10px;text-decoration:none;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.28);transition:transform .14s ease}
   .m-cb-btn:active{transform:scale(.96)}
   .m-cb-ic{flex:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center}
   .m-cb-txt{display:flex;flex-direction:column;line-height:1.14;white-space:nowrap}
   .m-cb-txt b{font-size:15px;font-weight:800;letter-spacing:.2px}
   .m-cb-txt small{font-size:9.5px;font-weight:700;opacity:.8}
-  .m-cb-call{flex:1.35;background:linear-gradient(135deg,#e8cc78 0%,#c8a84b 100%);color:#06243c;box-shadow:0 6px 20px rgba(200,168,75,.5);animation:mcbPulse 2.6s ease-in-out infinite}
-  .m-cb-call .m-cb-ic{background:rgba(6,36,60,.16)}
+  .m-cb-call{flex:1.35;background:linear-gradient(135deg,#9fcef5 0%,#3d9be8 100%);color:#0a2540;box-shadow:0 6px 20px rgba(61,155,232,.5);animation:mcbPulse 2.6s ease-in-out infinite}
+  .m-cb-call .m-cb-ic{background:rgba(10,37,64,.16)}
   .m-cb-wa{background:linear-gradient(135deg,#25d366 0%,#1ebe57 100%);color:#fff}
   .m-cb-wa .m-cb-ic{background:rgba(255,255,255,.22)}
-  @keyframes mcbPulse{0%,100%{box-shadow:0 6px 20px rgba(200,168,75,.5)}50%{box-shadow:0 7px 27px rgba(200,168,75,.85)}}
+  @keyframes mcbPulse{0%,100%{box-shadow:0 6px 20px rgba(61,155,232,.5)}50%{box-shadow:0 7px 27px rgba(61,155,232,.85)}}
   body{padding-bottom:88px!important}
   .fab,.fab-call{display:none!important}
 }
@@ -1586,7 +1586,7 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
           <div class="doc-qual">BDS, MDS (OMFS) · Maxillofacial Surgeon &amp; Implantologist</div>
           <div class="doc-exp-banner doc-exp-gold">✦ 11 Years Experience</div>
           <div class="doc-role">A specialist in Oral &amp; Maxillofacial Surgery with deep expertise in wisdom tooth extractions, jaw surgeries, dental implants, and complex oral procedures. Known for precise, pain-free interventions and exceptional patient care.</div>
-          <div class="doc-tags"><span class="doc-tag">OMFS</span><span class="doc-tag">Implantologist</span><span class="doc-tag">Jaw Surgery</span><span class="doc-tag" style="background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);border:none;font-weight:800;box-shadow:0 3px 12px rgba(200,168,75,.45);letter-spacing:.4px;"><img src="/icon-rootcanal.webp" alt="Root Canal" width="14" height="14" loading="lazy"> Painless Root Canal Specialist</span></div>
+          <div class="doc-tags"><span class="doc-tag">OMFS</span><span class="doc-tag">Implantologist</span><span class="doc-tag">Jaw Surgery</span><span class="doc-tag" style="background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy);border:none;font-weight:800;box-shadow:0 3px 12px rgba(61,155,232,.45);letter-spacing:.4px;"><img src="/icon-rootcanal.webp" alt="Root Canal" width="14" height="14" loading="lazy"> Painless Root Canal Specialist</span></div>
         </div>
       </div>
     </div>
@@ -1630,11 +1630,11 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
     <svg viewBox="0 0 180 400" xmlns="http://www.w3.org/2000/svg">
       <path d="M90 10 C90 10 30 50 30 100 S90 150 90 200 S30 250 30 300 S90 350 90 390" stroke-dasharray="6 8"/>
       <path d="M90 10 C90 10 150 50 150 100 S90 150 90 200 S150 250 150 300 S90 350 90 390" stroke-dasharray="6 8"/>
-      <circle cx="30" cy="100" r="4" fill="rgba(18,169,146,.4)"/>
-      <circle cx="150" cy="100" r="4" fill="rgba(18,169,146,.4)"/>
-      <circle cx="30" cy="300" r="4" fill="rgba(18,169,146,.4)"/>
-      <circle cx="150" cy="300" r="4" fill="rgba(18,169,146,.4)"/>
-      <circle cx="90" cy="200" r="6" fill="rgba(200,168,75,.5)"/>
+      <circle cx="30" cy="100" r="4" fill="rgba(47,138,224,.4)"/>
+      <circle cx="150" cy="100" r="4" fill="rgba(47,138,224,.4)"/>
+      <circle cx="30" cy="300" r="4" fill="rgba(47,138,224,.4)"/>
+      <circle cx="150" cy="300" r="4" fill="rgba(47,138,224,.4)"/>
+      <circle cx="90" cy="200" r="6" fill="rgba(61,155,232,.5)"/>
     </svg>
   </div>
   <div class="container" style="position:relative;z-index:2">
@@ -2088,10 +2088,10 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
 
           <!-- 2. Dental Chart — Elliptical Arc -->
           <div class="pf-section-heading">2. Dental Chart</div>
-          <div id="dental-chart-wrap" style="background:#f8fffe;border:1px solid #cce8e2;border-radius:16px;padding:14px 10px 10px;overflow:hidden">
+          <div id="dental-chart-wrap" style="background:#f5f9fe;border:1px solid #d2e4f5;border-radius:16px;padding:14px 10px 10px;overflow:hidden">
             <!-- Condition selector -->
             <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;justify-content:center" id="tooth-mark-mode">
-              <span style="font-size:11px;color:#6b8f88;font-weight:700;align-self:center;letter-spacing:.5px;text-transform:uppercase;margin-right:4px">Tap tooth then select condition:</span>
+              <span style="font-size:11px;color:#6885a0;font-weight:700;align-self:center;letter-spacing:.5px;text-transform:uppercase;margin-right:4px">Tap tooth then select condition:</span>
               <button type="button" class="tc-cond-btn tc-healthy selected" data-mark="Healthy" onclick="pfSetMark(this)">● Healthy</button>
               <button type="button" class="tc-cond-btn tc-decay"   data-mark="Decay"   onclick="pfSetMark(this)">● Decay</button>
               <button type="button" class="tc-cond-btn tc-filled"  data-mark="Filled"  onclick="pfSetMark(this)">● Filled</button>
@@ -2103,12 +2103,12 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
             <!-- SVG Arc Chart -->
             <svg id="tooth-chart-svg" viewBox="0 0 620 370" xmlns="http://www.w3.org/2000/svg"
                  style="width:100%;max-width:620px;display:block;margin:0 auto">
-              <rect width="620" height="370" fill="#f8fffe" rx="8"/>
+              <rect width="620" height="370" fill="#f5f9fe" rx="8"/>
               <ellipse cx="310" cy="168" rx="248" ry="128" fill="none" stroke="#d8eae7" stroke-width="1.2" stroke-dasharray="5 4"/>
               <ellipse cx="310" cy="202" rx="248" ry="128" fill="none" stroke="#d8eae7" stroke-width="1.2" stroke-dasharray="5 4"/>
-              <line x1="310" y1="28" x2="310" y2="344" stroke="#cce8e2" stroke-width="1" stroke-dasharray="4 4"/>
-              <text x="310" y="18"  font-size="10" fill="#6b8f88" text-anchor="middle" font-family="Nunito,sans-serif">← Upper jaw (maxilla) →</text>
-              <text x="310" y="362" font-size="10" fill="#6b8f88" text-anchor="middle" font-family="Nunito,sans-serif">← Lower jaw (mandible) →</text>
+              <line x1="310" y1="28" x2="310" y2="344" stroke="#d2e4f5" stroke-width="1" stroke-dasharray="4 4"/>
+              <text x="310" y="18"  font-size="10" fill="#6885a0" text-anchor="middle" font-family="Nunito,sans-serif">← Upper jaw (maxilla) →</text>
+              <text x="310" y="362" font-size="10" fill="#6885a0" text-anchor="middle" font-family="Nunito,sans-serif">← Lower jaw (mandible) →</text>
               <text x="30"  y="44"  font-size="12" fill="#e07b5a" font-weight="700" font-family="Nunito,sans-serif">Q1</text>
               <text x="574" y="44"  font-size="12" fill="#e07b5a" font-weight="700" font-family="Nunito,sans-serif">Q2</text>
               <text x="30"  y="344" font-size="12" fill="#e07b5a" font-weight="700" font-family="Nunito,sans-serif">Q4</text>
@@ -2125,9 +2125,9 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
               <span class="tc-legend tc-implant">&#9679; Implant</span>
             </div>
             <!-- Chart summary -->
-            <div id="tc-summary-wrap" style="margin-top:10px;background:#fff;border:1px solid #cce8e2;border-radius:10px;padding:8px 12px">
-              <div style="font-size:11px;font-weight:800;color:#0a7c6e;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px">Chart Summary</div>
-              <div id="tc-summary-text" style="font-size:11.5px;color:#0d2b26;line-height:1.7"></div>
+            <div id="tc-summary-wrap" style="margin-top:10px;background:#fff;border:1px solid #d2e4f5;border-radius:10px;padding:8px 12px">
+              <div style="font-size:11px;font-weight:800;color:#0c63b3;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px">Chart Summary</div>
+              <div id="tc-summary-text" style="font-size:11.5px;color:#0e2940;line-height:1.7"></div>
             </div>
           </div>
 
@@ -2254,12 +2254,12 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
         <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">9:00AM – 9:00PM</span></div>
         <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:00AM – 9:00PM</span></div>
         <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">9:00AM – 9:00PM</span></div>
-        <div style="margin-top:16px;background:linear-gradient(135deg,rgba(10,124,110,.1),rgba(200,168,75,.1));border:1px solid rgba(10,124,110,.2);border-radius:12px;padding:12px 16px;text-align:center;font-size:13px;color:var(--teal);font-weight:700;">✅ Open Every Day — No Holidays!</div>
+        <div style="margin-top:16px;background:linear-gradient(135deg,rgba(12,99,179,.1),rgba(61,155,232,.1));border:1px solid rgba(12,99,179,.2);border-radius:12px;padding:12px 16px;text-align:center;font-size:13px;color:var(--teal);font-weight:700;">✅ Open Every Day — No Holidays!</div>
       </div>
     </div>
 
     <!-- ── GOOGLE MAPS EMBED ── -->
-    <div class="reveal" style="margin-top:48px;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(10,124,110,.15);border:2px solid var(--border);">
+    <div class="reveal" style="margin-top:48px;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(12,99,179,.15);border:2px solid var(--border);">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.0!2d78.5488!3d17.3285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba0c34b48b571%3A0x6e5ca5b8b3f48d7a!2sSri%20Sai%20Speciality%20Dental%20Care!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
         width="100%"
@@ -2291,9 +2291,9 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
 
 
 <!-- ── FOOTER ── -->
-<section style="background:#f0f7f5;padding:36px 60px;text-align:center;">
-  <p style="font-family:'Nunito',sans-serif;font-size:13px;color:#6b8f88;line-height:1.9;max-width:900px;margin:0 auto;">
-    <strong style="color:#0a7c6e;">Sri Sai Speciality Dental Care</strong> serves patients from 
+<section style="background:#eef4fb;padding:36px 60px;text-align:center;">
+  <p style="font-family:'Nunito',sans-serif;font-size:13px;color:#6885a0;line-height:1.9;max-width:900px;margin:0 auto;">
+    <strong style="color:#0c63b3;">Sri Sai Speciality Dental Care</strong> serves patients from 
     <strong>Karmanghat</strong>, <strong>Hayathnagar</strong>, <strong>LB Nagar</strong>, 
     <strong>Saroornagar</strong>, <strong>Vanasthalipuram</strong>, <strong>Nagole</strong>, 
     <strong>Dilsukhnagar</strong>, <strong>Uppal</strong>, <strong>Boduppal</strong> and nearby areas of Hyderabad.
@@ -2302,37 +2302,37 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
   </p>
 </section>
 <!-- ── LOCAL SEO SECTION ── -->
-<section style="background:#f0f7f5;padding:50px 40px;" aria-label="Areas we serve">
+<section style="background:#eef4fb;padding:50px 40px;" aria-label="Areas we serve">
   <div style="max-width:1100px;margin:0 auto;text-align:center;">
-    <p style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#0a7c6e;margin-bottom:18px;">Areas We Serve in Hyderabad</p>
-    <p style="font-family:'Nunito',sans-serif;font-size:13.5px;color:#3d5a54;line-height:2;max-width:900px;margin:0 auto 20px;">
+    <p style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#0c63b3;margin-bottom:18px;">Areas We Serve in Hyderabad</p>
+    <p style="font-family:'Nunito',sans-serif;font-size:13.5px;color:#3a5570;line-height:2;max-width:900px;margin:0 auto 20px;">
       <strong>Sri Sai Speciality Dental Care</strong> is conveniently located on <strong>TKR College Road, Karmanghat</strong> and proudly serves patients from:
     </p>
     <div id="areas-pills" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px;">
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Karmanghat</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 LB Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Meerpet</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 TKR Road</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 TKR College</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 BN Reddy Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Hastinapuram</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Chintalkunta</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Hayath Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Bhupesh Gupta Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Greenlands Colony</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Sri Ramnagar Colony</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Nandi Hills</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Almasguda</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Jillalguda</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Gayatri Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Saroor Nagar</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Bairamlal Guda</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Kakitaya Colony</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 Chandrapuri Colony</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 RTC Colony</span>
-      <span style="background:#fff;border:1.5px solid #cce8e2;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a7c6e;font-weight:600;">📍 ZP Road</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Karmanghat</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 LB Nagar</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Meerpet</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 TKR Road</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 TKR College</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 BN Reddy Nagar</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Hastinapuram</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Chintalkunta</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Hayath Nagar</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Bhupesh Gupta Nagar</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Greenlands Colony</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Sri Ramnagar Colony</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Nandi Hills</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Almasguda</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Jillalguda</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Gayatri Nagar</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Saroor Nagar</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Bairamlal Guda</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Kakitaya Colony</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 Chandrapuri Colony</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 RTC Colony</span>
+      <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0c63b3;font-weight:600;">📍 ZP Road</span>
     </div>
-    <p style="font-family:'Nunito',sans-serif;font-size:13px;color:#6b8f88;line-height:1.9;max-width:800px;margin:0 auto;">
+    <p style="font-family:'Nunito',sans-serif;font-size:13px;color:#6885a0;line-height:1.9;max-width:800px;margin:0 auto;">
       Looking for a <strong>dentist near Karmanghat</strong>? <strong>Dental clinic near LB Nagar</strong>? <strong>Best implants near Meerpet</strong>? 
       <strong>Painless root canal near Hastinapuram</strong>? <strong>Braces treatment near Hayath Nagar</strong>? 
       <strong>Dental clinic near TKR College</strong>? <strong>Teeth whitening near Saroor Nagar</strong>?
@@ -2393,7 +2393,7 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
     <!-- Col 4 — Book & Social -->
     <div>
       <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1);">Book Now</div>
-      <a href="tel:8688033072" style="display:flex;align-items:center;gap:10px;background:rgba(10,124,110,.25);border:1px solid rgba(10,124,110,.4);border-radius:12px;padding:11px 14px;margin-bottom:10px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(10,124,110,.4)'" onmouseout="this.style.background='rgba(10,124,110,.25)'">
+      <a href="tel:8688033072" style="display:flex;align-items:center;gap:10px;background:rgba(12,99,179,.25);border:1px solid rgba(12,99,179,.4);border-radius:12px;padding:11px 14px;margin-bottom:10px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='rgba(12,99,179,.4)'" onmouseout="this.style.background='rgba(12,99,179,.25)'">
         <span style="font-size:18px;">📞</span>
         <div><div style="font-size:11px;color:var(--teal2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Call Now</div><div style="font-size:13.5px;color:#fff;font-weight:700;">86880 33072</div></div>
       </a>
@@ -2472,7 +2472,7 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
 
 <div class="fab-call">
   <span class="fab-label">Call Now</span>
-  <a href="tel:8688033072" class="fab-btn" aria-label="Call Now" style="background:linear-gradient(135deg,#0a7c6e,#12a992);">
+  <a href="tel:8688033072" class="fab-btn" aria-label="Call Now" style="background:linear-gradient(135deg,#0c63b3,#2f8ae0);">
     <svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
   </a>
 </div>
@@ -2488,7 +2488,7 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
     const s=document.createElement('div');
     s.className='pre-sparkle';
     const size=Math.random()*6+3;
-    const colors=['var(--teal2)','var(--gold2)','rgba(255,255,255,.8)','rgba(18,169,146,.9)'];
+    const colors=['var(--teal2)','var(--gold2)','rgba(255,255,255,.8)','rgba(47,138,224,.9)'];
     s.style.cssText=`width:${size}px;height:${size}px;background:${colors[Math.floor(Math.random()*colors.length)]};left:${Math.random()*100}%;bottom:${Math.random()*20}%;animation-duration:${Math.random()*3+2}s;animation-delay:${Math.random()*2}s;box-shadow:0 0 ${size*2}px currentColor`;
     pre.appendChild(s);
   }
@@ -2544,7 +2544,7 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
 
   /* PARTICLES */
   const pc=document.getElementById('particles');
-  const colors=['rgba(200,168,75,.5)','rgba(18,169,146,.45)','rgba(255,255,255,.12)','rgba(125,232,216,.3)'];
+  const colors=['rgba(61,155,232,.5)','rgba(47,138,224,.45)','rgba(255,255,255,.12)','rgba(125,232,216,.3)'];
   for(let i=0;i<28;i++){
     const p=document.createElement('div');p.className='particle';
     const s=Math.random()*5+2;
@@ -2841,7 +2841,7 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
     const confirmHTML=`
 <style>
 .bk-confirm{font-family:'Nunito',sans-serif;padding:4px 0}
-.bk-confirm-hdr{background:linear-gradient(135deg,#0a7c6e 0%,#12a992 100%);border-radius:16px;padding:24px 20px 20px;text-align:center;margin-bottom:20px;position:relative;overflow:hidden}
+.bk-confirm-hdr{background:linear-gradient(135deg,#0c63b3 0%,#2f8ae0 100%);border-radius:16px;padding:24px 20px 20px;text-align:center;margin-bottom:20px;position:relative;overflow:hidden}
 .bk-confirm-hdr::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='28'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");border-radius:16px}
 .bk-tick{width:64px;height:64px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:2.2rem;border:3px solid rgba(255,255,255,.4);animation:bkTickPop .5s cubic-bezier(.16,1,.3,1) both}
 @keyframes bkTickPop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
@@ -2849,22 +2849,22 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
 .bk-confirm-hdr h3{color:#fff;font-size:1.25rem;font-weight:800;margin:0 0 4px;font-family:'Playfair Display',serif}
 .bk-confirm-hdr p{color:rgba(255,255,255,.82);font-size:12.5px;margin:0}
 .bk-ref{display:inline-block;background:rgba(255,255,255,.18);color:#fff;border-radius:100px;padding:4px 16px;font-size:10.5px;font-weight:700;margin-top:10px;letter-spacing:.5px}
-.bk-details-card{background:#f8fffe;border:1.5px solid #cce8e2;border-radius:14px;overflow:hidden;margin-bottom:16px}
-.bk-details-title{background:#d8f5ef;color:#0a7c6e;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:800;padding:9px 16px;border-bottom:1px solid #cce8e2}
-.bk-detail-row{display:flex;align-items:flex-start;padding:10px 16px;border-bottom:1px solid #f0f7f5;gap:12px}
+.bk-details-card{background:#f5f9fe;border:1.5px solid #d2e4f5;border-radius:14px;overflow:hidden;margin-bottom:16px}
+.bk-details-title{background:#dbeefb;color:#0c63b3;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:800;padding:9px 16px;border-bottom:1px solid #d2e4f5}
+.bk-detail-row{display:flex;align-items:flex-start;padding:10px 16px;border-bottom:1px solid #eef4fb;gap:12px}
 .bk-detail-row:last-child{border-bottom:none}
 .bk-detail-icon{font-size:1rem;flex-shrink:0;width:22px;text-align:center;margin-top:1px}
-.bk-detail-lbl{font-size:11px;color:#6b8f88;font-weight:600;display:block;margin-bottom:2px}
-.bk-detail-val{font-size:13px;color:#0d2b26;font-weight:700;word-break:break-word}
-.bk-notice{background:linear-gradient(135deg,#fff8e0,#fffbf0);border:1.5px solid #e8cc78;border-radius:12px;padding:13px 16px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
+.bk-detail-lbl{font-size:11px;color:#6885a0;font-weight:600;display:block;margin-bottom:2px}
+.bk-detail-val{font-size:13px;color:#0e2940;font-weight:700;word-break:break-word}
+.bk-notice{background:linear-gradient(135deg,#eef6fe,#fffbf0);border:1.5px solid #9fcef5;border-radius:12px;padding:13px 16px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
 .bk-notice-icon{font-size:1.2rem;flex-shrink:0}
 .bk-notice-txt{font-size:12px;color:#5a4200;font-weight:600;line-height:1.55}
 .bk-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:4px}
 .bk-act-btn{padding:11px 20px;border:none;border-radius:100px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;font-size:13px;transition:all .25s;display:flex;align-items:center;gap:6px}
 .bk-act-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.15)}
-.bk-act-print{background:linear-gradient(135deg,#c8a84b,#e8cc78);color:#06243c}
-.bk-act-close{background:linear-gradient(135deg,#0a7c6e,#12a992);color:#fff}
-.bk-act-new{background:#f0f7f5;color:#0a7c6e;border:1.5px solid #cce8e2}
+.bk-act-print{background:linear-gradient(135deg,#3d9be8,#9fcef5);color:#0a2540}
+.bk-act-close{background:linear-gradient(135deg,#0c63b3,#2f8ae0);color:#fff}
+.bk-act-new{background:#eef4fb;color:#0c63b3;border:1.5px solid #d2e4f5}
 </style>
 <div class="bk-confirm">
   <div class="bk-confirm-hdr">
@@ -2881,7 +2881,7 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
   ${(emailSent && d.email) ? `<div style="background:linear-gradient(135deg,#e8f4fd,#d4edff);border:1.5px solid #4285f4;border-radius:12px;padding:13px 16px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start">
     <div style="font-size:1.2rem;flex-shrink:0">📧</div>
     <div style="font-size:12px;color:#0d3a7a;font-weight:600;line-height:1.55">You will receive a confirmation email at <strong><a href="mailto:${d.email}" style="color:#0d3a7a;text-decoration:underline;">${d.email}</a></strong>.</div>
-  </div>` : (emailSent && !d.email) ? `<div style="background:#fff8e0;border:1.5px solid #e8cc78;border-radius:12px;padding:13px 16px;margin-bottom:16px;font-size:12px;color:#5a4200;font-weight:600">💡 Add your email next time to receive a confirmation email automatically.</div>` : ''}
+  </div>` : (emailSent && !d.email) ? `<div style="background:#eef6fe;border:1.5px solid #9fcef5;border-radius:12px;padding:13px 16px;margin-bottom:16px;font-size:12px;color:#5a4200;font-weight:600">💡 Add your email next time to receive a confirmation email automatically.</div>` : ''}
 
   <div class="bk-details-card">
     <div class="bk-details-title">📋 Your Appointment Details</div>
@@ -2949,17 +2949,17 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
     pw.document.write(`<!DOCTYPE html><html><head><title>Appointment - Sri Sai Dental</title><style>
       *{box-sizing:border-box;margin:0;padding:0}
       body{font-family:Arial,sans-serif;color:#1a1a1a;padding:30px;background:#fff}
-      .hdr{text-align:center;border-bottom:3px solid #0a7c6e;padding-bottom:18px;margin-bottom:22px}
-      .clinic-name{font-size:22px;font-weight:900;color:#0a7c6e;letter-spacing:.3px}
-      .clinic-sub{font-size:10px;letter-spacing:3px;color:#c8a84b;text-transform:uppercase;margin-top:3px;font-weight:700}
-      .doc-title{font-size:18px;font-weight:700;color:#0d2b26;margin-top:14px}
+      .hdr{text-align:center;border-bottom:3px solid #0c63b3;padding-bottom:18px;margin-bottom:22px}
+      .clinic-name{font-size:22px;font-weight:900;color:#0c63b3;letter-spacing:.3px}
+      .clinic-sub{font-size:10px;letter-spacing:3px;color:#3d9be8;text-transform:uppercase;margin-top:3px;font-weight:700}
+      .doc-title{font-size:18px;font-weight:700;color:#0e2940;margin-top:14px}
       .doc-sub{font-size:11px;color:#666;margin-top:3px}
-      .notice{background:#f0fff8;border:1.5px solid #0a7c6e;border-radius:8px;padding:13px 16px;margin-bottom:20px;font-size:12.5px;color:#0a4a3a;font-weight:600;line-height:1.6}
-      .section-title{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:800;color:#0a7c6e;border-bottom:2px solid #d8f5ef;padding-bottom:6px;margin-bottom:12px;margin-top:20px}
+      .notice{background:#f0fff8;border:1.5px solid #0c63b3;border-radius:8px;padding:13px 16px;margin-bottom:20px;font-size:12.5px;color:#0a4a3a;font-weight:600;line-height:1.6}
+      .section-title{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:800;color:#0c63b3;border-bottom:2px solid #dbeefb;padding-bottom:6px;margin-bottom:12px;margin-top:20px}
       .row{display:flex;gap:16px;margin-bottom:10px}
       .col{flex:1}
-      .lbl{font-size:10.5px;font-weight:700;color:#6b8f88;display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:.8px}
-      .val{font-size:13px;font-weight:700;color:#0d2b26;background:#f8fffe;border:1px solid #cce8e2;border-radius:6px;padding:7px 11px;min-height:32px}
+      .lbl{font-size:10.5px;font-weight:700;color:#6885a0;display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:.8px}
+      .val{font-size:13px;font-weight:700;color:#0e2940;background:#f5f9fe;border:1px solid #d2e4f5;border-radius:6px;padding:7px 11px;min-height:32px}
       .footer{margin-top:32px;border-top:1px solid #ddd;padding-top:14px;text-align:center;font-size:10.5px;color:#999;line-height:1.7}
       @media print{body{padding:15px}.footer{position:fixed;bottom:15px;left:0;right:0}}
     </style></head><body>
@@ -3373,7 +3373,7 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
     el.innerHTML = Object.entries(groups).map(([cond,teeth])=>
       `<span style="display:inline-block;margin:2px 8px 2px 0">
         <span style="background:${TC_COLORS[cond]};color:#fff;border-radius:100px;padding:1px 9px;font-size:10.5px;font-weight:700">${cond}</span>
-        <span style="font-size:11px;color:#3d5a54"> ${teeth.sort((a,b)=>a-b).join(', ')}</span>
+        <span style="font-size:11px;color:#3a5570"> ${teeth.sort((a,b)=>a-b).join(', ')}</span>
       </span>`).join('');
   }
 
@@ -3397,17 +3397,17 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
     ).join('');
     return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg"
         ${forPrint ? `width="580" height="346"` : `style="width:100%;max-width:620px;display:block;margin:0 auto"`}
-        style="${forPrint?'display:block;border:1px solid #cce8e2;border-radius:8px;background:#f8fffe':''}">
-      <rect width="${W}" height="${H}" fill="#f8fffe" rx="8"/>
+        style="${forPrint?'display:block;border:1px solid #d2e4f5;border-radius:8px;background:#f5f9fe':''}">
+      <rect width="${W}" height="${H}" fill="#f5f9fe" rx="8"/>
       <!-- Upper arch guide -->
       <ellipse cx="${cx}" cy="168" rx="248" ry="128" fill="none" stroke="#d8eae7" stroke-width="1.2" stroke-dasharray="5 4"/>
       <!-- Lower arch guide -->
       <ellipse cx="${cx}" cy="202" rx="248" ry="128" fill="none" stroke="#d8eae7" stroke-width="1.2" stroke-dasharray="5 4"/>
       <!-- Midline -->
-      <line x1="${cx}" y1="28" x2="${cx}" y2="${H-26}" stroke="#cce8e2" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="${cx}" y1="28" x2="${cx}" y2="${H-26}" stroke="#d2e4f5" stroke-width="1" stroke-dasharray="4 4"/>
       <!-- Jaw labels -->
-      <text x="${cx}" y="18" font-size="10" fill="#6b8f88" text-anchor="middle" font-family="Arial,sans-serif">&#8592; Upper jaw (maxilla) &#8594;</text>
-      <text x="${cx}" y="${H-20}" font-size="10" fill="#6b8f88" text-anchor="middle" font-family="Arial,sans-serif">&#8592; Lower jaw (mandible) &#8594;</text>
+      <text x="${cx}" y="18" font-size="10" fill="#6885a0" text-anchor="middle" font-family="Arial,sans-serif">&#8592; Upper jaw (maxilla) &#8594;</text>
+      <text x="${cx}" y="${H-20}" font-size="10" fill="#6885a0" text-anchor="middle" font-family="Arial,sans-serif">&#8592; Lower jaw (mandible) &#8594;</text>
       <!-- Quadrant labels -->
       <text x="30" y="44" font-size="12" fill="#e07b5a" font-weight="bold" font-family="Arial,sans-serif">Q1</text>
       <text x="${W-46}" y="44" font-size="12" fill="#e07b5a" font-weight="bold" font-family="Arial,sans-serif">Q2</text>
@@ -3700,19 +3700,19 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
       const summaryHTML = `
 <style>
 .pfsm-wrap{font-family:'Nunito',sans-serif}
-.pfsm-hdr{background:linear-gradient(135deg,#0a7c6e,#12a992);color:#fff;padding:18px 20px;border-radius:14px;text-align:center;margin-bottom:14px}
+.pfsm-hdr{background:linear-gradient(135deg,#0c63b3,#2f8ae0);color:#fff;padding:18px 20px;border-radius:14px;text-align:center;margin-bottom:14px}
 .pfsm-hdr h3{font-size:1.1rem;font-weight:800;margin:6px 0 4px}
 .pfsm-hdr p{font-size:11px;opacity:.8;margin:0}
 .pfsm-ts{display:inline-block;background:rgba(255,255,255,.18);border-radius:100px;padding:3px 14px;font-size:10px;margin-top:6px}
-.pfsm-sec{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:#0a7c6e;margin:14px 0 6px;padding-bottom:4px;border-bottom:2px solid #d8f5ef}
-.pfsm-row{display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f7f5;gap:8px}
-.pfsm-lbl{font-size:11.5px;color:#6b8f88;font-weight:600;flex-shrink:0;max-width:48%}
-.pfsm-val{font-size:12.5px;color:#0d2b26;font-weight:700;text-align:right;word-break:break-word}
+.pfsm-sec{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:#0c63b3;margin:14px 0 6px;padding-bottom:4px;border-bottom:2px solid #dbeefb}
+.pfsm-row{display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;border-bottom:1px solid #eef4fb;gap:8px}
+.pfsm-lbl{font-size:11.5px;color:#6885a0;font-weight:600;flex-shrink:0;max-width:48%}
+.pfsm-val{font-size:12.5px;color:#0e2940;font-weight:700;text-align:right;word-break:break-word}
 .pfsm-acts{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;justify-content:center}
 .pfsm-btn{padding:10px 22px;border:none;border-radius:100px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;font-size:13px;transition:all .2s}
 .pfsm-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.15)}
-.pfsm-gold{background:linear-gradient(135deg,#c8a84b,#e8cc78);color:#06243c}
-.pfsm-teal{background:linear-gradient(135deg,#0a7c6e,#12a992);color:#fff}
+.pfsm-gold{background:linear-gradient(135deg,#3d9be8,#9fcef5);color:#0a2540}
+.pfsm-teal{background:linear-gradient(135deg,#0c63b3,#2f8ae0);color:#fff}
 </style>
 <div class="pfsm-wrap">
   <div class="pfsm-hdr">
@@ -3832,20 +3832,20 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
       const examSummaryHTML = `
 <style>
 .pfsm-wrap{font-family:'Nunito',sans-serif}
-.pfsm-hdr{background:linear-gradient(135deg,#0a7c6e,#12a992);color:#fff;padding:18px 20px;border-radius:14px;text-align:center;margin-bottom:14px}
+.pfsm-hdr{background:linear-gradient(135deg,#0c63b3,#2f8ae0);color:#fff;padding:18px 20px;border-radius:14px;text-align:center;margin-bottom:14px}
 .pfsm-hdr h3{font-size:1.1rem;font-weight:800;margin:6px 0 4px}
 .pfsm-hdr p{font-size:11px;opacity:.8;margin:0}
 .pfsm-ts{display:inline-block;background:rgba(255,255,255,.18);border-radius:100px;padding:3px 14px;font-size:10px;margin-top:6px}
-.pfsm-sec{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:#0a7c6e;margin:14px 0 6px;padding-bottom:4px;border-bottom:2px solid #d8f5ef}
-.pfsm-row{display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f7f5;gap:8px}
-.pfsm-lbl{font-size:11.5px;color:#6b8f88;font-weight:600;flex-shrink:0;max-width:48%}
-.pfsm-val{font-size:12.5px;color:#0d2b26;font-weight:700;text-align:right;word-break:break-word}
-.pfsm-chart{font-size:11.5px;color:#0d2b26;background:#f0f7f5;border-radius:8px;padding:8px 10px;margin-top:4px;word-break:break-word}
+.pfsm-sec{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:#0c63b3;margin:14px 0 6px;padding-bottom:4px;border-bottom:2px solid #dbeefb}
+.pfsm-row{display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;border-bottom:1px solid #eef4fb;gap:8px}
+.pfsm-lbl{font-size:11.5px;color:#6885a0;font-weight:600;flex-shrink:0;max-width:48%}
+.pfsm-val{font-size:12.5px;color:#0e2940;font-weight:700;text-align:right;word-break:break-word}
+.pfsm-chart{font-size:11.5px;color:#0e2940;background:#eef4fb;border-radius:8px;padding:8px 10px;margin-top:4px;word-break:break-word}
 .pfsm-acts{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;justify-content:center}
 .pfsm-btn{padding:10px 22px;border:none;border-radius:100px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;font-size:13px;transition:all .2s}
 .pfsm-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.15)}
-.pfsm-gold{background:linear-gradient(135deg,#c8a84b,#e8cc78);color:#06243c}
-.pfsm-teal{background:linear-gradient(135deg,#0a7c6e,#12a992);color:#fff}
+.pfsm-gold{background:linear-gradient(135deg,#3d9be8,#9fcef5);color:#0a2540}
+.pfsm-teal{background:linear-gradient(135deg,#0c63b3,#2f8ae0);color:#fff}
 </style>
 <div class="pfsm-wrap">
   <div class="pfsm-hdr">
@@ -4013,12 +4013,12 @@ Submitted from Sri Sai Dental Care`;
         <title>Patient Registration Form - ${name}</title>
         <style>
           body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; color: #333; }
-          h1 { text-align: center; color: #0a7c6e; border-bottom: 3px solid #0a7c6e; padding-bottom: 10px; }
+          h1 { text-align: center; color: #0c63b3; border-bottom: 3px solid #0c63b3; padding-bottom: 10px; }
           .section { margin: 20px 0; }
-          .section-title { font-weight: bold; font-size: 14px; color: #0a7c6e; border-bottom: 1px solid #ccc; padding: 8px 0; }
+          .section-title { font-weight: bold; font-size: 14px; color: #0c63b3; border-bottom: 1px solid #ccc; padding: 8px 0; }
           .row { display: flex; gap: 20px; margin: 10px 0; }
           .col { flex: 1; }
-          label { font-weight: bold; color: #0a7c6e; display: block; font-size: 12px; }
+          label { font-weight: bold; color: #0c63b3; display: block; font-size: 12px; }
           .value { padding: 5px; border: 1px solid #ddd; border-radius: 4px; background: #f9f9f9; }
           .footer { margin-top: 30px; text-align: center; font-size: 12px; color: #666; }
           @media print { body { margin: 0; } }
@@ -4153,18 +4153,18 @@ Submitted from Sri Sai Dental Care`;
         <title>Patient Registration Summary - ${name}</title>
         <style>
           body { font-family: Arial, sans-serif; margin: 30px; line-height: 1.8; color: #333; background: #fff; }
-          .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #0a7c6e; padding-bottom: 15px; }
-          .clinic-name { font-size: 24px; font-weight: bold; color: #0a7c6e; }
+          .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #0c63b3; padding-bottom: 15px; }
+          .clinic-name { font-size: 24px; font-weight: bold; color: #0c63b3; }
           .clinic-sub { font-size: 12px; color: #666; letter-spacing: 1px; }
           .timestamp { text-align: right; font-size: 12px; color: #999; margin-bottom: 20px; }
-          h2 { color: #0a7c6e; font-size: 16px; border-left: 4px solid #0a7c6e; padding-left: 10px; margin-top: 20px; }
+          h2 { color: #0c63b3; font-size: 16px; border-left: 4px solid #0c63b3; padding-left: 10px; margin-top: 20px; }
           .row { display: flex; gap: 30px; margin: 15px 0; }
           .col { flex: 1; }
-          label { font-weight: bold; color: #0a7c6e; font-size: 12px; text-transform: uppercase; }
+          label { font-weight: bold; color: #0c63b3; font-size: 12px; text-transform: uppercase; }
           .value { font-size: 14px; color: #333; padding: 8px 0; border-bottom: 1px dotted #ccc; }
-          .footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid #0a7c6e; text-align: center; font-size: 11px; color: #666; }
+          .footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid #0c63b3; text-align: center; font-size: 11px; color: #666; }
           .print-btn { text-align: center; margin: 20px 0; }
-          button { padding: 10px 30px; background: #0a7c6e; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; }
+          button { padding: 10px 30px; background: #0c63b3; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; }
           button:hover { background: #086b61; }
           @media print { 
             body { margin: 10px; }
@@ -4321,18 +4321,18 @@ Submitted from Sri Sai Dental Care`;
         <title>Dental Examination Report - ${patient}</title>
         <style>
           body { font-family: Arial, sans-serif; margin: 30px; line-height: 1.8; color: #333; background: #fff; }
-          .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #0a7c6e; padding-bottom: 15px; }
-          .clinic-name { font-size: 24px; font-weight: bold; color: #0a7c6e; }
+          .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #0c63b3; padding-bottom: 15px; }
+          .clinic-name { font-size: 24px; font-weight: bold; color: #0c63b3; }
           .clinic-sub { font-size: 12px; color: #666; letter-spacing: 1px; }
           .timestamp { text-align: right; font-size: 12px; color: #999; margin-bottom: 20px; }
-          h2 { color: #0a7c6e; font-size: 16px; border-left: 4px solid #0a7c6e; padding-left: 10px; margin-top: 20px; }
+          h2 { color: #0c63b3; font-size: 16px; border-left: 4px solid #0c63b3; padding-left: 10px; margin-top: 20px; }
           .row { display: flex; gap: 30px; margin: 15px 0; }
           .col { flex: 1; }
-          label { font-weight: bold; color: #0a7c6e; font-size: 12px; text-transform: uppercase; }
+          label { font-weight: bold; color: #0c63b3; font-size: 12px; text-transform: uppercase; }
           .value { font-size: 14px; color: #333; padding: 8px 0; border-bottom: 1px dotted #ccc; }
-          .footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid #0a7c6e; text-align: center; font-size: 11px; color: #666; }
+          .footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid #0c63b3; text-align: center; font-size: 11px; color: #666; }
           .print-btn { text-align: center; margin: 20px 0; }
-          button { padding: 10px 30px; background: #0a7c6e; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; }
+          button { padding: 10px 30px; background: #0c63b3; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; }
           button:hover { background: #086b61; }
           @media print { 
             body { margin: 10px; }
@@ -4498,12 +4498,12 @@ From Sri Sai Speciality Dental Care`;
         <title>Examination Form - ${patient}</title>
         <style>
           body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; color: #333; }
-          h1 { text-align: center; color: #0a7c6e; border-bottom: 3px solid #0a7c6e; padding-bottom: 10px; }
+          h1 { text-align: center; color: #0c63b3; border-bottom: 3px solid #0c63b3; padding-bottom: 10px; }
           .section { margin: 20px 0; }
-          .section-title { font-weight: bold; font-size: 14px; color: #0a7c6e; border-bottom: 1px solid #ccc; padding: 8px 0; }
+          .section-title { font-weight: bold; font-size: 14px; color: #0c63b3; border-bottom: 1px solid #ccc; padding: 8px 0; }
           .row { display: flex; gap: 20px; margin: 10px 0; }
           .col { flex: 1; }
-          label { font-weight: bold; color: #0a7c6e; display: block; font-size: 12px; }
+          label { font-weight: bold; color: #0c63b3; display: block; font-size: 12px; }
           .value { padding: 5px; border: 1px solid #ddd; border-radius: 4px; background: #f9f9f9; }
           .footer { margin-top: 30px; text-align: center; font-size: 12px; color: #666; }
           @media print { body { margin: 0; } }
