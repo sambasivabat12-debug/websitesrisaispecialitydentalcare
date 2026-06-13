@@ -32,6 +32,13 @@ export default {
       });
     }
 
-    return env.ASSETS.fetch(request);
+    // Static assets (images, fonts, css, js) get a long immutable cache; HTML revalidates
+    const assetResp = await env.ASSETS.fetch(request);
+    if (/\.(webp|png|jpe?g|gif|svg|ico|woff2?|ttf|otf|css|js|mp4|webm|avif)$/i.test(path)) {
+      const h = new Headers(assetResp.headers);
+      h.set('Cache-Control', 'public, max-age=31536000, immutable');
+      return new Response(assetResp.body, { status: assetResp.status, statusText: assetResp.statusText, headers: h });
+    }
+    return assetResp;
   }
 }
