@@ -1424,6 +1424,9 @@ nav.scrolled{background:#ffffff!important;backdrop-filter:none!important;-webkit
 .mobile-menu-links a{color:var(--navy)!important}
 .mobile-menu-links a:hover{color:var(--teal)!important}
 .mobile-menu-book{background:#16a34a!important;background-image:none!important;color:#fff!important;box-shadow:0 2px 10px rgba(22,163,74,.2)!important}
+/* speed: animation libraries removed — guarantee content visible, hide custom cursor */
+#cursor,#cursor-ring{display:none!important}
+.anim-slide-left,.anim-slide-right,.anim-trail,.anim-zoom-bounce,.anim-elastic,.anim-morph,.split-char,.split-w{opacity:1!important;transform:none!important}
 </style>
 </head>
 <body>
@@ -3262,6 +3265,7 @@ nav.scrolled{background:#ffffff!important;backdrop-filter:none!important;-webkit
 
   /* ── Load GSAP dynamically after page ready ── */
   function boot(){
+    return; /* GSAP/ScrollTrigger/Lottie removed for performance — content shows via CSS + IntersectionObserver */
     loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', function(ok){
       if(!ok){ return; } /* CDN failed — page still works without GSAP */
       loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', function(ok2){
