@@ -3167,15 +3167,18 @@ nav.scrolled{background:rgba(6,36,60,.88)!important;backdrop-filter:blur(28px)!i
       if(!ok){ return; } /* CDN failed — page still works without GSAP */
       loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', function(ok2){
         initGSAP();
-        /* Load Lottie optionally */
-        loadScript('https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js', function(ok3){
-          if(!ok3) return;
-          try{
-            var c=document.getElementById('hero-lottie');
-            if(c) lottie.loadAnimation({container:c,renderer:'svg',loop:true,autoplay:true,
-              path:'https://assets9.lottiefiles.com/packages/lf20_kkflmtur.json'});
-          }catch(e){}
-        });
+        /* Load Lottie ONLY where the hero animation is visible (>1100px).
+           On phones/tablets it's display:none, so skip the ~250KB download. */
+        var _heroLottie=document.getElementById('hero-lottie');
+        if(_heroLottie && window.matchMedia('(min-width:1101px)').matches){
+          loadScript('https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js', function(ok3){
+            if(!ok3) return;
+            try{
+              lottie.loadAnimation({container:_heroLottie,renderer:'svg',loop:true,autoplay:true,
+                path:'https://assets9.lottiefiles.com/packages/lf20_kkflmtur.json'});
+            }catch(e){}
+          });
+        }
       });
     });
   }
