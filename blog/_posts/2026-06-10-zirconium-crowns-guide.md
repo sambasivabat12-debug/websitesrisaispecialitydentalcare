@@ -44,8 +44,7 @@ A dental crown (commonly called a "cap") is a custom-made cover that fits over a
 
 ## Crown Cost in Hyderabad
 
-- **PFM crown:** ₹3,500 – ₹6,000
-- **Zirconium crown:** ₹8,000 – ₹15,000 depending on the grade
+The exact cost depends on your specific case and needs. Please consult our doctor for an accurate, personalised estimate — call us at **86880 33072**.
 
 A zirconium crown costs more upfront but its strength, appearance, and longevity make it the best value over time.
 

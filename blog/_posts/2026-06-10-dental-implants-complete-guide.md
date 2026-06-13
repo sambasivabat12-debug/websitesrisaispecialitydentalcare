@@ -51,8 +51,7 @@ The procedure is done under local anaesthesia — you feel pressure but no pain.
 
 Implant cost depends on the brand and bone condition:
 
-- **Standard implant with crown:** ₹25,000 – ₹40,000
-- **Premium implant systems:** ₹40,000 – ₹60,000
+The exact cost depends on your specific case and needs. Please consult our doctor for an accurate, personalised estimate — call us at **86880 33072**.
 
 This is a one-time investment that can last decades — often cheaper than replacing bridges or dentures multiple times.
 

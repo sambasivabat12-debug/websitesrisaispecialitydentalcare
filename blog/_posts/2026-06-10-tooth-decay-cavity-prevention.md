@@ -27,7 +27,7 @@ Your mouth hosts bacteria that feed on sugars from food. As they feed, they prod
 
 **Stage 5 — Abscess:** infection spreads beyond the root, causing swelling and serious risk. May require extraction.
 
-The lesson: **a ₹1,500 filling today prevents a ₹8,000 root canal tomorrow.**
+The lesson: **a simple filling today prevents a costly root canal tomorrow.**
 
 ## Why Don't Cavities Hurt at First?
 

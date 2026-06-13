@@ -47,9 +47,7 @@ Saving your natural tooth is always better. When a tooth is extracted, surroundi
 
 ## Cost of Root Canal in Hyderabad
 
-- **Front teeth:** ₹3,000 – ₹5,000
-- **Premolars:** ₹4,000 – ₹6,000
-- **Molars:** ₹5,000 – ₹8,000
+The exact cost depends on your specific case and needs. Please consult our doctor for an accurate, personalised estimate — call us at **86880 33072**.
 
 We offer transparent pricing with no hidden charges.
 

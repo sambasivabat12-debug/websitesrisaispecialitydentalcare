@@ -54,9 +54,7 @@ The first 2–4 weeks involve adaptation. Start with soft foods cut into small p
 
 ## Cost of Dentures in Hyderabad
 
-- **Partial denture:** ₹3,000 – ₹10,000
-- **Complete denture set:** ₹15,000 – ₹40,000
-- **Flexible dentures:** ₹8,000 – ₹20,000
+The exact cost depends on your specific case and needs. Please consult our doctor for an accurate, personalised estimate — call us at **86880 33072**.
 ---
 
 <a href="/dental-dentures" style="display:block;background:linear-gradient(135deg,#d8f5ef 0%,#f8fffe 100%);border:1px solid rgba(10,124,110,.35);border-left:5px solid #0a7c6e;border-radius:14px;padding:20px 24px;margin:34px 0;text-decoration:none">

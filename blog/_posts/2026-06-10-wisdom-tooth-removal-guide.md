@@ -52,8 +52,7 @@ With 35+ years of surgical experience, our team handles even the most complex im
 
 ## Cost of Wisdom Tooth Removal in Hyderabad
 
-- **Simple extraction:** ₹1,500 – ₹3,000
-- **Surgical extraction (impacted):** ₹4,000 – ₹8,000
+The exact cost depends on your specific case and needs. Please consult our doctor for an accurate, personalised estimate — call us at **86880 33072**.
 
 Don't endure repeated wisdom tooth pain — each infection gets worse than the last.
 ---

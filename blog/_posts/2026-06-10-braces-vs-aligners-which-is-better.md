@@ -54,9 +54,7 @@ Both typically take **12 to 24 months** depending on case complexity. Mild crowd
 
 ## Cost in Hyderabad
 
-- **Metal braces:** ₹25,000 – ₹45,000
-- **Ceramic braces:** ₹35,000 – ₹55,000
-- **Clear aligners:** ₹60,000 – ₹1,50,000 depending on case
+The exact cost depends on your specific case and needs. Please consult our doctor for an accurate, personalised estimate — call us at **86880 33072**.
 
 ## Which Should You Choose?
 

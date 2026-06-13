@@ -46,7 +46,7 @@ Typically 1 to 3 years depending on your habits. To keep your smile bright:
 
 ## Cost of Teeth Whitening in Hyderabad
 
-Professional in-clinic whitening at Sri Sai Speciality Dental Care costs between **₹6,000 – ₹12,000** depending on the type of treatment. Combined cleaning + whitening packages are available.
+Professional in-clinic whitening at Sri Sai Speciality Dental Care varies depending on the type of treatment — consult our doctor for an accurate estimate. Combined cleaning + whitening packages are available.
 
 ## Whitening Before a Wedding or Event?
 

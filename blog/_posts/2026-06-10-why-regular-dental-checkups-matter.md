@@ -19,9 +19,9 @@ Regular 6-monthly check-ups catch problems while they're small, painless, and ch
 
 Consider the same cavity over time:
 
-- **Caught early (check-up):** a ₹1,500 filling, 20 minutes
-- **Ignored 6 months:** decay reaches the nerve — ₹8,000 root canal + ₹10,000 crown
-- **Ignored further:** tooth lost — ₹30,000+ implant or bridge
+- **Caught early (check-up):** a quick, simple filling — about 20 minutes
+- **Ignored 6 months:** decay reaches the nerve — now needing a root canal plus a crown
+- **Ignored further:** tooth lost — now needing a far more costly implant or bridge
 
 A check-up costs a fraction of what one ignored problem costs to repair. Prevention is always cheaper than cure.
 

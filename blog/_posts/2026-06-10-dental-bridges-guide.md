@@ -52,8 +52,7 @@ We'll examine your case honestly and recommend what's truly best for you.
 
 Bridge cost is calculated per unit (each crown/tooth in the bridge):
 
-- **PFM bridge:** ₹3,500 – ₹6,000 per unit
-- **Zirconium bridge:** ₹8,000 – ₹15,000 per unit
+The exact cost depends on your specific case and needs. Please consult our doctor for an accurate, personalised estimate — call us at **86880 33072**.
 
 A typical 3-unit bridge replaces one missing tooth.
 

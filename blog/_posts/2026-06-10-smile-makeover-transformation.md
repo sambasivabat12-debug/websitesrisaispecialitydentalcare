@@ -50,8 +50,7 @@ A whitening + bonding makeover can finish in **a single week**. Cases involving 
 
 Cost varies completely by what's included:
 
-- **Whitening + minor bonding:** ₹10,000 – ₹25,000
-- **Veneer smile makeover (6–8 teeth):** ₹48,000 – ₹1,60,000
+The exact cost depends on your specific case and needs. Please consult our doctor for an accurate, personalised estimate — call us at **86880 33072**.
 - **Comprehensive makeovers:** customised quotes after consultation
 
 With 35+ years of experience and 10 lakh+ happy patients, we design smiles that look natural — never fake.
