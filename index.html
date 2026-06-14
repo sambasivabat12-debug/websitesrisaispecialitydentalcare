@@ -270,14 +270,11 @@ section{padding:80px 40px}
 
 /* ══════════════════════════════════════  TRUST STRIP ══ */
 .trust-strip{background:var(--navy);padding:18px 52px;overflow:hidden;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
-@media(max-width:768px){.trust-strip{padding:14px 0}}
-.trust-track{display:flex;gap:60px;animation:marquee 28s linear infinite;white-space:nowrap;width:max-content}
-@media(max-width:768px){.trust-track{gap:32px}}
-@media(max-width:768px){.trust-item{font-size:11.5px;gap:7px}}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.55);font-size:12.5px;font-weight:500;letter-spacing:.4px;flex-shrink:0}
-.trust-item-icon{font-size:18px}
-.trust-item-sep{color:rgba(255,255,255,.15);font-size:18px}
+@media(max-width:768px){.trust-strip{padding:16px 12px}}
+.trust-badges{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;max-width:1080px;margin:0 auto}
+.trust-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:13px;font-weight:600;letter-spacing:.3px;padding:9px 18px;border-radius:100px;white-space:nowrap}
+.trust-badge .tb-ic{font-size:15px;line-height:1}
+@media(max-width:768px){.trust-badge{font-size:12px;padding:8px 13px;gap:6px}}
 
 /* ══════════════════════════════════════  DOCTORS ══════ */
 .doctors{background:var(--white)}
@@ -1540,61 +1537,17 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
         <span></span>
       </div>
     </div>
-    <div class="hero-ticker">
-      <div class="hero-ticker-track">
-        <span class="hero-ticker-item"><span class="ticker-icon">🏆</span> <span><span class="ticker-highlight">35+ Years</span> of Trusted Excellence</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon">😊</span> <span><span class="ticker-highlight">Thousands</span> of Happy Patients Served</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon"><img decoding="async" src="/icon-implant.webp" alt="Dental Implant" width="16" height="16" loading="lazy"></span> <span>Advanced <span class="ticker-highlight">Dental Implants</span> &amp; Surgery</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon"><img decoding="async" src="/icon-whitening.webp" alt="Teeth Whitening" width="16" height="16" loading="lazy"></span> <span><span class="ticker-highlight">Zirconium Crowns</span> &amp; Smile Design</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon"><img decoding="async" src="/icon-rootcanal.webp" alt="Root Canal" width="16" height="16" loading="lazy"></span> <span>Painless <span class="ticker-highlight">Root Canal</span> Treatment</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon">📍</span> <span>Karmanghat · TKR Road · <span class="ticker-highlight">Meerpet, Hyderabad</span></span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon">🕐</span> <span>Open Every Day <span class="ticker-highlight">9:00 AM – 9:00 PM</span></span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon">👨‍⚕️</span> <span><span class="ticker-highlight">IDA Member</span> Specialist Doctors</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <!-- duplicate for seamless loop -->
-        <span class="hero-ticker-item"><span class="ticker-icon">🏆</span> <span><span class="ticker-highlight">35+ Years</span> of Trusted Excellence</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon">😊</span> <span><span class="ticker-highlight">Thousands</span> of Happy Patients Served</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon"><img decoding="async" src="/icon-implant.webp" alt="Dental Implant" width="16" height="16" loading="lazy"></span> <span>Advanced <span class="ticker-highlight">Dental Implants</span> &amp; Surgery</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon"><img decoding="async" src="/icon-whitening.webp" alt="Teeth Whitening" width="16" height="16" loading="lazy"></span> <span><span class="ticker-highlight">Zirconium Crowns</span> &amp; Smile Design</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon"><img decoding="async" src="/icon-rootcanal.webp" alt="Root Canal" width="16" height="16" loading="lazy"></span> <span>Painless <span class="ticker-highlight">Root Canal</span> Treatment</span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon">📍</span> <span>Karmanghat · TKR Road · <span class="ticker-highlight">Meerpet, Hyderabad</span></span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon">🕐</span> <span>Open Every Day <span class="ticker-highlight">9:00 AM – 9:00 PM</span></span></span>
-        <span class="hero-ticker-sep">✦</span>
-        <span class="hero-ticker-item"><span class="ticker-icon">👨‍⚕️</span> <span><span class="ticker-highlight">IDA Member</span> Specialist Doctors</span></span>
-        <span class="hero-ticker-sep">✦</span>
-      </div>
-    </div>
   </div>
 </div>
 
 <!-- ── TRUST STRIP ── -->
 <section class="trust-strip" aria-label="Why patients trust us">
-  <div class="trust-track">
-    <span class="trust-item"><span class="trust-item-icon">⭐</span> 5.0 Rating on Google</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">🏆</span> 35+ Years of Excellence</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">🦷</span> MDS Maxillofacial Surgeon</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">🛡️</span> IDA Member</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">🕐</span> Open 7 Days, 9AM–9PM</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">🚑</span> Same-Day &amp; Emergency Care</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">⭐</span> 5.0 Rating on Google</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">🏆</span> 35+ Years of Excellence</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">🦷</span> MDS Maxillofacial Surgeon</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">🛡️</span> IDA Member</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">🕐</span> Open 7 Days, 9AM–9PM</span><span class="trust-item-sep">·</span>
-    <span class="trust-item"><span class="trust-item-icon">🚑</span> Same-Day &amp; Emergency Care</span><span class="trust-item-sep">·</span>
+  <div class="trust-badges">
+    <span class="trust-badge"><span class="tb-ic">⭐</span> 5.0 on Google</span>
+    <span class="trust-badge"><span class="tb-ic">🏆</span> 35+ Years</span>
+    <span class="trust-badge"><span class="tb-ic">🦷</span> MDS Maxillofacial Surgeon</span>
+    <span class="trust-badge"><span class="tb-ic">🛡️</span> IDA Member</span>
+    <span class="trust-badge"><span class="tb-ic">🕐</span> Open 7 Days · 9AM–9PM</span>
   </div>
 </section>
 
