@@ -1429,20 +1429,6 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
 @media(max-width:900px){.tech-grid{grid-template-columns:repeat(2,1fr);gap:12px}}
 @media(max-width:520px){.tech-grid{gap:10px}.tech-card{padding:20px 13px}.tech-ico{width:52px;height:52px;font-size:24px}.tech-card h3{font-size:1.02rem}.tech-card p{font-size:.82rem}}
 </style>
-<style id="cg-slider-css">
-.cg-slider{max-width:760px;margin:48px auto 0;position:relative}
-.cg-slider-viewport{overflow:hidden;border-radius:20px;border:1px solid var(--border);box-shadow:0 18px 50px rgba(10,37,64,.12)}
-.cg-slider-track{display:flex;transition:transform .6s cubic-bezier(.16,1,.3,1);will-change:transform}
-.cg-slide{flex:0 0 100%;min-width:100%;position:relative}
-.cg-slide img{width:100%;height:430px;object-fit:cover;display:block}
-.cg-cap{position:absolute;left:0;right:0;bottom:0;padding:26px 26px 24px;background:linear-gradient(to top,rgba(10,37,64,.88) 0%,rgba(10,37,64,.42) 46%,transparent 100%)}
-.cg-cap-badge{background:rgba(212,160,23,.96);color:#0a2540;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:4px 13px;border-radius:100px;display:inline-block;margin-bottom:9px}
-.cg-cap-title{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;color:#fff;display:block;line-height:1.2}
-.cg-dots{display:flex;justify-content:center;gap:10px;margin-top:22px}
-.cg-dot{width:11px;height:11px;border-radius:50%;border:none;background:#cfe0f3;cursor:pointer;padding:0;transition:transform .3s,background .3s,box-shadow .3s}
-.cg-dot.active{background:#D4A017;transform:scale(1.25);box-shadow:0 0 0 4px rgba(212,160,23,.18)}
-@media(max-width:600px){.cg-slider{margin-top:34px}.cg-slide img{height:290px}.cg-cap{padding:20px}.cg-cap-title{font-size:1.15rem}}
-</style>
 </head>
 <body>
 <!-- GTM noscript -->
@@ -1729,16 +1715,11 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
       <p class="sec-eyebrow">Our Clinic</p>
       <h2 class="sec-title">A Comfortable &amp; <em>Modern</em> Environment</h2>
     </div>
-    <div class="cg-slider">
-      <div class="cg-slider-viewport">
-        <div class="cg-slider-track" id="cgTrack">
-          <div class="cg-slide"><img decoding="async" src="/clinic-exterior.webp" alt="Sri Sai Dental Clinic Exterior in Karmanghat" loading="lazy"><div class="cg-cap"><span class="cg-cap-badge">Our Clinic</span><span class="cg-cap-title">Clinic Exterior — Karmanghat</span></div></div>
-          <div class="cg-slide"><img decoding="async" src="/clinic-room1.webp" alt="Advanced Dental Treatment Room 1"><div class="cg-cap"><span class="cg-cap-badge">Treatment Room</span><span class="cg-cap-title">Advanced Treatment Room 1</span></div></div>
-          <div class="cg-slide"><img decoding="async" src="/clinic-room2.webp" alt="Advanced Dental Treatment Room 2"><div class="cg-cap"><span class="cg-cap-badge">Treatment Room</span><span class="cg-cap-title">Advanced Treatment Room 2</span></div></div>
-          <div class="cg-slide"><img decoding="async" src="/clinic-room3.webp" alt="Advanced Dental Treatment Room 3"><div class="cg-cap"><span class="cg-cap-badge">Treatment Room</span><span class="cg-cap-title">Advanced Treatment Room 3</span></div></div>
-        </div>
-      </div>
-      <div class="cg-dots" id="cgDots" role="tablist" aria-label="Clinic photo slides"></div>
+    <div class="cg-grid stagger">
+      <div class="cg-card"><img decoding="async" class="cg-img" src="/clinic-exterior.webp" alt="Sri Sai Dental Clinic Exterior" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Our Clinic</span><span class="cg-title-txt">Clinic Exterior — Karmanghat</span></div></div>
+      <div class="cg-card"><img decoding="async" class="cg-img" src="/clinic-room1.webp" alt="Dental Treatment Room 1" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Treatment Room</span><span class="cg-title-txt">Advanced Treatment Room 1</span></div></div>
+      <div class="cg-card"><img decoding="async" class="cg-img" src="/clinic-room2.webp" alt="Dental Treatment Room 2" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Treatment Room</span><span class="cg-title-txt">Advanced Treatment Room 2</span></div></div>
+      <div class="cg-card"><img decoding="async" class="cg-img" src="/clinic-room3.webp" alt="Dental Treatment Room 3" loading="lazy"><div class="cg-overlay"></div><div class="cg-label"><span class="cg-badge">Treatment Room</span><span class="cg-title-txt">Advanced Treatment Room 3</span></div></div>
     </div>
   </div>
 </section>
@@ -3212,38 +3193,6 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
 })();
 <\/script>
 
-<script>
-(function(){
-  var track=document.getElementById('cgTrack'), dotsWrap=document.getElementById('cgDots');
-  if(!track||!dotsWrap||!track.children.length)return;
-  var n=track.children.length, i=0, timer=null;
-  for(var k=0;k<n;k++){
-    var d=document.createElement('button');
-    d.className='cg-dot'+(k===0?' active':''); d.type='button';
-    d.setAttribute('aria-label','Go to clinic photo '+(k+1));
-    (function(idx){d.addEventListener('click',function(){go(idx);reset();});})(k);
-    dotsWrap.appendChild(d);
-  }
-  var dots=dotsWrap.children;
-  function go(idx){i=(idx%n+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';for(var k=0;k<n;k++)dots[k].classList.toggle('active',k===i);}
-  function next(){go(i+1);}
-  function start(){timer=setInterval(next,4500);}
-  function stop(){clearInterval(timer);}
-  function reset(){stop();start();}
-  start();
-  var slider=track.closest('.cg-slider');
-  slider.addEventListener('mouseenter',stop);
-  slider.addEventListener('mouseleave',start);
-  var x0=null;
-  track.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;stop();},{passive:true});
-  track.addEventListener('touchend',function(e){
-    if(x0===null){start();return;}
-    var dx=e.changedTouches[0].clientX-x0;
-    if(Math.abs(dx)>40){ if(dx<0){next();}else{go(i-1);} }
-    x0=null; start();
-  },{passive:true});
-})();
-</script>
 </body></html>`);
     pw.document.close();
     setTimeout(()=>{pw.print();},300);
@@ -3562,7 +3511,7 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
       // 2. Before & After — Patient Transformations
       acBuild('.ba-grid','ba-ac-outer', 25, '310px', null);
       // 3. Clinic Gallery
-      /* Clinic Gallery now uses a one-card auto-slider (#cgTrack) */
+      acBuild('.cg-grid','cg-ac-outer', 15, '380px', null);
       // 4. Patient Testimonials (Real Stories)
       acPatient();
       // 5. Areas We Serve
