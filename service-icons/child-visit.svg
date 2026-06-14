@@ -1,0 +1,25 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Child's First Visit">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#3aa0c4"/><stop offset="1" stop-color="#1f6f8a"/>
+</linearGradient>
+<linearGradient id="enamel" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dcefe9"/>
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.45" r="0.6">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+<circle cx="3" cy="3" r="2.4" fill="#ffffff" opacity="0.10"/>
+</pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="160" cy="120" r="240" fill="#ffffff" opacity="0.06"/>
+<circle cx="1060" cy="560" r="280" fill="#06243c" opacity="0.07"/>
+<circle cx="600" cy="300" r="250" fill="url(#glow)"/>
+<path d="M 600.0 165.0 C 530.0 165.0 488.0 211.0 490.0 267.0 C 492.0 315.0 504.0 353.0 528.0 395.0 C 540.0 417.0 560.0 415.0 566.0 389.0 C 572.0 361.0 578.0 345.0 590.0 345.0 C 602.0 345.0 608.0 365.0 614.0 391.0 C 622.0 419.0 644.0 417.0 656.0 393.0 C 682.0 349.0 698.0 313.0 704.0 263.0 C 710.0 209.0 670.0 165.0 600.0 165.0 Z" fill="url(#enamel)" stroke="#0a7c6e" stroke-width="7" stroke-linejoin="round"/><circle cx="572" cy="255" r="9" fill="#06243c"/><circle cx="628" cy="255" r="9" fill="#06243c"/><path d="M566 290 Q600 320 634 290" stroke="#06243c" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="548" cy="285" r="12" fill="#f7b8c2" opacity="0.7"/><circle cx="652" cy="285" r="12" fill="#f7b8c2" opacity="0.7"/><g transform="translate(700,180)"><path d="M 0 -22 L 6.16 -6.16 L 22 0 L 6.16 6.16 L 0 22 L -6.16 6.16 L -22 0 L -6.16 -6.16 Z" fill="#c8a84b"/></g>
+
+<circle cx="1120" cy="80" r="10" fill="#c8a84b"/>
+<circle cx="90" cy="540" r="8" fill="#c8a84b" opacity="0.8"/>
+</svg>
