@@ -156,54 +156,6 @@ nav.scrolled{background:rgba(10,37,64,.96);backdrop-filter:blur(22px);padding:10
   .nav-brand-sub{display:none}
 }
 
-/* ══════════════════════════════════════  PRELOADER ══ */
-#preloader{position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#0a2540 0%,#0a4a3a 60%,#123a63 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease;overflow:hidden}
-#preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
-
-/* Background animated rings */
-.pre-bg-rings{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
-.pre-ring{position:absolute;border-radius:50%;border:1px solid rgba(47,138,224,.12);animation:preRingPulse 3s ease-in-out infinite}
-.pre-ring:nth-child(1){width:200px;height:200px;animation-delay:0s}
-.pre-ring:nth-child(2){width:320px;height:320px;animation-delay:.6s}
-.pre-ring:nth-child(3){width:440px;height:440px;animation-delay:1.2s}
-.pre-ring:nth-child(4){width:560px;height:560px;animation-delay:1.8s}
-@keyframes preRingPulse{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.45;transform:scale(1.04)}}
-
-/* Floating sparkles */
-.pre-sparkle{position:absolute;border-radius:50%;animation:sparkleFly linear infinite;opacity:0}
-@keyframes sparkleFly{0%{opacity:0;transform:translateY(60px) scale(0)}20%{opacity:1}80%{opacity:.6}100%{opacity:0;transform:translateY(-80px) scale(1.5)}}
-
-/* Logo container */
-.pre-logo-container{position:relative;margin-bottom:28px;animation:preLogoEntry .8s cubic-bezier(.16,1,.3,1) both}
-@keyframes preLogoEntry{from{opacity:0;transform:scale(.5) rotate(-20deg)}to{opacity:1;transform:scale(1) rotate(0deg)}}
-.pre-logo-ring{position:absolute;inset:-12px;border-radius:50%;border:2.5px solid transparent;border-top-color:var(--teal2);border-right-color:var(--gold2);animation:preLogoRingSpin 2s linear infinite}
-@keyframes preLogoRingSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.pre-logo-bg{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,rgba(10,102,194,.3),rgba(61,155,232,.2));backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(47,138,224,.3),0 0 80px rgba(47,138,224,.1)}
-.pre-logo-bg img{width:76px;height:76px;object-fit:contain;border-radius:50%}
-
-/* Tooth icon orbit */
-.pre-orbit{position:absolute;inset:-32px;animation:orbitSpin 4s linear infinite}
-@keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.pre-orbit-dot{position:absolute;top:0;left:50%;transform:translateX(-50%);width:10px;height:10px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:50%;box-shadow:0 0 8px var(--gold2)}
-
-/* Text */
-.pre-clinic-name{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,4vw,1.7rem);font-weight:700;color:#fff;text-align:center;letter-spacing:.2px;margin-bottom:4px;animation:preFade .8s .2s both cubic-bezier(.16,1,.3,1);line-height:1.2}
-.pre-clinic-sub{font-size:10px;letter-spacing:3.5px;color:var(--gold2);text-transform:uppercase;font-weight:700;text-align:center;margin-bottom:32px;animation:preFade .8s .32s both cubic-bezier(.16,1,.3,1)}
-
-/* Progress */
-.pre-bar-wrap{width:clamp(160px,50vw,220px);height:3px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;animation:preFade .8s .42s both cubic-bezier(.16,1,.3,1);position:relative}
-.pre-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--teal2),var(--gold));border-radius:3px;box-shadow:0 0 8px rgba(47,138,224,.6);position:relative}
-.pre-bar::after{content:'';position:absolute;right:0;top:-2px;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 8px var(--teal2)}
-.pre-pct{font-family:'Nunito',sans-serif;font-size:11px;color:rgba(255,255,255,.72);letter-spacing:3px;margin-top:12px;animation:preFade .8s .5s both cubic-bezier(.16,1,.3,1);font-weight:600}
-.pre-loading-dots{display:flex;gap:6px;margin-top:16px;animation:preFade .8s .6s both cubic-bezier(.16,1,.3,1)}
-.pre-loading-dots span{width:6px;height:6px;border-radius:50%;background:var(--teal2);animation:dotBounce 1.4s ease-in-out infinite}
-.pre-loading-dots span:nth-child(2){animation-delay:.2s;background:var(--gold2)}
-.pre-loading-dots span:nth-child(3){animation-delay:.4s;background:var(--teal2)}
-@keyframes dotBounce{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
-
-.pre-glow{position:absolute;width:200px;height:200px;background:radial-gradient(circle,rgba(47,138,224,.2),transparent 70%);border-radius:50%;animation:preGlow 2.5s ease infinite;pointer-events:none}
-@keyframes preGlow{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.4);opacity:1}}
-@keyframes preFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
 /* ══════════════════════════════════════  HERO ══════ */
 .hero{min-height:100vh;background:linear-gradient(150deg,var(--navy) 0%,var(--navy2) 45%,#0a2540 100%);position:relative;display:flex;align-items:center;overflow:hidden;padding-top:80px}
@@ -1348,12 +1300,6 @@ nav.scrolled{background:rgba(10,37,64,.88)!important;backdrop-filter:blur(28px)!
 </style>
 <style id="light-theme-overrides">
 /* loading screen -> light */
-#preloader{background:linear-gradient(165deg,#e9f2fc 0%,#f6fbff 55%,#ffffff 100%)!important}
-.pre-clinic-name{color:var(--navy)!important}
-.pre-clinic-sub{color:var(--teal)!important}
-.pre-pct{color:var(--soft)!important}
-.pre-bar-wrap{background:rgba(10,102,194,.12)!important}
-.pre-ring{border-color:rgba(10,102,194,.16)!important}
 /* ===== LIGHT (white + blue) THEME — top of page ===== */
 /* HERO: dark navy -> clean white/light-blue */
 .hero{background:linear-gradient(165deg,#e9f2fc 0%,#f6fbff 55%,#ffffff 100%)!important}
@@ -1436,27 +1382,6 @@ nav.scrolled{background:#ffffff!important;backdrop-filter:none!important;-webkit
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MZT8DBJ4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ── PRELOADER ── -->
-<div id="preloader">
-  <!-- Background rings -->
-  <div class="pre-bg-rings">
-    <div class="pre-ring"></div>
-    <div class="pre-ring"></div>
-    <div class="pre-ring"></div>
-    <div class="pre-ring"></div>
-  </div>
-  <!-- Floating sparkles injected by JS -->
-  <div class="pre-sparkles" id="preSparkles"></div>
-  <div class="pre-logo-container">
-    <div class="pre-logo-ring"></div>
-    <div class="pre-orbit"><div class="pre-orbit-dot"></div></div>
-    <div class="pre-logo-bg"><picture><source srcset="/logo.webp" type="image/webp"><img src="/logo.webp" alt="Sri Sai Dental Logo" fetchpriority="high"></picture></div>
-  </div>
-  <div class="pre-clinic-name">Sri Sai Speciality<br>Dental Care</div>
-  <div class="pre-clinic-sub">(T V Rao) · Karmanghat · Hyderabad</div>
-  <div class="pre-bar-wrap"><div class="pre-bar" id="preBar"></div></div>
-  <div class="pre-pct" id="prePct">0%</div>
-  <div class="pre-loading-dots"><span></span><span></span><span></span></div>
-</div>
 
 <!-- ── UTILS ── -->
 <div id="cursor"></div>
@@ -2528,51 +2453,7 @@ nav.scrolled{background:#ffffff!important;backdrop-filter:none!important;-webkit
 
 <script>
 (function(){
-  /* PRELOADER */
-  const pre=document.getElementById('preloader'),bar=document.getElementById('preBar'),pct=document.getElementById('prePct');
-
-  // Generate floating sparkles
-  const sparkleContainer = document.getElementById('preSparkles') || pre;
-  for(let i=0;i<18;i++){
-    const s=document.createElement('div');
-    s.className='pre-sparkle';
-    const size=Math.random()*6+3;
-    const colors=['var(--teal2)','var(--gold2)','rgba(255,255,255,.8)','rgba(47,138,224,.9)'];
-    s.style.cssText=`width:${size}px;height:${size}px;background:${colors[Math.floor(Math.random()*colors.length)]};left:${Math.random()*100}%;bottom:${Math.random()*20}%;animation-duration:${Math.random()*3+2}s;animation-delay:${Math.random()*2}s;box-shadow:0 0 ${size*2}px currentColor`;
-    pre.appendChild(s);
-  }
-
-  let p=0;
-  const iv=setInterval(()=>{
-    p+=Math.random()*10+5;
-    if(p>=100){
-      p=100;clearInterval(iv);
-      setTimeout(()=>{
-        pre.classList.add('hidden');
-        document.body.style.overflow='';
-        // Force hero content visible after preloader hides
-        document.querySelectorAll('.hero-content, .h1-welcome, .h1-name, .h1-sub, .h1-tvrao, .hero-badge, .hero-sub, .hero-pills, .hero-actions, .hero-timing').forEach(function(el){
-          el.style.opacity='1';
-          el.style.transform='none';
-          el.style.visibility='visible';
-        });
-      },300);
-    }
-    bar.style.width=Math.min(p,100)+'%';
-    pct.textContent=Math.floor(Math.min(p,100))+'%';
-  },75);
-  // Fallback: force hide preloader after 4 seconds no matter what
-  setTimeout(function(){
-    pre.classList.add('hidden');
-    document.body.style.overflow='';
-    document.querySelectorAll('.hero-content, .h1-welcome, .h1-name, .h1-sub, .h1-tvrao, .hero-badge, .hero-sub, .hero-pills, .hero-actions, .hero-timing').forEach(function(el){
-      el.style.opacity='1';
-      el.style.transform='none';
-      el.style.visibility='visible';
-    });
-  }, 4000);
-  document.body.style.overflow='hidden';
-
+  
   /* CURSOR */
   const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
   let mx=0,my=0,rx=0,ry=0;
