@@ -3564,7 +3564,7 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
       var dots=dotsWrap.children;
       function go(idx){ i=(idx%n+n)%n; track.style.transform='translateX(-'+(i*100)+'%)'; for(var k=0;k<n;k++) dots[k].classList.toggle('active',k===i); }
       function next(){ go(i+1); }
-      function start(){ timer=setInterval(next,3000); }
+      function start(){ timer=setInterval(next,2000); }
       function stop(){ clearInterval(timer); }
       function reset(){ stop(); start(); }
       start();
@@ -4716,7 +4716,7 @@ From Sri Sai Speciality Dental Care`;
   var dots=dotsWrap.children;
   function go(idx){i=(idx%n+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';for(var k=0;k<n;k++)dots[k].classList.toggle('active',k===i);}
   function next(){go(i+1);}
-  function start(){timer=setInterval(next,3000);}
+  function start(){timer=setInterval(next,2000);}
   function stop(){clearInterval(timer);}
   function reset(){stop();start();}
   start();
