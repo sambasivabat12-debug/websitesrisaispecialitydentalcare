@@ -1135,6 +1135,10 @@ footer a{color:var(--gold2);text-decoration:none}
   .bp-carousel-track{padding:8px 16px 16px;animation:bpAutoScroll 60s linear infinite}
 }
 /* Blog card */
+.bp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.bp-grid .bpc{width:auto}
+@media(max-width:900px){.bp-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.bp-grid{grid-template-columns:1fr}}
 .bpc{width:300px;flex-shrink:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative}
 .bpc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s ease;z-index:2}
 .bpc:hover{transform:translateY(-8px);box-shadow:0 24px 60px var(--shadow-teal);border-color:var(--teal2)}
@@ -2158,12 +2162,38 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
       </div>
       <a href="/blog/" class="bp-view-all">&#128221; View All Articles &rarr;</a>
     </div>
-    <div class="bp-carousel-outer" id="bp-carousel-outer">
-      <div class="bp-carousel-track" id="bp-track">
-        <div style="color:var(--soft);padding:40px;font-size:14px">Loading articles&#8230;</div>
-      </div>
+    <div class="bp-grid">
+      <a href="/blog/2026-06-10-root-canal-treatment-guide" class="bpc">
+        <div class="bpc-img"><img decoding="async" src="/blog/img/root-canal.webp" alt="Root Canal Treatment in Hyderabad — Everything You Need to Know" loading="lazy" width="300" height="180"></div>
+        <div class="bpc-body">
+          <span class="bpc-cat">Root Canal Treatment</span>
+          <div class="bpc-title">Root Canal Treatment in Hyderabad — Everything You Need to Know</div>
+          <div class="bpc-desc">Scared of root canal? Don't be. At Sri Sai Speciality Dental Care, Karmanghat, we perform…</div>
+          <div class="bpc-meta">📅 10 Jun 2026</div>
+          <span class="bpc-btn">Read →</span>
+        </div>
+      </a>
+      <a href="/blog/2026-06-10-dental-implants-complete-guide" class="bpc">
+        <div class="bpc-img"><img decoding="async" src="/blog/img/implants.webp" alt="Dental Implants in Hyderabad — Cost, Procedure & Benefits Explained" loading="lazy" width="300" height="180"></div>
+        <div class="bpc-body">
+          <span class="bpc-cat">Dental Implants</span>
+          <div class="bpc-title">Dental Implants in Hyderabad — Cost, Procedure & Benefits Explained</div>
+          <div class="bpc-desc">Missing teeth? Dental implants are the gold standard permanent replacement. Learn the…</div>
+          <div class="bpc-meta">📅 10 Jun 2026</div>
+          <span class="bpc-btn">Read →</span>
+        </div>
+      </a>
+      <a href="/blog/2026-06-10-teeth-whitening-treatment-guide" class="bpc">
+        <div class="bpc-img"><img decoding="async" src="/blog/img/whitening.webp" alt="Teeth Whitening in Hyderabad — Get a Brighter Smile Safely" loading="lazy" width="300" height="180"></div>
+        <div class="bpc-body">
+          <span class="bpc-cat">Teeth Whitening Treatment</span>
+          <div class="bpc-title">Teeth Whitening in Hyderabad — Get a Brighter Smile Safely</div>
+          <div class="bpc-desc">Yellow or stained teeth? Professional teeth whitening can brighten your smile by several…</div>
+          <div class="bpc-meta">📅 10 Jun 2026</div>
+          <span class="bpc-btn">Read →</span>
+        </div>
+      </a>
     </div>
-    <p class="bp-pause-hint">&#9646;&#9646; Hover to pause &nbsp;&#8231;&nbsp; Swipe or click to read</p>
     <div style="text-align:center;margin-top:32px" class="reveal">
       <a href="/blog/" class="btn-gold" style="font-size:14px;padding:15px 40px">&#128221; Read All 20 Blog Articles &rarr;</a>
     </div>
