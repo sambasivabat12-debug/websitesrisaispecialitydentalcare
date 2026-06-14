@@ -159,7 +159,7 @@ nav.scrolled{background:#ffffff!important;backdrop-filter:none!important;-webkit
 
 <nav class="blog-nav">
   <a href="/" class="blog-nav-logo">
-    <img src="/logo.webp" alt="Sri Sai Dental Logo">
+    <img decoding="async" src="/logo.webp" alt="Sri Sai Dental Logo">
     <span class="blog-nav-name">Sri Sai Speciality Dental Care</span>
   </a>
   <div class="blog-nav-links">
@@ -236,7 +236,7 @@ function render(posts){
   if(!posts.length){grid.innerHTML='<div class="no-posts"><h3>No posts found</h3></div>';return;}
   grid.innerHTML=posts.map(p=>`
     <div class="blog-card">
-      ${p.thumbnail?`<img class="blog-card-img" src="${p.thumbnail}" alt="${p.title}" loading="lazy" onerror="this.onerror=null;this.src='/logo.webp';this.style.objectFit='contain';this.style.background='#dbeefb';this.style.padding='30px';">`:`<div class="blog-card-img-placeholder">🦷</div>`}
+      ${p.thumbnail?`<img decoding="async" class="blog-card-img" src="${p.thumbnail}" alt="${p.title}" loading="lazy" onerror="this.onerror=null;this.src='/logo.webp';this.style.objectFit='contain';this.style.background='#dbeefb';this.style.padding='30px';">`:`<div class="blog-card-img-placeholder">🦷</div>`}
       <div class="blog-card-body">
         ${p.category?`<span class="blog-card-tag">${p.category}</span>`:''}
         <div class="blog-card-title">${p.title}</div>
