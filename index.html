@@ -1106,6 +1106,12 @@ footer a{color:var(--gold2);text-decoration:none}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+/* Gentle gallery auto-scroll keeps running even with Reduce Motion on */
+@media(prefers-reduced-motion:reduce){
+  .ac-track{animation:acScroll 25s linear infinite!important}
+  .areas-ac-outer .ac-track{animation-duration:40s!important}
+  .patient-scroll-track{animation:acScroll 30s linear infinite!important}
+}
 
 /* ══════════════════════════════════════  PATIENT FORMS SECTION ══ */
 
