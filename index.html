@@ -1125,6 +1125,7 @@ footer a{color:var(--gold2);text-decoration:none}
 .bp-carousel-outer::after{right:0;background:linear-gradient(to left,var(--soft-gray),transparent)}
 /* Carousel track — auto-scrolling on desktop */
 .bp-carousel-track{display:flex;gap:22px;width:max-content;padding:12px 40px 20px}
+@keyframes bpAutoScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @media(min-width:769px){
   .bp-carousel-track{animation:bpAutoScroll 60s linear infinite}
   .bp-carousel-track:hover{animation-play-state:paused}
@@ -1132,10 +1133,9 @@ footer a{color:var(--gold2);text-decoration:none}
 }
 /* Mobile: swipeable scroll */
 @media(max-width:768px){
-  .bp-carousel-outer{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -16px}
-  .bp-carousel-outer::-webkit-scrollbar{display:none}
+  .bp-carousel-outer{overflow:hidden;margin:0 -16px}
   .bp-carousel-outer::before,.bp-carousel-outer::after{display:none}
-  .bp-carousel-track{padding:8px 16px 16px;animation:none!important}
+  .bp-carousel-track{padding:8px 16px 16px;animation:bpAutoScroll 60s linear infinite}
 }
 /* Blog card */
 .bpc{width:300px;flex-shrink:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative}
@@ -1230,10 +1230,9 @@ footer a{color:var(--gold2);text-decoration:none}
 .areas-ac-outer::after{right:0;background:linear-gradient(to left,#eef4fb 0%,transparent 100%)}
 .areas-ac-outer .ac-track{gap:10px;padding:8px 60px 16px;animation-duration:40s}
 @media(max-width:768px){
-  .ac-outer{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none}
-  .ac-outer::-webkit-scrollbar{display:none}
+  .ac-outer{overflow:hidden}
   .ac-outer::before,.ac-outer::after{display:none}
-  .ac-track{animation:none!important;padding:8px 16px 16px;gap:14px}
+  .ac-track{padding:8px 16px 16px;gap:14px}
   .why-ac-outer,.ba-ac-outer,.cg-ac-outer,.patient-ac-outer,.areas-ac-outer{margin:24px -16px 0}
 }
 
@@ -3459,13 +3458,13 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
       });
       // Override desktop grid to flex carousel
       var style = document.createElement('style');
-      style.textContent = '@media(min-width:769px){'
+      style.textContent = ''
         +'.patient-scroll-track{display:flex!important;grid-template-columns:unset!important;'
         +'width:max-content!important;animation:acScroll 30s linear infinite;'
         +'overflow:visible!important;flex-wrap:nowrap!important;}'
         +'.patient-scroll-track:hover{animation-play-state:paused}'
         +'.patient-card{flex:0 0 300px!important;max-width:300px!important;}'
-        +'.patient-dots{display:none}}';
+        +'.patient-dots{display:none}';
       document.head.appendChild(style);
       // Wrap for gradient edges
       var outer = document.createElement('div');
