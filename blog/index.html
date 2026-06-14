@@ -168,7 +168,7 @@ nav.scrolled{background:#ffffff!important;backdrop-filter:none!important;-webkit
 .mobile-menu-links a{display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:clamp(1.4rem,6vw,2rem);font-weight:700;color:#fff;text-decoration:none;padding:8px 0;letter-spacing:-.3px;transition:color .2s;min-height:44px}
 .mobile-menu-links a:active{color:#9fcef5}
 .mobile-menu-book{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;font-weight:700;font-size:15px;padding:14px 36px;border-radius:100px;text-decoration:none;box-shadow:0 6px 24px rgba(22,163,74,.35);min-height:48px;display:flex;align-items:center;justify-content:center;margin-top:4px}
-@media(max-width:900px){.hamburger{display:flex}.blog-nav-links{display:none}}
+@media(max-width:900px){.hamburger{display:flex;flex-shrink:0;order:-1}.blog-nav{justify-content:flex-start;gap:12px}.blog-nav-logo{min-width:0;overflow:hidden}.blog-nav-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.blog-nav-links{display:none}}
 </style>
 </head>
 <body>
