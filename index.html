@@ -1732,10 +1732,10 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
     <div class="cg-slider">
       <div class="cg-slider-viewport">
         <div class="cg-slider-track" id="cgTrack">
-          <div class="cg-slide"><img decoding="async" src="/clinic-exterior.webp" alt="Sri Sai Dental Clinic Exterior in Karmanghat" loading="lazy"><div class="cg-cap"><span class="cg-cap-badge">Our Clinic</span><span class="cg-cap-title">Clinic Exterior — Karmanghat</span></div></div>
           <div class="cg-slide"><img decoding="async" src="/clinic-room1.webp" alt="Advanced Dental Treatment Room 1"><div class="cg-cap"><span class="cg-cap-badge">Treatment Room</span><span class="cg-cap-title">Advanced Treatment Room 1</span></div></div>
-          <div class="cg-slide"><img decoding="async" src="/clinic-room2.webp" alt="Advanced Dental Treatment Room 2"><div class="cg-cap"><span class="cg-cap-badge">Treatment Room</span><span class="cg-cap-title">Advanced Treatment Room 2</span></div></div>
-          <div class="cg-slide"><img decoding="async" src="/clinic-room3.webp" alt="Advanced Dental Treatment Room 3"><div class="cg-cap"><span class="cg-cap-badge">Treatment Room</span><span class="cg-cap-title">Advanced Treatment Room 3</span></div></div>
+          <div class="cg-slide"><img decoding="async" src="/clinic-room2.webp" alt="Advanced Dental Treatment Room 2" loading="lazy"><div class="cg-cap"><span class="cg-cap-badge">Treatment Room</span><span class="cg-cap-title">Advanced Treatment Room 2</span></div></div>
+          <div class="cg-slide"><img decoding="async" src="/clinic-room3.webp" alt="Advanced Dental Treatment Room 3" loading="lazy"><div class="cg-cap"><span class="cg-cap-badge">Treatment Room</span><span class="cg-cap-title">Advanced Treatment Room 3</span></div></div>
+          <div class="cg-slide"><img decoding="async" src="/clinic-exterior.webp" alt="Sri Sai Dental Clinic Exterior in Karmanghat" loading="lazy"><div class="cg-cap"><span class="cg-cap-badge">Our Clinic</span><span class="cg-cap-title">Clinic Exterior — Karmanghat</span></div></div>
         </div>
       </div>
       <div class="cg-dots" id="cgDots" role="tablist" aria-label="Clinic photo slides"></div>
@@ -4669,7 +4669,7 @@ From Sri Sai Speciality Dental Care`;
   var dots=dotsWrap.children;
   function go(idx){i=(idx%n+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';for(var k=0;k<n;k++)dots[k].classList.toggle('active',k===i);}
   function next(){go(i+1);}
-  function start(){timer=setInterval(next,4500);}
+  function start(){timer=setInterval(next,3000);}
   function stop(){clearInterval(timer);}
   function reset(){stop();start();}
   start();
