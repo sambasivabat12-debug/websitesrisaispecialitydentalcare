@@ -394,6 +394,16 @@ nav.scrolled .nav-links-kit a{color:#0a2540}
 .mobile-menu-book{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;font-weight:700;font-size:15px;padding:14px 36px;border-radius:100px;text-decoration:none;box-shadow:0 6px 24px rgba(22,163,74,.35);min-height:48px;display:flex;align-items:center;justify-content:center;margin-top:4px}
 @media(max-width:900px){.hamburger{display:flex;flex-shrink:0}nav#nav{justify-content:flex-start;gap:12px;padding-left:16px;padding-right:16px}nav#nav .nav-logo{min-width:0}nav#nav .nav-right{display:none}}
 </style>
+<style id="ot-bento-css">
+.ot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px;margin-top:26px}
+.ot-tile{display:flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:14px 16px;text-decoration:none;color:inherit;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s,border-color .3s}
+.ot-tile:hover{transform:translateY(-4px);border-color:var(--teal2);box-shadow:0 14px 32px rgba(10,102,194,.12)}
+.ot-ico{width:44px;height:44px;flex-shrink:0;background:#eaf3fc;border-radius:12px;display:flex;align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.ot-ico img{width:26px;height:26px;object-fit:contain}
+.ot-tile:hover .ot-ico{transform:scale(1.12) rotate(-6deg)}
+.ot-name{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:700;color:var(--navy);line-height:1.2}
+@media(max-width:600px){.ot-grid{grid-template-columns:1fr 1fr;gap:10px}.ot-tile{padding:12px;flex-direction:column;align-items:flex-start;gap:8px}}
+</style>
 </head>
 <body>
 
@@ -722,17 +732,19 @@ nav.scrolled .nav-links-kit a{color:#0a2540}
   <div class="container">
     <p class="sec-eyebrow reveal" style="text-align:center">Explore More</p>
     <h2 class="sec-title reveal" style="text-align:center;margin-bottom:28px">Other Treatments We <em>Offer</em></h2>
-    <div class="other-treat-pills reveal">
-      <a href="/dental-implants" class="other-treat-pill">🔩 Dental Implants</a>
-      <a href="/dental-braces" class="other-treat-pill">😬 Dental Braces</a>
-      <a href="/dental-aligners" class="other-treat-pill">🦷 Clear Aligners</a>
-      <a href="/wisdom-tooth-removal" class="other-treat-pill">🦷 Wisdom Tooth</a>
-      <a href="/dental-fillings" class="other-treat-pill">🪥 Dental Fillings</a>
-      <a href="/teeth-whitening" class="other-treat-pill">✨ Teeth Whitening</a>
-      <a href="/dental-bridges" class="other-treat-pill">🦷 Dental Bridges</a>
-      <a href="/dental-dentures" class="other-treat-pill">😁 Dental Dentures</a>
-      <a href="/dental-crowns" class="other-treat-pill">👑 Dental Crowns</a>
-    </div>
+    <div class="ot-grid">
+        <a href="/dental-implants" class="ot-tile"><span class="ot-ico"><img src="/service-icons/implants.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Dental Implants</span></a>
+        <a href="/dental-crowns" class="ot-tile"><span class="ot-ico"><img src="/service-icons/crowns.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Dental Crowns</span></a>
+        <a href="/dental-bridges" class="ot-tile"><span class="ot-ico"><img src="/service-icons/bridges.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Dental Bridges</span></a>
+        <a href="/dental-dentures" class="ot-tile"><span class="ot-ico"><img src="/service-icons/dentures.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Dentures</span></a>
+        <a href="/dental-braces" class="ot-tile"><span class="ot-ico"><img src="/service-icons/braces-aligners.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Dental Braces</span></a>
+        <a href="/dental-aligners" class="ot-tile"><span class="ot-ico"><img src="/service-icons/braces-aligners.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Clear Aligners</span></a>
+        <a href="/teeth-whitening" class="ot-tile"><span class="ot-ico"><img src="/service-icons/whitening.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Teeth Whitening</span></a>
+        <a href="/dental-fillings" class="ot-tile"><span class="ot-ico"><img src="/service-icons/tooth-decay.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Dental Fillings</span></a>
+        <a href="/wisdom-tooth-removal" class="ot-tile"><span class="ot-ico"><img src="/service-icons/wisdom-tooth.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Wisdom Tooth</span></a>
+        <a href="/smile-design" class="ot-tile"><span class="ot-ico"><img src="/service-icons/smile-makeover.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Smile Design</span></a>
+        <a href="/kids-dentistry" class="ot-tile"><span class="ot-ico"><img src="/service-icons/child-visit.svg" alt="" loading="lazy" decoding="async"></span><span class="ot-name">Kids Dentistry</span></a>
+      </div>
     <div style="text-align:center;margin-top:28px">
       <a href="/treatments" class="btn-view-all">View All Treatments →</a>
     </div>
