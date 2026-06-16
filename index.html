@@ -3276,8 +3276,8 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
     btn.disabled=true;btn.textContent='Saving & Sending Email...';
     try{
       await fetch('https://script.google.com/macros/s/AKfycbz-gH_TfcrlzK0E29UjJsXklem_KW2alFANT5Jknd3xV2_oivJTtGP_a0n68Y6elNj21A/exec',{
-        method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify(d)
+        method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body:JSON.stringify(Object.assign({token:'srisai-clinic-2026'},d))
       });
       window._lastBookingData=d;
       showBookingConfirmation(d,true);
