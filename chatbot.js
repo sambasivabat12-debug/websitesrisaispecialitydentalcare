@@ -36,6 +36,7 @@
   .ssdc-x{background:rgba(255,255,255,.22);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:19px;line-height:1;flex-shrink:0}
   .ssdc-x:hover{background:rgba(255,255,255,.35)}
   .ssdc-bd{flex:1;overflow-y:auto;padding:16px 14px;background:#F8FAFC;display:flex;flex-direction:column;gap:9px}
+  .ssdc-bd>*:first-child{margin-top:auto}
   .ssdc-m{max-width:82%;padding:10px 13px;border-radius:14px;font-size:13.5px;line-height:1.5;white-space:pre-line;word-wrap:break-word;animation:ssdcM .28s ease}
   @keyframes ssdcM{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
   .ssdc-m.bot{background:#fff;color:#0F172A;border:1px solid #e9eef5;border-bottom-left-radius:4px;align-self:flex-start}
