@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --gold:#3d9be8;   --gold2:#9fcef5;  --gold3:#eef6fe;
   --cream:#f8fafc;  --white:#ffffff;
   --soft-gray:#eef4fb;
-  --mid:#3a5570;    --soft:#6885a0;   --border:#d2e4f5;
+  --mid:#3a5570;    --soft:#516d8a;   --border:#d2e4f5;
   --text:#0f172a;
   --shadow-teal:rgba(10,102,194,.14);
   --shadow-gold:rgba(61,155,232,.25);
@@ -1362,7 +1362,7 @@ nav.scrolled{background:#ffffff!important;backdrop-filter:none!important;-webkit
 .patient-name{color:var(--navy)!important}
 .patient-quote{color:var(--mid)!important}
 /* ===== PREMIUM PASS — flat solid buttons, GREEN Book CTA, no neon glow ===== */
-.btn-book-hero,.nav-book,.form-submit,.form-card-btn{background:#16a34a!important;background-image:none!important;color:#fff!important;box-shadow:0 2px 10px rgba(22,163,74,.2)!important}
+.btn-book-hero,.nav-book,.form-submit,.form-card-btn{background:#15803d!important;background-image:none!important;color:#fff!important;box-shadow:0 2px 10px rgba(22,163,74,.2)!important}
 .btn-book-hero:hover,.nav-book:hover,.form-submit:hover,.form-card-btn:hover{background:#15803d!important;box-shadow:0 4px 14px rgba(22,163,74,.28)!important}
 .btn-gold{background:var(--teal)!important;background-image:none!important;color:#fff!important;box-shadow:0 2px 10px rgba(15,23,42,.1)!important}
 .btn-gold:hover{box-shadow:0 4px 14px rgba(15,23,42,.15)!important}
@@ -1378,7 +1378,7 @@ nav.scrolled{background:#ffffff!important;backdrop-filter:none!important;-webkit
 .mobile-menu{background:#ffffff!important}
 .mobile-menu-links a{color:var(--navy)!important}
 .mobile-menu-links a:hover{color:var(--teal)!important}
-.mobile-menu-book{background:#16a34a!important;background-image:none!important;color:#fff!important;box-shadow:0 2px 10px rgba(22,163,74,.2)!important}
+.mobile-menu-book{background:#15803d!important;background-image:none!important;color:#fff!important;box-shadow:0 2px 10px rgba(22,163,74,.2)!important}
 /* speed: animation libraries removed — guarantee content visible, hide custom cursor */
 #cursor,#cursor-ring{display:none!important}
 .anim-slide-left,.anim-slide-right,.anim-trail,.anim-zoom-bounce,.anim-elastic,.anim-morph,.split-char,.split-w{opacity:1!important;transform:none!important}
@@ -1454,6 +1454,13 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
 .oc-dots{display:flex;justify-content:center;gap:9px;margin-top:18px;flex-wrap:wrap}
 .oc-dot{width:10px;height:10px;border-radius:50%;border:none;background:#cfe0f3;cursor:pointer;padding:0;transition:transform .3s,background .3s}
 .oc-dot.active{background:#D4A017;transform:scale(1.25);box-shadow:0 0 0 4px rgba(212,160,23,.18)}
+/* a11y: 24px tap target for slider dots — visible dot size/look unchanged */
+.cg-dots .cg-dot,.oc-dots .oc-dot{width:24px!important;height:24px!important;min-width:24px;background:transparent!important;box-shadow:none!important;transform:none!important;padding:0;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.cg-dots .cg-dot::before,.oc-dots .oc-dot::before{content:"";width:11px;height:11px;border-radius:50%;background:#cfe0f3;transition:transform .3s,background .3s,box-shadow .3s}
+.oc-dots .oc-dot::before{width:10px;height:10px}
+.cg-dots .cg-dot.active::before,.oc-dots .oc-dot.active::before{background:#D4A017;transform:scale(1.25);box-shadow:0 0 0 4px rgba(212,160,23,.18)}
+/* a11y: lighten small blue accent labels on dark contact/footer cards (kept blue, just readable) */
+#contact a > div > div:first-child,#contact [style*="#2f8ae0"],footer a > div > div:first-child,footer [style*="#2f8ae0"]{color:#8fc0f5!important}
 #patientDots{display:none!important}
 @media(max-width:600px){.oc-slider{margin-top:30px}.oc-slide{padding:6px}}
 </style>
@@ -1751,7 +1758,7 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
           <div class="cg-slide"><img decoding="async" src="/clinic-exterior.webp" alt="Sri Sai Dental Clinic Exterior in Karmanghat" loading="lazy"><div class="cg-cap"><span class="cg-cap-badge">Our Clinic</span><span class="cg-cap-title">Clinic Exterior — Karmanghat</span></div></div>
         </div>
       </div>
-      <div class="cg-dots" id="cgDots" role="tablist" aria-label="Clinic photo slides"></div>
+      <div class="cg-dots" id="cgDots" role="group" aria-label="Clinic photo slides"></div>
     </div>
   </div>
 </section>
@@ -2122,7 +2129,7 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
           <div id="dental-chart-wrap" style="background:#f8fafc;border:1px solid #d2e4f5;border-radius:16px;padding:14px 10px 10px;overflow:hidden">
             <!-- Condition selector -->
             <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;justify-content:center" id="tooth-mark-mode">
-              <span style="font-size:11px;color:#6885a0;font-weight:700;align-self:center;letter-spacing:.5px;text-transform:uppercase;margin-right:4px">Tap tooth then select condition:</span>
+              <span style="font-size:11px;color:#516d8a;font-weight:700;align-self:center;letter-spacing:.5px;text-transform:uppercase;margin-right:4px">Tap tooth then select condition:</span>
               <button type="button" class="tc-cond-btn tc-healthy selected" data-mark="Healthy" onclick="pfSetMark(this)">● Healthy</button>
               <button type="button" class="tc-cond-btn tc-decay"   data-mark="Decay"   onclick="pfSetMark(this)">● Decay</button>
               <button type="button" class="tc-cond-btn tc-filled"  data-mark="Filled"  onclick="pfSetMark(this)">● Filled</button>
@@ -2138,8 +2145,8 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
               <ellipse cx="310" cy="168" rx="248" ry="128" fill="none" stroke="#d8eae7" stroke-width="1.2" stroke-dasharray="5 4"/>
               <ellipse cx="310" cy="202" rx="248" ry="128" fill="none" stroke="#d8eae7" stroke-width="1.2" stroke-dasharray="5 4"/>
               <line x1="310" y1="28" x2="310" y2="344" stroke="#d2e4f5" stroke-width="1" stroke-dasharray="4 4"/>
-              <text x="310" y="18"  font-size="10" fill="#6885a0" text-anchor="middle" font-family="Nunito,sans-serif">← Upper jaw (maxilla) →</text>
-              <text x="310" y="362" font-size="10" fill="#6885a0" text-anchor="middle" font-family="Nunito,sans-serif">← Lower jaw (mandible) →</text>
+              <text x="310" y="18"  font-size="10" fill="#516d8a" text-anchor="middle" font-family="Nunito,sans-serif">← Upper jaw (maxilla) →</text>
+              <text x="310" y="362" font-size="10" fill="#516d8a" text-anchor="middle" font-family="Nunito,sans-serif">← Lower jaw (mandible) →</text>
               <text x="30"  y="44"  font-size="12" fill="#e07b5a" font-weight="700" font-family="Nunito,sans-serif">Q1</text>
               <text x="574" y="44"  font-size="12" fill="#e07b5a" font-weight="700" font-family="Nunito,sans-serif">Q2</text>
               <text x="30"  y="344" font-size="12" fill="#e07b5a" font-weight="700" font-family="Nunito,sans-serif">Q4</text>
@@ -2349,7 +2356,7 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
 
 <!-- ── FOOTER ── -->
 <section style="background:#eef4fb;padding:36px 60px;text-align:center;">
-  <p style="font-family:'Nunito',sans-serif;font-size:13px;color:#6885a0;line-height:1.9;max-width:900px;margin:0 auto;">
+  <p style="font-family:'Nunito',sans-serif;font-size:13px;color:#516d8a;line-height:1.9;max-width:900px;margin:0 auto;">
     <strong style="color:#0a66c2;">Sri Sai Speciality Dental Care</strong> serves patients from 
     <strong>Karmanghat</strong>, <strong>Hayathnagar</strong>, <strong>LB Nagar</strong>, 
     <strong>Saroornagar</strong>, <strong>Vanasthalipuram</strong>, <strong>Nagole</strong>, 
@@ -2389,7 +2396,7 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
       <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a66c2;font-weight:600;">📍 RTC Colony</span>
       <span style="background:#fff;border:1.5px solid #d2e4f5;border-radius:100px;padding:6px 16px;font-family:'Nunito',sans-serif;font-size:13px;color:#0a66c2;font-weight:600;">📍 ZP Road</span>
     </div>
-    <p style="font-family:'Nunito',sans-serif;font-size:13px;color:#6885a0;line-height:1.9;max-width:800px;margin:0 auto;">
+    <p style="font-family:'Nunito',sans-serif;font-size:13px;color:#516d8a;line-height:1.9;max-width:800px;margin:0 auto;">
       Looking for a <strong>dentist near Karmanghat</strong>? <strong>Dental clinic near LB Nagar</strong>? <strong>Best implants near Meerpet</strong>? 
       <strong>Painless root canal near Hastinapuram</strong>? <strong>Braces treatment near Hayath Nagar</strong>? 
       <strong>Dental clinic near TKR College</strong>? <strong>Teeth whitening near Saroor Nagar</strong>?
@@ -2519,14 +2526,14 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
 </div>
 
 <!-- ── FAB ── -->
-<div class="fab">
+<div class="fab" role="complementary" aria-label="WhatsApp us">
   <span class="fab-label">WhatsApp Us</span>
   <a href="https://wa.me/918688033072" target="_blank" rel="noopener" class="fab-btn" aria-label="WhatsApp" style="background:linear-gradient(135deg,#2f8ae0,#0a66c2);">
     <svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M17.5 14c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2.1 3.1 5 4.4.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.4 5.3L2 22l4.8-1.4c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.3-.5-4.7-1.3l-.3-.2-2.8.8.8-2.8-.2-.3C3.9 15.1 3.4 13.6 3.4 12c0-4.7 3.8-8.6 8.6-8.6 4.7 0 8.6 3.8 8.6 8.6 0 4.7-3.9 8.2-8.6 8.2z"/></svg>
   </a>
 </div>
 
-<div class="fab-call">
+<div class="fab-call" role="complementary" aria-label="Call us">
   <span class="fab-label">Call Now</span>
   <a href="tel:+918688033072" class="fab-btn" aria-label="Call Now" style="background:linear-gradient(135deg,#0a66c2,#2f8ae0);">
     <svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
@@ -2866,7 +2873,7 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
 .bk-detail-row{display:flex;align-items:flex-start;padding:10px 16px;border-bottom:1px solid #eef4fb;gap:12px}
 .bk-detail-row:last-child{border-bottom:none}
 .bk-detail-icon{font-size:1rem;flex-shrink:0;width:22px;text-align:center;margin-top:1px}
-.bk-detail-lbl{font-size:11px;color:#6885a0;font-weight:600;display:block;margin-bottom:2px}
+.bk-detail-lbl{font-size:11px;color:#516d8a;font-weight:600;display:block;margin-bottom:2px}
 .bk-detail-val{font-size:13px;color:#0f172a;font-weight:700;word-break:break-word}
 .bk-notice{background:linear-gradient(135deg,#eef6fe,#fffbf0);border:1.5px solid #9fcef5;border-radius:12px;padding:13px 16px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
 .bk-notice-icon{font-size:1.2rem;flex-shrink:0}
@@ -2970,7 +2977,7 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
       .section-title{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:800;color:#0a66c2;border-bottom:2px solid #dbeefb;padding-bottom:6px;margin-bottom:12px;margin-top:20px}
       .row{display:flex;gap:16px;margin-bottom:10px}
       .col{flex:1}
-      .lbl{font-size:10.5px;font-weight:700;color:#6885a0;display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:.8px}
+      .lbl{font-size:10.5px;font-weight:700;color:#516d8a;display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:.8px}
       .val{font-size:13px;font-weight:700;color:#0f172a;background:#f8fafc;border:1px solid #d2e4f5;border-radius:6px;padding:7px 11px;min-height:32px}
       .footer{margin-top:32px;border-top:1px solid #ddd;padding-top:14px;text-align:center;font-size:10.5px;color:#999;line-height:1.7}
       @media print{body{padding:15px}.footer{position:fixed;bottom:15px;left:0;right:0}}
@@ -3419,8 +3426,8 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
       <!-- Midline -->
       <line x1="${cx}" y1="28" x2="${cx}" y2="${H-26}" stroke="#d2e4f5" stroke-width="1" stroke-dasharray="4 4"/>
       <!-- Jaw labels -->
-      <text x="${cx}" y="18" font-size="10" fill="#6885a0" text-anchor="middle" font-family="Arial,sans-serif">&#8592; Upper jaw (maxilla) &#8594;</text>
-      <text x="${cx}" y="${H-20}" font-size="10" fill="#6885a0" text-anchor="middle" font-family="Arial,sans-serif">&#8592; Lower jaw (mandible) &#8594;</text>
+      <text x="${cx}" y="18" font-size="10" fill="#516d8a" text-anchor="middle" font-family="Arial,sans-serif">&#8592; Upper jaw (maxilla) &#8594;</text>
+      <text x="${cx}" y="${H-20}" font-size="10" fill="#516d8a" text-anchor="middle" font-family="Arial,sans-serif">&#8592; Lower jaw (mandible) &#8594;</text>
       <!-- Quadrant labels -->
       <text x="30" y="44" font-size="12" fill="#e07b5a" font-weight="bold" font-family="Arial,sans-serif">Q1</text>
       <text x="${W-46}" y="44" font-size="12" fill="#e07b5a" font-weight="bold" font-family="Arial,sans-serif">Q2</text>
@@ -3755,7 +3762,7 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
 .pfsm-ts{display:inline-block;background:rgba(255,255,255,.18);border-radius:100px;padding:3px 14px;font-size:10px;margin-top:6px}
 .pfsm-sec{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:#0a66c2;margin:14px 0 6px;padding-bottom:4px;border-bottom:2px solid #dbeefb}
 .pfsm-row{display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;border-bottom:1px solid #eef4fb;gap:8px}
-.pfsm-lbl{font-size:11.5px;color:#6885a0;font-weight:600;flex-shrink:0;max-width:48%}
+.pfsm-lbl{font-size:11.5px;color:#516d8a;font-weight:600;flex-shrink:0;max-width:48%}
 .pfsm-val{font-size:12.5px;color:#0f172a;font-weight:700;text-align:right;word-break:break-word}
 .pfsm-acts{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;justify-content:center}
 .pfsm-btn{padding:10px 22px;border:none;border-radius:100px;font-family:'Nunito',sans-serif;font-weight:700;cursor:pointer;font-size:13px;transition:all .2s}
@@ -3887,7 +3894,7 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
 .pfsm-ts{display:inline-block;background:rgba(255,255,255,.18);border-radius:100px;padding:3px 14px;font-size:10px;margin-top:6px}
 .pfsm-sec{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:#0a66c2;margin:14px 0 6px;padding-bottom:4px;border-bottom:2px solid #dbeefb}
 .pfsm-row{display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;border-bottom:1px solid #eef4fb;gap:8px}
-.pfsm-lbl{font-size:11.5px;color:#6885a0;font-weight:600;flex-shrink:0;max-width:48%}
+.pfsm-lbl{font-size:11.5px;color:#516d8a;font-weight:600;flex-shrink:0;max-width:48%}
 .pfsm-val{font-size:12.5px;color:#0f172a;font-weight:700;text-align:right;word-break:break-word}
 .pfsm-chart{font-size:11.5px;color:#0f172a;background:#eef4fb;border-radius:8px;padding:8px 10px;margin-top:4px;word-break:break-word}
 .pfsm-acts{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;justify-content:center}
