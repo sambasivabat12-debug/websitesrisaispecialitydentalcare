@@ -32,16 +32,14 @@
 <!-- ═══════════════════════════════════════════
      TOOL 1 — GOOGLE TAG MANAGER
 ═══════════════════════════════════════════ -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MZT8DBJ4');</script>
+<!-- Google Tag Manager is loaded lazily on first interaction (see the deferred
+     loader below). dataLayer + gtag() are still defined synchronously, so no
+     pageview or click event is ever lost — only the heavy download is delayed. -->
 
 <!-- ═══════════════════════════════════════════
      TOOL 2 — GOOGLE ANALYTICS 4 (GA4)
 ═══════════════════════════════════════════ -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MKB7CRV5S"></script>
+<!-- GA4 gtag.js is loaded lazily on first interaction (see the deferred loader below) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -76,6 +74,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       el.addEventListener('click', function() { gaTrackReview(); });
     });
   });
+
+  /* ── Lazy-load the Google tag scripts (GTM + GA4/Ads) on first interaction,
+     or after 4s for idle visitors. dataLayer + gtag() are defined above, so any
+     pageview/config/click is queued and processed the instant the scripts load
+     — nothing is lost; only the ~430 KiB download is moved off the critical path. */
+  (function () {
+    var loaded = false;
+    function loadGoogleTags() {
+      if (loaded) return; loaded = true;
+      var ga = document.createElement('script');
+      ga.async = true;
+      ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-1MKB7CRV5S';
+      document.head.appendChild(ga);
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MZT8DBJ4');
+    }
+    var evts = ['scroll', 'pointerdown', 'touchstart', 'mousemove', 'keydown'];
+    function onFirst() { evts.forEach(function (ev) { window.removeEventListener(ev, onFirst); }); loadGoogleTags(); }
+    evts.forEach(function (ev) { window.addEventListener(ev, onFirst, { passive: true }); });
+    setTimeout(loadGoogleTags, 4000);
+  })();
 </script>
 
 <!-- ═══════════════════════════════════════════
@@ -2555,7 +2579,15 @@ nav:not(.scrolled) .hamburger span{background:#fff!important}
 
   /* PROGRESS BAR */
   const prog=document.getElementById('progress');
-  window.addEventListener('scroll',()=>{const p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;prog.style.width=p+'%'});
+  (function(){
+    var maxScroll=0, ticking=false;
+    function recalc(){ maxScroll=document.body.scrollHeight-window.innerHeight; }
+    recalc(); window.addEventListener('resize',recalc,{passive:true}); window.addEventListener('load',recalc);
+    window.addEventListener('scroll',function(){
+      if(ticking) return; ticking=true;
+      requestAnimationFrame(function(){ prog.style.width=(maxScroll>0?(window.scrollY/maxScroll)*100:0)+'%'; ticking=false; });
+    },{passive:true});
+  })();
 
   /* NAV */
   const nav=document.getElementById('nav');
