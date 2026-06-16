@@ -101,7 +101,7 @@
   var input   = root.querySelector('.ssdc-in');
   var snd     = root.querySelector('.ssdc-snd');
 
-  var lead = { name: '', phone: '', service: '' };
+  var lead = { name: '', phone: '', email: '', service: '' };
   var step = null;       // null | 'name' | 'phone' | 'treatment' | 'chat'
   var started = false;
   var busy = false;
@@ -187,6 +187,7 @@
     var msg = 'Hi! I would like to book an appointment at ' + CLINIC_NAME + '.';
     if (lead.name)    msg += '\nName: ' + lead.name;
     if (lead.phone)   msg += '\nPhone: ' + lead.phone;
+    if (lead.email)   msg += '\nEmail: ' + lead.email;
     if (lead.service) msg += '\nTreatment: ' + lead.service;
     return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
   }
@@ -245,6 +246,7 @@
         contactCtas();
         if (step==='name') unlock('Type your name…');
         else if (step==='phone') unlock('Your mobile number…');
+        else if (step==='email') unlock('Your email address…');
         else if (step==='treatment') unlock('Type or tap a treatment…');
       });
       return;
@@ -255,7 +257,12 @@
     } else if (step === 'phone'){
       var digits = v.replace(/\D/g,''); bubble(v,'me');
       if (digits.length < 10){ input.value=''; bot("Hmm, that does not look complete — please enter a 10-digit mobile number. 🙂", function(){ unlock('Your mobile number…'); }); return; }
-      lead.phone = v; lock(); step=null; askService();
+      lead.phone = v; lock(); step=null;
+      bot("Great, thank you! 📧 And your email address? We'll use it to share appointment details.", function(){ step='email'; unlock('Your email address…'); });
+    } else if (step === 'email'){
+      bubble(v,'me');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){ input.value=''; bot("That email does not look quite right — could you re-enter it? 🙂", function(){ unlock('Your email address…'); }); return; }
+      lead.email = v; lock(); step=null; askService();
     } else if (step === 'treatment'){
       bubble(v,'me'); pick(v);
     } else if (step === 'chat'){
