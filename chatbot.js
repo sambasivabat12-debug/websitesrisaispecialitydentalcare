@@ -11,6 +11,10 @@
   var SERVICES = ['Dental Implants','Crowns & Bridges','Dentures','Braces / Aligners','Root Canal',
                   'Teeth Whitening','Wisdom Tooth','Kids Dentistry','Fillings','Smile Design',
                   'General Check-up','Other'];
+
+  // Google Sheets endpoint (Apps Script Web App /exec URL). Leave '' to disable lead saving.
+  var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz-gH_TfcrlzK0E29UjJsXklem_KW2alFANT5Jknd3xV2_oivJTtGP_a0n68Y6elNj21A/exec';
+  var LEAD_TOKEN     = 'srisai-clinic-2026'; // must match the token check in your Apps Script (if added)
   /* =================================================================== */
 
   if (document.getElementById('ssdc-chat')) return; // guard against double-load
@@ -183,6 +187,19 @@
   function options(list){ var w=document.createElement('div'); w.className='ssdc-opts'; list.forEach(function(o){ var b=document.createElement('button'); b.className='ssdc-o'; b.textContent=o.label; b.addEventListener('click', function(){ if(w.parentNode) w.parentNode.removeChild(w); bubble(o.label,'me'); o.go(); }); w.appendChild(b); }); bd.appendChild(w); down(); }
   function ctas(html){ var w=document.createElement('div'); w.className='ssdc-cta'; w.innerHTML=html; bd.appendChild(w); down(); }
 
+  function saveLead(){
+    if (!SHEET_ENDPOINT) return;
+    try {
+      fetch(SHEET_ENDPOINT, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          token: LEAD_TOKEN, name: lead.name, phone: lead.phone, email: lead.email,
+          source: 'Website Chatbot', query: lead.service ? ('Interested in: ' + lead.service) : ''
+        })
+      }).catch(function(){});
+    } catch (e) {}
+  }
   function waLink(){
     var msg = 'Hi! I would like to book an appointment at ' + CLINIC_NAME + '.';
     if (lead.name)    msg += '\nName: ' + lead.name;
@@ -220,7 +237,7 @@
     });
   }
   function pick(s){
-    lead.service = s; lock();
+    lead.service = s; lock(); saveLead();
     bot('Perfect, ' + lead.name + '! ✅ I have noted your interest in ' + s + ', and our team can reach you at ' + lead.phone + '.', function(){
       bot('Now, how can I help? Ask me anything below, or tap an option. 👇', function(){
         step='chat'; contactCtas(); showChatChips(); unlock('Type your question…'); busy=false;
