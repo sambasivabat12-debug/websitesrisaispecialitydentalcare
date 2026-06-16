@@ -105,7 +105,7 @@
   var input   = root.querySelector('.ssdc-in');
   var snd     = root.querySelector('.ssdc-snd');
 
-  var lead = { name: '', phone: '', email: '', service: '' };
+  var lead = { name: '', phone: '', email: '', service: '', date: '', time: '' };
   var step = null;       // null | 'name' | 'phone' | 'treatment' | 'chat'
   var started = false;
   var busy = false;
@@ -195,6 +195,7 @@
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify({
           token: LEAD_TOKEN, name: lead.name, phone: lead.phone, email: lead.email,
+          date: lead.date, time: lead.time,
           source: 'Website Chatbot', query: lead.service ? ('Interested in: ' + lead.service) : ''
         })
       }).catch(function(){});
@@ -217,7 +218,7 @@
   function showChatChips(){
     var labels = ['Timings','Location','Cost','Book appointment','Dental implants','Tooth pain','Ask any question'];
     chatRow = document.createElement('div'); chatRow.className='ssdc-opts';
-    labels.forEach(function(l){ var b=document.createElement('button'); b.className='ssdc-o'; b.textContent=l; b.addEventListener('click', function(){ if(!busy) answer(l); }); chatRow.appendChild(b); });
+    labels.forEach(function(l){ var b=document.createElement('button'); b.className='ssdc-o'; b.textContent=l; b.addEventListener('click', function(){ if(!busy && step==='chat') answer(l); }); chatRow.appendChild(b); });
     bd.appendChild(chatRow); down();
   }
   function parkChips(){ if (chatRow){ bd.appendChild(chatRow); down(); } }
@@ -237,7 +238,7 @@
     });
   }
   function pick(s){
-    lead.service = s; lock(); saveLead();
+    lead.service = s; lock();
     bot('Perfect, ' + lead.name + '! ✅ I have noted your interest in ' + s + ', and our team can reach you at ' + lead.phone + '.', function(){
       bot('Now, how can I help? Ask me anything below, or tap an option. 👇', function(){
         step='chat'; contactCtas(); showChatChips(); unlock('Type your question…'); busy=false;
@@ -252,7 +253,12 @@
       return;
     }
     var r = match(text);
+    if (r.id === 'book'){ busy = false; startBooking(); return; }
     bot(r.a, function(){ if (SHOW_CTA.indexOf(r.id) !== -1) contactCtas(); parkChips(); busy=false; });
+  }
+  function startBooking(){
+    lock();
+    bot("I'd be glad to help you book, " + (lead.name || 'there') + "! 📅 What date would you like to come in? (e.g. 25 June, or tomorrow)", function(){ step='book_date'; unlock('Preferred date…'); });
   }
   function submit(){
     var v = (input.value || '').trim();
@@ -265,6 +271,8 @@
         else if (step==='phone') unlock('Your mobile number…');
         else if (step==='email') unlock('Your email address…');
         else if (step==='treatment') unlock('Type or tap a treatment…');
+        else if (step==='book_date') unlock('Preferred date…');
+        else if (step==='book_time') unlock('Preferred time…');
       });
       return;
     }
@@ -282,6 +290,14 @@
       lead.email = v; lock(); step=null; askService();
     } else if (step === 'treatment'){
       bubble(v,'me'); pick(v);
+    } else if (step === 'book_date'){
+      bubble(v,'me'); lead.date = v; lock(); step=null;
+      bot("And what time suits you? 🕐 We're open 9 AM – 9 PM (e.g. 4:30 PM).", function(){ step='book_time'; unlock('Preferred time…'); });
+    } else if (step === 'book_time'){
+      bubble(v,'me'); lead.time = v; lock(); saveLead();
+      bot("Thank you, " + lead.name + "! ✅ Your appointment request for " + lead.date + " at " + lead.time + " has been received. We've emailed the details to " + lead.email + ", and our team will call you shortly to confirm. 📞", function(){
+        step='chat'; contactCtas(); parkChips(); busy=false;
+      });
     } else if (step === 'chat'){
       input.value=''; answer(v);
     }
