@@ -63,6 +63,7 @@
     #ssdc-launch{bottom:78px;right:14px;width:56px;height:56px}
     #ssdc-launch svg{width:27px;height:27px}
     .ssdc-panel{bottom:74px;right:10px;left:10px;top:64px;width:auto;height:auto;max-height:none}
+    .ssdc-in{font-size:16px}
   }`;
 
   var style = document.createElement('style');
