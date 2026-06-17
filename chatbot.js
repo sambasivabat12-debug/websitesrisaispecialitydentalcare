@@ -108,6 +108,25 @@
   var lead = { name: '', phone: '', email: '', service: '', date: '', time: '' };
   var step = null;       // null | 'name' | 'phone' | 'treatment' | 'chat'
   var started = false;
+
+  /* ---- conversation tracking (Session ID + message log; survives a page refresh) ---- */
+  var DEVICE = (/Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent || '')) ? 'Mobile' : 'Desktop';
+  var chatId = '';
+  var chatLog = [];
+  (function initSession(){
+    try {
+      var raw = localStorage.getItem('ssdc_chat');
+      if (raw){
+        var o = JSON.parse(raw);
+        if (o && o.id && o.ts && (Date.now() - o.ts) < 12 * 60 * 60 * 1000){
+          chatId = o.id; chatLog = (o.msgs && o.msgs.length) ? o.msgs : [];
+        }
+      }
+    } catch (e) {}
+    if (!chatId){ chatId = 'C' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+  })();
+  function persistSession(){ try { localStorage.setItem('ssdc_chat', JSON.stringify({ id: chatId, msgs: chatLog, ts: Date.now() })); } catch (e) {} }
+  function logMsg(t){ if (t == null) return; chatLog.push(String(t)); if (chatLog.length > 60){ chatLog = chatLog.slice(-60); } persistSession(); }
   var busy = false;
   var chatRow = null;
 
@@ -178,7 +197,7 @@
   /* ============================ HELPERS ============================ */
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function down(){ bd.scrollTop = bd.scrollHeight; }
-  function bubble(text, who){ var d=document.createElement('div'); d.className='ssdc-m '+who; d.textContent=text; bd.appendChild(d); down(); return d; }
+  function bubble(text, who){ var d=document.createElement('div'); d.className='ssdc-m '+who; d.textContent=text; bd.appendChild(d); down(); if (who === 'me'){ logMsg(text); } return d; }
   function bubbleHtml(html){ var d=document.createElement('div'); d.className='ssdc-m bot'; d.innerHTML=html; bd.appendChild(d); down(); return d; }
   function typing(cb, ms){ var t=document.createElement('div'); t.className='ssdc-typ'; t.innerHTML='<i></i><i></i><i></i>'; bd.appendChild(t); down(); setTimeout(function(){ if(t.parentNode) t.parentNode.removeChild(t); cb(); }, ms||800); }
   function bot(text, after){ typing(function(){ bubble(text,'bot'); if(after) after(); }); }
@@ -187,19 +206,32 @@
   function options(list){ var w=document.createElement('div'); w.className='ssdc-opts'; list.forEach(function(o){ var b=document.createElement('button'); b.className='ssdc-o'; b.textContent=o.label; b.addEventListener('click', function(){ if(w.parentNode) w.parentNode.removeChild(w); bubble(o.label,'me'); o.go(); }); w.appendChild(b); }); bd.appendChild(w); down(); }
   function ctas(html){ var w=document.createElement('div'); w.className='ssdc-cta'; w.innerHTML=html; bd.appendChild(w); down(); }
 
-  function saveLead(){
-    if (!SHEET_ENDPOINT) return;
+  function postSheet(payload, attempt){
+    attempt = attempt || 1;
     try {
       fetch(SHEET_ENDPOINT, {
         method: 'POST', mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({
-          token: LEAD_TOKEN, name: lead.name, phone: lead.phone, email: lead.email,
-          date: lead.date, time: lead.time,
-          source: 'Website Chatbot', query: lead.service ? ('Interested in: ' + lead.service) : ''
-        })
-      }).catch(function(){});
-    } catch (e) {}
+        body: JSON.stringify(payload)
+      }).catch(function(){ if (attempt < 3){ setTimeout(function(){ postSheet(payload, attempt + 1); }, 1500 * attempt); } });
+    } catch (e) { if (attempt < 3){ setTimeout(function(){ postSheet(payload, attempt + 1); }, 1500 * attempt); } }
+  }
+  function saveLead(finalBooking){
+    if (!SHEET_ENDPOINT) return;
+    var msgs = chatLog.join('  |  ');
+    var payload = {
+      token: LEAD_TOKEN, chatId: chatId,
+      name: lead.name, phone: lead.phone, email: lead.email,
+      treatment: lead.service, date: lead.date, time: lead.time,
+      messages: msgs, questions: msgs,
+      page: location.pathname, device: DEVICE,
+      source: 'Website Chatbot',
+      query: lead.service ? ('Interested in: ' + lead.service) : ''
+    };
+    // Progressive/partial saves are tagged type:'chatbot'. The single completed-booking
+    // save is left untyped so it still records even on an older Apps Script version.
+    if (!finalBooking){ payload.type = 'chatbot'; }
+    postSheet(payload, 1);
   }
   function waLink(){
     var msg = 'Hi! I would like to book an appointment at ' + CLINIC_NAME + '.';
@@ -238,7 +270,7 @@
     });
   }
   function pick(s){
-    lead.service = s; lock();
+    lead.service = s; lock(); saveLead();
     bot('Perfect, ' + lead.name + '! ✅ I have noted your interest in ' + s + ', and our team can reach you at ' + lead.phone + '.', function(){
       bot('Now, how can I help? Ask me anything below, or tap an option. 👇', function(){
         step='chat'; contactCtas(); showChatChips(); unlock('Type your question…'); busy=false;
@@ -247,7 +279,7 @@
   }
   function answer(text){
     if (busy) return; busy = true;
-    bubble(text,'me');
+    bubble(text,'me'); saveLead();
     if (text.toLowerCase() === 'ask any question'){
       bot("Of course! 😊 Just type your question below — about any treatment, symptom, cost, or appointment — and I'll help you.", function(){ parkChips(); busy=false; });
       return;
@@ -264,7 +296,7 @@
     var v = (input.value || '').trim();
     if (!v) return;
     if (step !== 'chat' && isEmergency(normalize(v))){
-      bubble(v,'me'); input.value='';
+      bubble(v,'me'); input.value=''; saveLead();
       bot(EMERGENCY_ANSWER, function(){
         contactCtas();
         if (step==='name') unlock('Type your name…');
@@ -277,24 +309,24 @@
       return;
     }
     if (step === 'name'){
-      lead.name = v; bubble(v,'me'); lock(); step=null;
+      lead.name = v; bubble(v,'me'); lock(); step=null; saveLead();
       bot("Nice to meet you, " + lead.name + "! 😊 What is the best mobile number to reach you?", function(){ step='phone'; unlock('Your mobile number…'); });
     } else if (step === 'phone'){
       var digits = v.replace(/\D/g,''); bubble(v,'me');
       if (digits.length < 10){ input.value=''; bot("Hmm, that does not look complete — please enter a 10-digit mobile number. 🙂", function(){ unlock('Your mobile number…'); }); return; }
-      lead.phone = v; lock(); step=null;
+      lead.phone = v; lock(); step=null; saveLead();
       bot("Great, thank you! 📧 And your email address? We'll use it to share appointment details.", function(){ step='email'; unlock('Your email address…'); });
     } else if (step === 'email'){
       bubble(v,'me');
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){ input.value=''; bot("That email does not look quite right — could you re-enter it? 🙂", function(){ unlock('Your email address…'); }); return; }
-      lead.email = v; lock(); step=null; askService();
+      lead.email = v; lock(); step=null; saveLead(); askService();
     } else if (step === 'treatment'){
       bubble(v,'me'); pick(v);
     } else if (step === 'book_date'){
-      bubble(v,'me'); lead.date = v; lock(); step=null;
+      bubble(v,'me'); lead.date = v; lock(); step=null; saveLead();
       bot("And what time suits you? 🕐 We're open 9 AM – 9 PM (e.g. 4:30 PM).", function(){ step='book_time'; unlock('Preferred time…'); });
     } else if (step === 'book_time'){
-      bubble(v,'me'); lead.time = v; lock(); saveLead();
+      bubble(v,'me'); lead.time = v; lock(); saveLead(true);
       bot("Thank you, " + lead.name + "! ✅ Your appointment request for " + lead.date + " at " + lead.time + " has been received. We've emailed the details to " + lead.email + ", and our team will call you shortly to confirm. 📞", function(){
         step='chat'; contactCtas(); parkChips(); busy=false;
       });
